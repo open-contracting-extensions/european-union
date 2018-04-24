@@ -1,0 +1,2 @@
+[codelists_text: schema/codelists/*.csv]
+[codelists_text: docs/extensions/codelists/*.csv]

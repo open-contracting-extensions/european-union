@@ -1,0 +1,24 @@
+{% extends "!layout.html" %}
+
+{% block sidebartitle %}
+<a href="{{ pathto(master_doc) }}">{{ project }}</a>
+{% endblock %}
+
+{% block mobile_nav %}
+  <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+  <a href="{{ pathto(master_doc) }}">{{ project }}</a>
+{% endblock %}
+
+{% block extra_links %}
+{% endblock %}
+
+{% block language_options %}
+            <option>Language</option>
+            <option value="en">English</option>
+{% endblock %}
+
+{% block version_options %}
+<!--#include virtual="/includes/version-options-profiles-ppp.html" -->
+{% endblock %}
+
+{% block root %}/profiles/TODO{% endblock %}

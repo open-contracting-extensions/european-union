@@ -1,0 +1,5 @@
+*.mo
+
+/build
+/docs/_build
+/docs/_static/codelists

@@ -1,0 +1,22 @@
+{
+  "name": {
+    "en": "OCDS for TODO"
+  },
+  "description": {
+    "en": "This profile collects extensions and guidance for implementing OCDS for TODO"
+  },
+  "documentationUrl": {
+    "en": "http://standard.open-contracting.org/profiles/TODO/latest/en/"
+  },
+  "codelists": [
+    "emptyCodelist.csv"
+  ],
+  "compatibility": [
+    "1.0",
+    "1.1"
+  ],
+  "dependencies": [
+    "http://httpbin.org/anything/path/to/extension1/extension.json",
+    "http://httpbin.org/anything/path/to/extension2/extension.json"
+  ]
+}
