@@ -11,5 +11,5 @@ sys.path.append(os.path.join(basedir, '..', 'docs'))
 
 from conf import extension_registry_git_ref  # noqa
 
-apply_extensions(basedir, extension_registry_git_ref, 'TODO', [
+apply_extensions(basedir, extension_registry_git_ref, 'eu', [
 ])

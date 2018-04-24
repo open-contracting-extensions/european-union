@@ -59,7 +59,7 @@ source_parsers = {
 master_doc = 'index'
 
 # General information about the project.
-project = 'OCDS for TODO'
+project = 'Open Contracting Data Standard for European Union'
 copyright = '2018 Open Contracting Partnership'
 author = 'Open Contracting Partnership'
 
