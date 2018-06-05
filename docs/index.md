@@ -6,5 +6,5 @@
 .. toctree::
    :maxdepth: 2
 
-   *
+   future_forms
 ```

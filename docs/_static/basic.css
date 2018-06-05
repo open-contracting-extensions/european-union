@@ -1,0 +1,10 @@
+.wy-nav-content {
+  max-width: none;
+}
+.rst-content table.docutils td {
+  vertical-align: top;
+}
+
+q {
+  font-style: italic;
+}
