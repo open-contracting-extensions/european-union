@@ -1,5 +1,6 @@
 *.mo
 
 /build
+/cache.sqlite
 /docs/_build
 /docs/_static/codelists
