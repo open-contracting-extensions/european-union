@@ -21,6 +21,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import os
+from collections import OrderedDict
 
 import standard_theme
 from ocds_documentation_support import translate_codelists, translate_schema
@@ -116,9 +117,9 @@ html_static_path = ['../schema', '_static']
 locale_dirs = ['../locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
 gettext_compact = False
 profile_identifier = 'eu'
-extension_versions = {
-    # 'extension_id_in_registry': 'version',
-}
+extension_versions = OrderedDict([
+    ('extension_id_in_registry', 'version'),
+])
 
 
 def setup(app):
