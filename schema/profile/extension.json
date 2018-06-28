@@ -1,15 +1,14 @@
 {
   "name": {
-    "en": "OCDS for EU"
+    "en": "OCDS for the European Union"
   },
   "description": {
-    "en": "This profile collects extensions and guidance for implementing OCDS for the European Union"
+    "en": "Collects, into a single extension, the extensions that compose the OCDS for the European Union profile."
   },
   "documentationUrl": {
     "en": "http://standard.open-contracting.org/profiles/eu/latest/en/"
   },
   "compatibility": [
-    "1.0",
     "1.1"
   ]
 }

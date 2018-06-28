@@ -1,4 +1,4 @@
-# OCDS for EU
+# OCDS for the European Union
 
 ## Contents
 

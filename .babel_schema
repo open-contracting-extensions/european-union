@@ -1,1 +1,1 @@
-[jsonschema_text: schema/*.json]
+[jsonschema_text: schema/*/*-schema.json]

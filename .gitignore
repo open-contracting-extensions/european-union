@@ -2,5 +2,5 @@
 
 /build
 /cache.sqlite
-/docs/_build
-/docs/_static/codelists
+/docs/_static/patched
+/docs/extensions/codelists_translated
