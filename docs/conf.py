@@ -120,7 +120,9 @@ html_extra_path = ['../schema/profile']
 
 # -- Local configuration --------------------------------------------------
 
+# The `LOCALE_DIR` from `config.mk`, plus the theme's locale.
 locale_dirs = ['../locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
+
 gettext_compact = False
 
 # The `DOMAIN_PREFIX` from `config.mk`.
