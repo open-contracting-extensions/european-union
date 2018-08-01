@@ -123,7 +123,8 @@ gettext_compact = False
 gettext_domain_prefix = 'TODO-'
 
 # The version of OCDS to patch.
-standard_version = '1__1__3'
+standard_tag = '1__1__3'
+standard_version = '1.1'
 
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/master/extension_versions.csv
