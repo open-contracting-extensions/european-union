@@ -1,10 +1,12 @@
 # OCDS for the European Union
 
-## Contents
+## Standard forms for public procurement
 
 ```eval_rst
 .. toctree::
    :maxdepth: 2
 
-   future_forms
+   F01
+   F02
+   F03
 ```

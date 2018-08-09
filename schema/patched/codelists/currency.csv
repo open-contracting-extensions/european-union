@@ -1,0 +1,301 @@
+Code,Title,Extension
+AED,UAE Dirham,OCDS Core
+AFN,Afghani,OCDS Core
+ALL,Lek,OCDS Core
+AMD,Armenian Dram,OCDS Core
+ANG,Netherlands Antillean Guilder,OCDS Core
+AOA,Kwanza,OCDS Core
+ARS,Argentine Peso,OCDS Core
+AUD,Australian Dollar,OCDS Core
+AWG,Aruban Florin,OCDS Core
+AZN,Azerbaijan Manat,OCDS Core
+BAM,Convertible Mark,OCDS Core
+BBD,Barbados Dollar,OCDS Core
+BDT,Taka,OCDS Core
+BGN,Bulgarian Lev,OCDS Core
+BHD,Bahraini Dinar,OCDS Core
+BIF,Burundi Franc,OCDS Core
+BMD,Bermudian Dollar,OCDS Core
+BND,Brunei Dollar,OCDS Core
+BOB,Boliviano,OCDS Core
+BOV,Mvdol,OCDS Core
+BRL,Brazilian Real,OCDS Core
+BSD,Bahamian Dollar,OCDS Core
+BTN,Ngultrum,OCDS Core
+BWP,Pula,OCDS Core
+BYN,Belarusian Ruble,OCDS Core
+BZD,Belize Dollar,OCDS Core
+CAD,Canadian Dollar,OCDS Core
+CDF,Congolese Franc,OCDS Core
+CHE,WIR Euro,OCDS Core
+CHF,Swiss Franc,OCDS Core
+CHW,WIR Franc,OCDS Core
+CLF,Unidad de Fomento,OCDS Core
+CLP,Chilean Peso,OCDS Core
+CNY,Yuan Renminbi,OCDS Core
+COP,Colombian Peso,OCDS Core
+COU,Unidad de Valor Real,OCDS Core
+CRC,Costa Rican Colon,OCDS Core
+CUC,Peso Convertible,OCDS Core
+CUP,Cuban Peso,OCDS Core
+CVE,Cabo Verde Escudo,OCDS Core
+CZK,Czech Koruna,OCDS Core
+DJF,Djibouti Franc,OCDS Core
+DKK,Danish Krone,OCDS Core
+DOP,Dominican Peso,OCDS Core
+DZD,Algerian Dinar,OCDS Core
+EGP,Egyptian Pound,OCDS Core
+ERN,Nakfa,OCDS Core
+ETB,Ethiopian Birr,OCDS Core
+EUR,Euro,OCDS Core
+FJD,Fiji Dollar,OCDS Core
+FKP,Falkland Islands Pound,OCDS Core
+GBP,Pound Sterling,OCDS Core
+GEL,Lari,OCDS Core
+GHS,Ghana Cedi,OCDS Core
+GIP,Gibraltar Pound,OCDS Core
+GMD,Dalasi,OCDS Core
+GNF,Guinean Franc,OCDS Core
+GTQ,Quetzal,OCDS Core
+GYD,Guyana Dollar,OCDS Core
+HKD,Hong Kong Dollar,OCDS Core
+HNL,Lempira,OCDS Core
+HRK,Kuna,OCDS Core
+HTG,Gourde,OCDS Core
+HUF,Forint,OCDS Core
+IDR,Rupiah,OCDS Core
+ILS,New Israeli Sheqel,OCDS Core
+INR,Indian Rupee,OCDS Core
+IQD,Iraqi Dinar,OCDS Core
+IRR,Iranian Rial,OCDS Core
+ISK,Iceland Krona,OCDS Core
+JMD,Jamaican Dollar,OCDS Core
+JOD,Jordanian Dinar,OCDS Core
+JPY,Yen,OCDS Core
+KES,Kenyan Shilling,OCDS Core
+KGS,Som,OCDS Core
+KHR,Riel,OCDS Core
+KMF,Comorian Franc,OCDS Core
+KPW,North Korean Won,OCDS Core
+KRW,Won,OCDS Core
+KWD,Kuwaiti Dinar,OCDS Core
+KYD,Cayman Islands Dollar,OCDS Core
+KZT,Tenge,OCDS Core
+LAK,Lao Kip,OCDS Core
+LBP,Lebanese Pound,OCDS Core
+LKR,Sri Lanka Rupee,OCDS Core
+LRD,Liberian Dollar,OCDS Core
+LSL,Loti,OCDS Core
+LYD,Libyan Dinar,OCDS Core
+MAD,Moroccan Dirham,OCDS Core
+MDL,Moldovan Leu,OCDS Core
+MGA,Malagasy Ariary,OCDS Core
+MKD,Denar,OCDS Core
+MMK,Kyat,OCDS Core
+MNT,Tugrik,OCDS Core
+MOP,Pataca,OCDS Core
+MRU,Ouguiya,OCDS Core
+MUR,Mauritius Rupee,OCDS Core
+MVR,Rufiyaa,OCDS Core
+MWK,Malawi Kwacha,OCDS Core
+MXN,Mexican Peso,OCDS Core
+MXV,Mexican Unidad de Inversion (UDI),OCDS Core
+MYR,Malaysian Ringgit,OCDS Core
+MZN,Mozambique Metical,OCDS Core
+NAD,Namibia Dollar,OCDS Core
+NGN,Naira,OCDS Core
+NIO,Cordoba Oro,OCDS Core
+NOK,Norwegian Krone,OCDS Core
+NPR,Nepalese Rupee,OCDS Core
+NZD,New Zealand Dollar,OCDS Core
+OMR,Rial Omani,OCDS Core
+PAB,Balboa,OCDS Core
+PEN,Sol,OCDS Core
+PGK,Kina,OCDS Core
+PHP,Philippine Piso,OCDS Core
+PKR,Pakistan Rupee,OCDS Core
+PLN,Zloty,OCDS Core
+PYG,Guarani,OCDS Core
+QAR,Qatari Rial,OCDS Core
+RON,Romanian Leu,OCDS Core
+RSD,Serbian Dinar,OCDS Core
+RUB,Russian Ruble,OCDS Core
+RWF,Rwanda Franc,OCDS Core
+SAR,Saudi Riyal,OCDS Core
+SBD,Solomon Islands Dollar,OCDS Core
+SCR,Seychelles Rupee,OCDS Core
+SDG,Sudanese Pound,OCDS Core
+SEK,Swedish Krona,OCDS Core
+SGD,Singapore Dollar,OCDS Core
+SHP,Saint Helena Pound,OCDS Core
+SLL,Leone,OCDS Core
+SOS,Somali Shilling,OCDS Core
+SRD,Surinam Dollar,OCDS Core
+SSP,South Sudanese Pound,OCDS Core
+STN,Dobra,OCDS Core
+SVC,El Salvador Colon,OCDS Core
+SYP,Syrian Pound,OCDS Core
+SZL,Lilangeni,OCDS Core
+THB,Baht,OCDS Core
+TJS,Somoni,OCDS Core
+TMT,Turkmenistan New Manat,OCDS Core
+TND,Tunisian Dinar,OCDS Core
+TOP,Pa’anga,OCDS Core
+TRY,Turkish Lira,OCDS Core
+TTD,Trinidad and Tobago Dollar,OCDS Core
+TWD,New Taiwan Dollar,OCDS Core
+TZS,Tanzanian Shilling,OCDS Core
+UAH,Hryvnia,OCDS Core
+UGX,Uganda Shilling,OCDS Core
+USD,US Dollar,OCDS Core
+USN,US Dollar (Next day),OCDS Core
+UYI,Uruguay Peso en Unidades Indexadas (URUIURUI),OCDS Core
+UYU,Peso Uruguayo,OCDS Core
+UZS,Uzbekistan Sum,OCDS Core
+VEF,Bolívar,OCDS Core
+VND,Dong,OCDS Core
+VUV,Vatu,OCDS Core
+WST,Tala,OCDS Core
+XAF,CFA Franc BEAC,OCDS Core
+XAG,Silver,OCDS Core
+XAU,Gold,OCDS Core
+XBA,Bond Markets Unit European Composite Unit (EURCO),OCDS Core
+XBB,Bond Markets Unit European Monetary Unit (E.M.U.-6),OCDS Core
+XBC,Bond Markets Unit European Unit of Account 9 (E.U.A.-9),OCDS Core
+XBD,Bond Markets Unit European Unit of Account 17 (E.U.A.-17),OCDS Core
+XCD,East Caribbean Dollar,OCDS Core
+XDR,SDR (Special Drawing Right),OCDS Core
+XOF,CFA Franc BCEAO,OCDS Core
+XPD,Palladium,OCDS Core
+XPF,CFP Franc,OCDS Core
+XPT,Platinum,OCDS Core
+XSU,Sucre,OCDS Core
+XTS,Codes specifically reserved for testing purposes,OCDS Core
+XUA,ADB Unit of Account,OCDS Core
+XXX,The codes assigned for transactions where no currency is involved,OCDS Core
+YER,Yemeni Rial,OCDS Core
+ZAR,Rand,OCDS Core
+ZMW,Zambian Kwacha,OCDS Core
+ZWL,Zimbabwe Dollar,OCDS Core
+ADP,Andorran Peseta,OCDS Core
+AFA,Afghani,OCDS Core
+ALK,Old Lek,OCDS Core
+AOK,Kwanza,OCDS Core
+AON,New Kwanza,OCDS Core
+AOR,Kwanza Reajustado,OCDS Core
+ARA,Austral,OCDS Core
+ARP,Peso Argentino,OCDS Core
+ARY,Peso,OCDS Core
+ATS,Schilling,OCDS Core
+AYM,Azerbaijan Manat,OCDS Core
+AZM,Azerbaijanian Manat,OCDS Core
+BAD,Dinar,OCDS Core
+BEC,Convertible Franc,OCDS Core
+BEF,Belgian Franc,OCDS Core
+BEL,Financial Franc,OCDS Core
+BGJ,Lev A/52,OCDS Core
+BGK,Lev A/62,OCDS Core
+BGL,Lev,OCDS Core
+BOP,Peso boliviano,OCDS Core
+BRB,Cruzeiro,OCDS Core
+BRC,Cruzado,OCDS Core
+BRE,Cruzeiro,OCDS Core
+BRN,New Cruzado,OCDS Core
+BRR,Cruzeiro Real,OCDS Core
+BUK,Kyat,OCDS Core
+BYB,Belarusian Ruble,OCDS Core
+BYR,Belarusian Ruble,OCDS Core
+CHC,WIR Franc (for electronic),OCDS Core
+CSD,Serbian Dinar,OCDS Core
+CSJ,Krona A/53,OCDS Core
+CSK,Koruna,OCDS Core
+CYP,Cyprus Pound,OCDS Core
+DDM,Mark der DDR,OCDS Core
+DEM,Deutsche Mark,OCDS Core
+ECS,Sucre,OCDS Core
+ECV,Unidad de Valor Constante (UVC),OCDS Core
+EEK,Kroon,OCDS Core
+ESA,Spanish Peseta,OCDS Core
+ESB,"""A"" Account (convertible Peseta Account)",OCDS Core
+ESP,Spanish Peseta,OCDS Core
+FIM,Markka,OCDS Core
+FRF,French Franc,OCDS Core
+GEK,Georgian Coupon,OCDS Core
+GHC,Cedi,OCDS Core
+GHP,Ghana Cedi,OCDS Core
+GNE,Syli,OCDS Core
+GNS,Syli,OCDS Core
+GQE,Ekwele,OCDS Core
+GRD,Drachma,OCDS Core
+GWE,Guinea Escudo,OCDS Core
+GWP,Guinea-Bissau Peso,OCDS Core
+HRD,Croatian Dinar,OCDS Core
+IEP,Irish Pound,OCDS Core
+ILP,Pound,OCDS Core
+ILR,Old Shekel,OCDS Core
+ISJ,Old Krona,OCDS Core
+ITL,Italian Lira,OCDS Core
+LAJ,Pathet Lao Kip,OCDS Core
+LSM,Loti,OCDS Core
+LTL,Lithuanian Litas,OCDS Core
+LTT,Talonas,OCDS Core
+LUC,Luxembourg Convertible Franc,OCDS Core
+LUF,Luxembourg Franc,OCDS Core
+LUL,Luxembourg Financial Franc,OCDS Core
+LVL,Latvian Lats,OCDS Core
+LVR,Latvian Ruble,OCDS Core
+MGF,Malagasy Franc,OCDS Core
+MLF,Mali Franc,OCDS Core
+MRO,Ouguiya,OCDS Core
+MTL,Maltese Lira,OCDS Core
+MTP,Maltese Pound,OCDS Core
+MVQ,Maldive Rupee,OCDS Core
+MXP,Mexican Peso,OCDS Core
+MZE,Mozambique Escudo,OCDS Core
+MZM,Mozambique Metical,OCDS Core
+NIC,Cordoba,OCDS Core
+NLG,Netherlands Guilder,OCDS Core
+PEH,Sol,OCDS Core
+PEI,Inti,OCDS Core
+PES,Sol,OCDS Core
+PLZ,Zloty,OCDS Core
+PTE,Portuguese Escudo,OCDS Core
+RHD,Rhodesian Dollar,OCDS Core
+ROK,Leu A/52,OCDS Core
+ROL,Old Leu,OCDS Core
+RUR,Russian Ruble,OCDS Core
+SDD,Sudanese Dinar,OCDS Core
+SDP,Sudanese Pound,OCDS Core
+SIT,Tolar,OCDS Core
+SKK,Slovak Koruna,OCDS Core
+SRG,Surinam Guilder,OCDS Core
+STD,Dobra,OCDS Core
+SUR,Rouble,OCDS Core
+TJR,Tajik Ruble,OCDS Core
+TMM,Turkmenistan Manat,OCDS Core
+TPE,Timor Escudo,OCDS Core
+TRL,Old Turkish Lira,OCDS Core
+UAK,Karbovanet,OCDS Core
+UGS,Uganda Shilling,OCDS Core
+UGW,Old Shilling,OCDS Core
+USS,US Dollar (Same day),OCDS Core
+UYN,Old Uruguay Peso,OCDS Core
+UYP,Uruguayan Peso,OCDS Core
+VEB,Bolivar,OCDS Core
+VNC,Old Dong,OCDS Core
+XEU,European Currency Unit (E.C.U),OCDS Core
+XFO,Gold-Franc,OCDS Core
+XFU,UIC-Franc,OCDS Core
+XRE,RINET Funds Code,OCDS Core
+YDD,Yemeni Dinar,OCDS Core
+YUD,New Yugoslavian Dinar,OCDS Core
+YUM,New Dinar,OCDS Core
+YUN,Yugoslavian Dinar,OCDS Core
+ZAL,Financial Rand,OCDS Core
+ZMK,Zambian Kwacha,OCDS Core
+ZRN,New Zaire,OCDS Core
+ZRZ,Zaire,OCDS Core
+ZWC,Rhodesian Dollar,OCDS Core
+ZWD,Zimbabwe Dollar,OCDS Core
+ZWN,Zimbabwe Dollar (new),OCDS Core
+ZWR,Zimbabwe Dollar,OCDS Core
