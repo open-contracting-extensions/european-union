@@ -11,4 +11,4 @@ sys.path.append(os.path.join(basedir, '..', 'docs'))
 
 from conf import standard_tag, standard_version, extension_versions  # noqa
 
-build_profile(basedir, standard_tag, standard_version, extension_versions)
+build_profile(basedir, standard_tag, extension_versions)
