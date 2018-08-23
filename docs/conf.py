@@ -165,7 +165,8 @@ def setup(app):
             sourcedir=os.path.join(basedir, sourcedir),
             builddir=os.path.join(basedir, builddir),
             localedir=localedir,
-            language=language)
+            language=language,
+            ocds_version=standard_version)
 
     directories = (
         ('schema/patched', os.path.join('docs', '_static', 'patched', 'codelists')),
