@@ -4,7 +4,7 @@
 
 ```eval_rst
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    F01
    F02
