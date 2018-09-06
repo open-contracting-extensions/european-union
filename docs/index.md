@@ -1,6 +1,30 @@
 # OCDS for the European Union
 
-## Standard forms for public procurement
+This website describes how to express, in OCDS, the information in Tenders Electronic Daily (TED) notices.
+
+## European context
+
+### Legal
+
+The primary legislation for public contracting in the European Union includes:
+
+* [Directive 2014/24/EU](https://eur-lex.europa.eu/eli/dir/2014/24/oj) on public procurement
+* [Directive 2014/23/EU](https://eur-lex.europa.eu/eli/dir/2014/23/oj) on the award of concession contracts
+* [Directive 2014/25/EU](https://eur-lex.europa.eu/eli/dir/2014/25/oj) on procurement by entities operating in the water, energy, transport and postal services sectors
+
+The secondary legislation includes the [Commission Implementing Regulation (EU) 2015/1986](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1986), which establishes standard forms for the publication of procurement notices.
+
+### Technical
+
+[PDF files](http://simap.ted.europa.eu/standard-forms-for-public-procurement) of the forms are provided by the European Commission, for reference only ([Prior information notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf), for example). However, the PDF files don't formally specify the form fields and their possible values (numbers, dates, codes, etc.). These are specified in the Tenders Electronic Daily (TED) [XML schemas](http://publications.europa.eu/mdr/eprocurement/ted/index.html); of particular interest is the Publication Schema, which is used to publish notices.
+
+Reading the schema, however, is challenging, unless you're familiar with XML Schema and related tools. To make it easier to undertand the structure of the notices, we generated [XML files](https://github.com/open-contracting/european-union-support/tree/master/output/samples) for the notices, which provide validation rules in comments, and retain XML Schema elements like `<choice>` only where necessary.
+
+The European Commission also provides [template PDF files](http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/Archive.zip), in which label keys like `ca` stand for labels like 'Contracting authority', and an Excel file mapping the label keys to labels in official languages of the European Union.
+
+## OCDS mapping
+
+This website takes the human-readable form labels from the PDF files, pairs them with the machine-readable element names from the XML files, and provides guidance on how to express the information in OCDS. In this way, a policy analyst can see the relationship to the standard forms established in the Implementing Regulation, and a software developer can see the relationship to the element defined in the XML schema.
 
 ```eval_rst
 .. toctree::
@@ -18,46 +42,31 @@
    F23
 ```
 
-## Common mappings
+### Reading the mappings
 
-<div class="wy-table-responsive">
-  <div class="wy-table-responsive"><table class="docutils">
-    <thead>
-      <tr>
-        <th>XPath</th>
-        <th>OCDS guidance</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td id="/@LG">
-          <p><code>/@LG</code></p>
-        </td>
-        <td>
-<p>Lowercase, and map to <code>language</code></p>
-        </td>
-      </tr>
-      <tr>
-        <td id="/@CATEGORY">
-          <p><code>/@CATEGORY</code></p>
-        </td>
-        <td>
-<p>Discard. TED translates at form-level. OCDS translates at field-level.</p>
-        </td>
-      </tr>
-      <tr>
-        <td id="/LEGAL_BASIS">
-          <p><code>/LEGAL_BASIS</code></p>
-        </td>
-        <td>
-<p>Map to <code>tender.legalBasis</code> <span class="badge badge-proposal">Proposal</span></p>
-        </td>
-      </tr>
-  </tbody></table></div>
-</div>
+Each OCDS mapping follows the same order as a standard form. The mapping is organized into the same sections as the form. Within each section, there is a table with three columns:
 
-## Common operations
+* **Index:** making it easy to find the label at the same index in the form
+* **Label and XPath:** containing a paired form label and XML path
+* **OCDS guidance:** describing how to transform TED XML to OCDS JSON (in most cases, the transformation is reversible)
 
-### Add a party
+Most fields map simply and directly from TED XML to OCDS JSON. Badges are used to call attention to special cases:
 
-Add an `Organization` object to the `parties` array, and set its `.id`.
+* <span class="badge badge-proposal">Proposal</span> If there is no field or code in OCDS corresponding to a field or code in TED, the guidance proposes a new field or code. A link is provided to a GitHub issue to discuss the proposal.
+* <span class="badge badge-warning">Attention</span> If there is a potential issue with the guidance, it is described briefly, and a link is provided to a GitHub issue to acknowledge or dismiss the potential issue.
+* <span class="badge badge-issue">Issue</span> If there is a reported issue with the guidance, it is described briefly, and a link is provided to the GitHub issue.
+
+When reading the guidance on this website, it may be useful to refer to the notice's [PDF file](http://simap.ted.europa.eu/standard-forms-for-public-procurement) (be sure to open the new, not old, form), to see whether the field is a check box, radio button, etc. and to its [XML file](https://github.com/open-contracting/european-union-support/tree/master/output/samples), to see the validation rules and other context.
+
+### Understanding the concepts in the forms
+
+In many cases, the form labels from the PDF files and the element names from the XML files are both short and ambiguous, and therefore difficult to interpret. In such cases, it is useful to refer to:
+
+* the European Union's primary legislation ([above](#legal))
+* the European Commission's [Public procurement standard forms guidance](https://ec.europa.eu/docsroom/documents/24191/attachments/1/translations/en/renditions/native)
+* the description of corresponding business terms in the European Commission's [eForms consultation](https://github.com/eForms/eForms/blob/master/20180604_eForms_consultation.xls?raw=true)
+* any TED notices that use the field
+
+### We want your feedback
+
+This is the first public working draft of this website. To contribute, please first read this page, and then dive into the mappings. For your convenience, we provide links to GitHub for all proposals, potential issues, and reported issues. To browse all issues or open another issue, visit [this website's GitHub repository](https://github.com/open-contracting-extensions/european-union/issues).
