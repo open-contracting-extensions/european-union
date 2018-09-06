@@ -16,15 +16,17 @@ The secondary legislation includes the [Commission Implementing Regulation (EU) 
 
 ### Technical
 
-[PDF files](http://simap.ted.europa.eu/standard-forms-for-public-procurement) of the forms are provided by the European Commission, for reference only ([Prior information notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf), for example). However, the PDF files don't formally specify the form fields and their possible values (numbers, dates, codes, etc.). These are specified in the Tenders Electronic Daily (TED) [XML schemas](http://publications.europa.eu/mdr/eprocurement/ted/index.html); of particular interest is the Publication Schema, which is used to publish notices.
+[PDF files](http://simap.ted.europa.eu/standard-forms-for-public-procurement) of the forms are provided by the European Commission, for reference only ([Prior information notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf), for example). However, the PDF files don't formally specify the form fields and their possible values (numbers, dates, codes, etc.). These are specified in the Tenders Electronic Daily (TED) [XML schemas](http://publications.europa.eu/mdr/eprocurement/ted/index.html). Of particular interest is the Publication Schema, which is used to publish notices.
 
 Reading the schema, however, is challenging, unless you're familiar with XML Schema and related tools. To make it easier to undertand the structure of the notices, we generated [XML files](https://github.com/open-contracting/european-union-support/tree/master/output/samples) for the notices, which provide validation rules in comments, and retain XML Schema elements like `<choice>` only where necessary.
 
-The European Commission also provides [template PDF files](http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/Archive.zip), in which label keys like `ca` stand for labels like 'Contracting authority', and an Excel file mapping the label keys to labels in official languages of the European Union.
+The European Commission also provides [template PDF files](http://publications.europa.eu/mdr/resource/eprocurement/ted/R2.0.9/publication/Archive.zip), in which label keys like `ca` stand for labels like 'Contracting authority', and provides an Excel file that maps the label keys to labels in official languages of the European Union.
 
-## OCDS mapping
+## TED and OCDS
 
-This website takes the human-readable form labels from the PDF files, pairs them with the machine-readable element names from the XML files, and provides guidance on how to express the information in OCDS. In this way, a policy analyst can see the relationship to the standard forms established in the Implementing Regulation, and a software developer can see the relationship to the element defined in the XML schema.
+This website takes the human-readable form labels from the standard form PDF files, pairs them with the machine-readable element names from the TED XML files, and provides guidance on how to express the information in OCDS.
+
+In this way, a policy analyst can see the relationship to the standard forms established in the Implementing Regulation, and a software developer can see the relationship to the elements defined in the TED XML schema.
 
 ```eval_rst
 .. toctree::
@@ -37,18 +39,48 @@ This website takes the human-readable form labels from the PDF files, pairs them
    F05
    F06
    F07
+   F08
+   F12
+   F13
    F21
    F22
    F23
+   F24
 ```
 
-### Reading the mappings
+### Reading this website
 
-Each OCDS mapping follows the same order as a standard form. The mapping is organized into the same sections as the form. Within each section, there is a table with three columns:
+The guidance on each page above follows the same order as a standard form and is organized into the same sections. Within each section, there is a table with three columns. For example:
 
-* **Index:** making it easy to find the label at the same index in the form
-* **Label and XPath:** containing a paired form label and XML path
-* **OCDS guidance:** describing how to transform TED XML to OCDS JSON (in most cases, the transformation is reversible)
+<table class="docutils">
+  <colgroup>
+    <col width="8%">
+    <col width="50%">
+    <col width="42%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Label and XPath</th>
+      <th>OCDS guidance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>II.1.1</td>
+      <td id="/OBJECT_CONTRACT/TITLE">
+        <p>Title<br><code>/OBJECT_CONTRACT/TITLE</code></p>
+      </td>
+      <td>
+<p>Map to <code>tender.title</code></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+* **Index** makes it easy to find the content at the same index in the form
+* **Label and XPath** contains a paired form label and XML path
+* **OCDS guidance** describes how to transform TED XML to OCDS JSON (in most cases, the transformation is reversible)
 
 Most fields map simply and directly from TED XML to OCDS JSON. Badges are used to call attention to special cases:
 
@@ -67,6 +99,6 @@ In many cases, the form labels from the PDF files and the element names from the
 * the description of corresponding business terms in the European Commission's [eForms consultation](https://github.com/eForms/eForms/blob/master/20180604_eForms_consultation.xls?raw=true)
 * any TED notices that use the field
 
-### We want your feedback
+### We want your feedback!
 
-This is the first public working draft of this website. To contribute, please first read this page, and then dive into the mappings. For your convenience, we provide links to GitHub for all proposals, potential issues, and reported issues. To browse all issues or open another issue, visit [this website's GitHub repository](https://github.com/open-contracting-extensions/european-union/issues).
+This is the first public working draft of this website. To contribute, please first read this page, and then dive into the guidance. Feedback is discussed openly on GitHub. For your convenience, we provide links to GitHub for all proposals, potential issues, and reported issues. To browse all issues or open another issue, visit [this website's GitHub issues](https://github.com/open-contracting-extensions/european-union/issues).
