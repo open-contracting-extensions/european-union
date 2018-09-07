@@ -102,6 +102,15 @@ In many cases, the form labels from the PDF files and the element names from the
 * the description of corresponding business terms in the European Commission's [eForms consultation](https://github.com/eForms/eForms/blob/master/20180604_eForms_consultation.xls?raw=true)
 * any TED notices that use the field
 
-### We want your feedback!
+## Technical details
+
+This guidance makes use of the following extensions:
+
+* [Covered By](https://github.com/open-contracting-extensions/ocds_coveredBy_extension)
+* [Financing](https://github.com/open-contracting/ocds_finance_extension)
+* [Lots](https://github.com/open-contracting/ocds_lots_extension)
+* [Options](https://github.com/open-contracting-extensions/ocds_options_extension)
+
+## We want your feedback!
 
 This is the first public working draft of this website. To contribute, please first read this page, and then dive into the guidance. Feedback is discussed openly on GitHub. For your convenience, we provide links to GitHub for all proposals, potential issues, and reported issues. To browse all issues or open another issue, visit [this website's GitHub issues](https://github.com/open-contracting-extensions/european-union/issues).
