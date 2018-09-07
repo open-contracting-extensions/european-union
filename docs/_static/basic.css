@@ -42,3 +42,8 @@ q {
   color: #212529;
   background-color: #ffc107;
 }
+
+.badge a,
+.badge a:visited {
+  color: #fff;
+}
