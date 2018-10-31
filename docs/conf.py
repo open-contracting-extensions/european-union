@@ -22,12 +22,13 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import os
 from collections import OrderedDict
+from glob import glob
+from pathlib import Path
 
 import standard_theme
-from ocdsdocumentationsupport.translation import translate_codelists, translate_schema
+from ocds_babel.translate import translate
 from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
-from sphinxcontrib.opendataservices import AutoStructifyLowPriority
 
 # -- General configuration ------------------------------------------------
 
@@ -38,11 +39,7 @@ from sphinxcontrib.opendataservices import AutoStructifyLowPriority
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-    'sphinxcontrib.jsonschema',
-    'sphinxcontrib.opencontracting',
-    'sphinxcontrib.opendataservices',
-]
+extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -126,6 +123,10 @@ gettext_domain_prefix = 'TODO-'
 standard_tag = '1__1__3'
 standard_version = '1.1'
 
+# Where the patched schemas will be deployed.
+underscored_release = release.replace('-', '__').replace('.', '__')
+schema_base_url = 'http://standard.open-contracting.org/profiles/ppp/schema/{}/'.format(underscored_release)
+
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/master/extension_versions.csv
 extension_versions = OrderedDict([
@@ -141,48 +142,32 @@ def setup(app):
     }, True)
 
     app.add_transform(AutoStructify)
-    app.add_transform(AutoStructifyLowPriority)
 
     # The root of the repository.
-    basedir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__)), '..'))
+    basedir = Path(os.path.realpath(__file__)).parents[1]
     # The `LOCALE_DIR` from `config.mk`.
-    localedir = os.path.join(basedir, 'locale')
+    localedir = basedir / 'locale'
 
     language = app.config.overrides.get('language', 'en')
 
-    arguments = (
-        (['patched/release-schema.json'], 'schema', os.path.join('docs', '_static')),
-        (['release-schema.json'], 'schema/profile', os.path.join('build', language)),
-    )
+    # The gettext domain for schema translations. Should match the domain in the `pybabel compile` command.
+    schema_domain = '{}schema'.format(gettext_domain_prefix)
+    # The gettext domain for codelist translations. Should match the domain in the `pybabel compile` command.
+    codelists_domain = '{}codelists'.format(gettext_domain_prefix)
 
-    for filenames, sourcedir, builddir in arguments:
-        translate_schema(
-            # The gettext domain for schema translations. Should match the domain in the `pybabel compile` command.
-            domain='{}schema'.format(gettext_domain_prefix),
-            # The filenames of schema files within the `sourcedir` that will be translated into the `builddir`. The
-            # glob pattern in `.babel_schema` should match the filenames.
-            filenames=filenames,
-            sourcedir=os.path.join(basedir, sourcedir),
-            builddir=os.path.join(basedir, builddir),
-            localedir=localedir,
-            language=language,
-            ocds_version=standard_version)
+    patched_dir = basedir / 'schema' / 'patched'
+    profile_dir = basedir / 'schema' / 'profile'
+    patched_build_dir = basedir / 'docs' / '_static' / 'patched'
+    profile_build_dir = basedir / 'build' / language
 
-    directories = (
-        ('schema/patched', os.path.join('docs', '_static', 'patched', 'codelists')),
-        ('schema/profile', os.path.join('build', language, 'codelists')),
-    )
-
-    for sourcedir, builddir in directories:
-        translate_codelists(
-            # The gettext domain for codelist translations. Should match the domain in the `pybabel compile` command.
-            domain='{}codelists'.format(gettext_domain_prefix),
-            # The directory containing source codelist files. Should match the glob patterns in `.babel_codelists`.
-            sourcedir=os.path.join(basedir, sourcedir, 'codelists'),
-            # The directory into which codelist files will be translated.
-            builddir=os.path.join(basedir, builddir),
-            localedir=localedir,
-            language=language)
+    translate([
+        # The glob patterns in `babel_ocds_schema.cfg` should match these filenames.
+        (glob(str(patched_dir / '*-schema.json')), patched_build_dir, schema_domain),
+        (glob(str(profile_dir / '*-schema.json')), profile_build_dir, schema_domain),
+        # The glob patterns in `babel_ocds_codelist.cfg` should match these.
+        (glob(str(patched_dir / 'codelists' / '*.csv')), patched_build_dir / 'codelists', codelists_domain),
+        (glob(str(profile_dir / 'codelists' / '*.csv')), profile_build_dir / 'codelists', codelists_domain),
+    ], localedir, language, version=standard_version)
 
     # Copy the untranslated extension.json file.
     with open(os.path.join(basedir, 'schema', 'profile', 'extension.json')) as f:
