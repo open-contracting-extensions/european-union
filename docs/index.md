@@ -49,6 +49,7 @@ In this way, a policy analyst can see the relationship to the standard forms est
    F23
    F24
    F25
+   changelog
 ```
 
 ### Reading this website
@@ -106,10 +107,15 @@ In many cases, the form labels from the PDF files and the element names from the
 
 This guidance makes use of the following extensions:
 
+* [Bid Statistics and Details](https://github.com/open-contracting/ocds_bid_extension)
 * [Covered By](https://github.com/open-contracting-extensions/ocds_coveredBy_extension)
 * [Financing](https://github.com/open-contracting/ocds_finance_extension)
+* [Location](https://github.com/open-contracting/ocds_location_extension)
 * [Lots](https://github.com/open-contracting/ocds_lots_extension)
 * [Options](https://github.com/open-contracting-extensions/ocds_options_extension)
+* [Participation Fees](https://github.com/open-contracting/ocds_participationFee_extension)
+* [Party Scale](https://github.com/open-contracting/ocds_partyDetails_scale_extension)
+* [Process-Level Title and Description](https://github.com/open-contracting/ocds_process_title_extension)
 
 ## We want your feedback!
 
