@@ -8,6 +8,7 @@
 * II.1.7 Total value of the procurement
 * VI.3 Additional information
 * V Award of contract (except for V.2.4 and V.2.5)
+* Annex D1
 
 ### Updated mappings
 
