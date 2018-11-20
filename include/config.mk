@@ -27,7 +27,7 @@ ASSETS_DIR=
 # The Transifex project name.
 TRANSIFEX_PROJECT=
 
-# Compile PO files for codelists and schema to MO files, so that translate_codelists and translate_schema succeed.
+# Compile PO files for codelists and schema to MO files, so that `translate` succeeds.
 .PHONY: compile
 compile:
 	# pybabel compile --use-fuzzy -d $(LOCALE_DIR) -D $(DOMAIN_PREFIX)schema
