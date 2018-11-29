@@ -170,7 +170,7 @@ def setup(app):
     ], localedir, language, version=standard_version)
 
     # Copy the untranslated extension.json file.
-    with open(os.path.join(basedir, 'schema', 'profile', 'extension.json')) as f:
+    with (profile_dir / 'extension.json').open() as f:
         extension_json = f.read()
-    with open(os.path.join(basedir, 'build', language, 'extension.json'), 'w') as f:
+    with (profile_build_dir / 'extension.json').open('w') as f:
         f.write(extension_json)
