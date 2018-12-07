@@ -6,7 +6,7 @@
     "en": "Collects, into a single extension, the extensions that compose the OCDS for the European Union profile."
   },
   "documentationUrl": {
-    "en": "http://standard.open-contracting.org/profiles/eu/latest/en/"
+    "en": "http://standard.open-contracting.org/profiles/eu/master/en/"
   },
   "compatibility": [
     "1.1"
