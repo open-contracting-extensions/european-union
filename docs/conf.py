@@ -58,7 +58,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Open Contracting Data Standard for European Union'
-copyright = '2018 Open Contracting Partnership'
+copyright = 'Open Contracting Partnership'
 author = 'Open Contracting Partnership'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -111,21 +111,34 @@ html_static_path = ['_static']
 
 # -- Local configuration --------------------------------------------------
 
-# The `LOCALE_DIR` from `config.mk`, plus the theme's locale.
-locale_dirs = ['../locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
+profile_identifier = 'eu'
+repository_url = 'https://github.com/open-contracting-extensions/european-union'
 
-gettext_compact = False
-
-# The `DOMAIN_PREFIX` from `config.mk`.
-gettext_domain_prefix = 'TODO-'
+html_theme_options = {
+    'display_version': False,
+    'root_url': '/profiles/{}'.format(profile_identifier),
+    'short_project': project.replace('Open Contracting Data Standard', 'OCDS'),
+    'copyright': copyright,
+    'license_name': 'Apache License 2.0',
+    'license_url': '{}/blob/HEAD/LICENSE'.format(repository_url),
+    'repository_url': repository_url,
+}
 
 # The version of OCDS to patch.
 standard_tag = '1__1__3'
 standard_version = '1.1'
 
 # Where the patched schemas will be deployed.
-underscored_release = release.replace('-', '__').replace('.', '__')
-schema_base_url = 'http://standard.open-contracting.org/profiles/ppp/schema/{}/'.format(underscored_release)
+schema_base_url = 'http://standard.open-contracting.org{}/schema/{}/'.format(
+    html_theme_options['root_url'], release.replace('-', '__').replace('.', '__'))
+
+# The `LOCALE_DIR` from `config.mk`, plus the theme's locale.
+locale_dirs = ['../locale/', os.path.join(standard_theme.get_html_theme_path(), 'locale')]
+
+gettext_compact = False
+
+# The `DOMAIN_PREFIX` from `config.mk`.
+gettext_domain_prefix = '{}-'.format(profile_identifier)
 
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/master/extension_versions.csv
