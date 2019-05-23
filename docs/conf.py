@@ -163,6 +163,7 @@ def setup(app):
 
     language = app.config.overrides.get('language', 'en')
 
+    headers = ['Title', 'Description', 'Extension']
     # The gettext domain for schema translations. Should match the domain in the `pybabel compile` command.
     schema_domain = '{}schema'.format(gettext_domain_prefix)
     # The gettext domain for codelist translations. Should match the domain in the `pybabel compile` command.
@@ -180,7 +181,7 @@ def setup(app):
         # The glob patterns in `babel_ocds_codelist.cfg` should match these.
         (glob(str(patched_dir / 'codelists' / '*.csv')), patched_build_dir / 'codelists', codelists_domain),
         (glob(str(profile_dir / 'codelists' / '*.csv')), profile_build_dir / 'codelists', codelists_domain),
-    ], localedir, language, version=standard_version)
+    ], localedir, language, headers, version=standard_version)
 
     # Copy the untranslated extension.json file.
     with (profile_dir / 'extension.json').open() as f:
