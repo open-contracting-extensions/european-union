@@ -22,6 +22,8 @@ Reading the schema, however, is challenging, unless you're familiar with XML Sch
 
 The European Commission also provides [template PDF files](https://publications.europa.eu/documents/3938058/5358176/Archive.zip/ce7ceb02-94b0-04e8-8b9f-7fb4acf1ccdb), in which label keys like `ca` stand for labels like 'Contracting authority', and provides an Excel file that maps the label keys to labels in official languages of the European Union.
 
+This guidance is based on the TED publication XML schema R2.0.9.
+
 ## TED and OCDS
 
 This website takes the human-readable form labels from the standard form PDF files, pairs them with the machine-readable element names from the TED XML files, and provides guidance on how to express the information in OCDS.
