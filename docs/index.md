@@ -22,7 +22,7 @@ Reading the schema, however, is challenging, unless you're familiar with XML Sch
 
 The European Commission also provides [template PDF files](https://publications.europa.eu/documents/3938058/5358176/Archive.zip/ce7ceb02-94b0-04e8-8b9f-7fb4acf1ccdb), in which label keys like `ca` stand for labels like 'Contracting authority', and provides an Excel file that maps the label keys to labels in official languages of the European Union.
 
-This guidance is based on the TED publication XML schema R2.0.9.
+This guidance is based on the TED publication XML schema R2.0.9 (006, 2018-06-08).
 
 ## TED and OCDS
 
@@ -51,6 +51,8 @@ In this way, a policy analyst can see the relationship to the standard forms est
    F23
    F24
    F25
+   T01
+   T02
    changelog
 ```
 
