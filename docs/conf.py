@@ -129,7 +129,7 @@ standard_tag = '1__1__3'
 standard_version = '1.1'
 
 # Where the patched schemas will be deployed.
-schema_base_url = 'http://standard.open-contracting.org{}/schema/{}/'.format(
+schema_base_url = 'https://standard.open-contracting.org{}/schema/{}/'.format(
     html_theme_options['root_url'], release.replace('-', '__').replace('.', '__'))
 
 # The `LOCALE_DIR` from `config.mk`, plus the theme's locale.
