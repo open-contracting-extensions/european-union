@@ -1,6 +1,6 @@
 Code,Title,Description,Extension
-planning,Planning,"A future contracting process is being considered. Early information about the process may be provided in the tender section. A process with this status may provide information on early engagement or consultation opportunities, during which the details of a subsequent tender can be shaped.",OCDS Core
-planned,Planned,"A contracting process is scheduled, but is not yet taking place. Details of the anticipated dates may be provided in the tender block.",OCDS Core
+planning,Planning,"A future contracting process is being considered. Early information about the process can be provided in the tender section. A process with this status might provide information on early engagement or consultation opportunities, during which the details of a subsequent tender can be shaped.",OCDS Core
+planned,Planned,"A contracting process is scheduled, but is not yet taking place. Details of the anticipated dates can be provided in the tender block.",OCDS Core
 active,Active,A tender process is currently taking place.,OCDS Core
 cancelled,Cancelled,The tender process has been cancelled.,OCDS Core
 unsuccessful,Unsuccessful,The tender process was unsuccessful.,OCDS Core

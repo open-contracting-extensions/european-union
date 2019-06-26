@@ -125,7 +125,7 @@ html_theme_options = {
 }
 
 # The version of OCDS to patch.
-standard_tag = '1__1__3'
+standard_tag = '1__1__4'
 standard_version = '1.1'
 
 # Where the patched schemas will be deployed.

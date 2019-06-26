@@ -1,5 +1,5 @@
 Code,Title,Description,Extension
-pending,Pending,"This contract has been proposed, but is not yet in force. It may be awaiting signature.",OCDS Core
+pending,Pending,"This contract has been proposed, but is not yet in force. It might be awaiting signature.",OCDS Core
 active,Active,"This contract has been signed by all the parties, and is now legally in force.",OCDS Core
 cancelled,Cancelled,This contract has been cancelled prior to being signed.,OCDS Core
-terminated,Terminated,"This contract was signed and in force, and has now come to a close. This may be due to successful completion of the contract, or may be early termination due to some non-completion.",OCDS Core
+terminated,Terminated,"This contract was signed and in force, and has now come to a close. This might be due to the successful completion of the contract, or might be early termination due to some non-completion.",OCDS Core

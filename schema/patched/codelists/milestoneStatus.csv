@@ -1,5 +1,5 @@
 Code,Title,Description,Extension
-scheduled,Scheduled,This milestone has been scheduled for the date in milestone.dueDate. Progress towards the milestone has not yet been evaluated as of milestone.dateModified,OCDS Core
-met,Met,This milestone has been achieved. The date on which it was met should be placed in the milestone.dateMet field,OCDS Core
-notMet,Not Met,This milestone had not been met at the date it was last reviewed (see milestone.dateModified).,OCDS Core
-partiallyMet,Partially Met,This milestone was judged to have been partially met at the date it was last reviewed (see milestone.dateModified),OCDS Core
+scheduled,Scheduled,This milestone has been scheduled for the date in milestone.dueDate. Progress towards the milestone has not yet been evaluated as of milestone.dateModified.,OCDS Core
+met,Met,This milestone has been achieved. The date on which it was met should be placed in the milestone.dateMet field.,OCDS Core
+notMet,Not met,This milestone had not been met at the date it was last reviewed (see milestone.dateModified).,OCDS Core
+partiallyMet,Partially met,This milestone was judged to have been partially met at the date it was last reviewed (see milestone.dateModified).,OCDS Core

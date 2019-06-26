@@ -112,7 +112,7 @@ OMR,Rial Omani,OCDS Core
 PAB,Balboa,OCDS Core
 PEN,Sol,OCDS Core
 PGK,Kina,OCDS Core
-PHP,Philippine Piso,OCDS Core
+PHP,Philippine Peso,OCDS Core
 PKR,Pakistan Rupee,OCDS Core
 PLN,Zloty,OCDS Core
 PYG,Guarani,OCDS Core
@@ -149,10 +149,11 @@ UAH,Hryvnia,OCDS Core
 UGX,Uganda Shilling,OCDS Core
 USD,US Dollar,OCDS Core
 USN,US Dollar (Next day),OCDS Core
-UYI,Uruguay Peso en Unidades Indexadas (URUIURUI),OCDS Core
+UYI,Uruguay Peso en Unidades Indexadas (UI),OCDS Core
 UYU,Peso Uruguayo,OCDS Core
+UYW,Unidad Previsional,OCDS Core
 UZS,Uzbekistan Sum,OCDS Core
-VEF,Bolívar,OCDS Core
+VES,Bolívar Soberano,OCDS Core
 VND,Dong,OCDS Core
 VUV,Vatu,OCDS Core
 WST,Tala,OCDS Core
@@ -282,6 +283,7 @@ USS,US Dollar (Same day),OCDS Core
 UYN,Old Uruguay Peso,OCDS Core
 UYP,Uruguayan Peso,OCDS Core
 VEB,Bolivar,OCDS Core
+VEF,Bolívar,OCDS Core
 VNC,Old Dong,OCDS Core
 XEU,European Currency Unit (E.C.U),OCDS Core
 XFO,Gold-Franc,OCDS Core

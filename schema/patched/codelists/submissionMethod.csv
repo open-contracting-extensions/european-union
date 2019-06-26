@@ -1,5 +1,5 @@
 Code,Title,Description,Extension
-electronicSubmission,Electronic Submission,Bids will be received through an electronic procurement platform.,OCDS Core
-electronicAuction,Electronic Auction,Bids will be received through an electronic auction platform.,OCDS Core
+electronicSubmission,Electronic submission,Bids will be received through an electronic procurement platform.,OCDS Core
+electronicAuction,Electronic auction,Bids will be received through an electronic auction platform.,OCDS Core
 written,Written,"Bids will be received via written documents, delivered as hard copies, via generic e-mail systems, or some similar mechanism.",OCDS Core
-inPerson,In Person,Bids will only be received if they are hand delivered at the time and place specified in submissionMethodDetails or attached documentation.,OCDS Core
+inPerson,In person,Bids will only be received if they are hand delivered at the time and place specified in submissionMethodDetails or attached documentation.,OCDS Core
