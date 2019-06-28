@@ -1,3 +1,5 @@
+# Update this file from a profile with:
+# curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/tests/conftest.py -o tests/conftest.py
 import os
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from multiprocessing import Process

@@ -1,3 +1,5 @@
+# Update this file from a profile with:
+# curl https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/tests/test_common.py -o tests/test_common.py
 import re
 import time
 
