@@ -13,7 +13,7 @@ addons:
 deploy:
   skip_cleanup: true
   provider: script
-  script: curl -Ss https://raw.githubusercontent.com/OpenDataServices/opendataservices-deploy/master/open-contracting-profile-deploy.sh | bash -
+  script: curl -Ss https://raw.githubusercontent.com/open-contracting/deploy/master/profile-deploy.sh | bash -
   on:
     all_branches: true
 env:
