@@ -16,7 +16,7 @@ To avoid repetition in the guidance, we refer and link to the following common o
 
 ## Add a party
 
-Add an `Organization` object to the `parties` array, and set its `.id`.
+Add an `Organization` object to the `parties` array, and set its `.id`. A party's `.id` needs to be consistent across all forms.
 
 ## Set time components
 
