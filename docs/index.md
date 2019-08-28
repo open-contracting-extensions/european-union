@@ -114,15 +114,25 @@ In many cases, the form labels from the PDF files and the element names from the
 
 This guidance makes use of the following extensions:
 
-* [Bid Statistics and Details](https://github.com/open-contracting-extensions/ocds_bid_extension)
+* [Bid Statistics and Details](https://extensions.open-contracting.org/en/extensions/bids/master/)
+* [Financing](https://extensions.open-contracting.org/en/extensions/finance/master/)
+* [Location](https://extensions.open-contracting.org/en/extensions/location/master/)
+* [Lots](https://extensions.open-contracting.org/en/extensions/lots/master/)
+* [Participation Fees](https://extensions.open-contracting.org/en/extensions/participation_fee/master/)
+* [Party Scale](https://extensions.open-contracting.org/en/extensions/partyScale/master/)
+* [Process-Level Title and Description](https://extensions.open-contracting.org/en/extensions/process_title/master/)
+
+And these draft extensions:
+
+* [Award Criteria](https://github.com/open-contracting-extensions/ocds_awardCriteria_extension)
+* [Bid Opening](https://github.com/open-contracting-extensions/ocds_bidOpening_extension)
+* [Contract Terms](https://github.com/open-contracting-extensions/ocds_contractTerms_extension)
 * [Covered By](https://github.com/open-contracting-extensions/ocds_coveredBy_extension)
-* [Financing](https://github.com/open-contracting-extensions/ocds_finance_extension)
-* [Location](https://github.com/open-contracting-extensions/ocds_location_extension)
-* [Lots](https://github.com/open-contracting-extensions/ocds_lots_extension)
+* [European Union](https://github.com/open-contracting-extensions/ocds_eu_extension)
 * [Options](https://github.com/open-contracting-extensions/ocds_options_extension)
-* [Participation Fees](https://github.com/open-contracting-extensions/ocds_participationFee_extension)
-* [Party Scale](https://github.com/open-contracting-extensions/ocds_partyDetails_scale_extension)
-* [Process-Level Title and Description](https://github.com/open-contracting-extensions/ocds_process_title_extension)
+* [Procedure](https://github.com/open-contracting-extensions/ocds_procedure_extension)
+* [Second Stage Description](https://github.com/open-contracting-extensions/ocds_secondStageDescription_extension)
+* [Submission Terms](https://github.com/open-contracting-extensions/ocds_submissionTerms_extension)
 
 ## We want your feedback!
 
