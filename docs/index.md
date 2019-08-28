@@ -22,7 +22,7 @@ Reading the schema, however, is challenging, unless you're familiar with XML Sch
 
 The European Commission also provides [template PDF files](https://publications.europa.eu/documents/3938058/5358176/Archive.zip/ce7ceb02-94b0-04e8-8b9f-7fb4acf1ccdb), in which label keys like `ca` stand for labels like 'Contracting authority', and provides an Excel file that maps the label keys to labels in official languages of the European Union.
 
-This guidance is based on the TED publication XML schema R2.0.9 (006, 2018-06-08).
+This guidance is based on the TED publication XML schema R2.0.9 (007, 2018-10-30).
 
 ## TED and OCDS
 
@@ -133,6 +133,7 @@ And these draft extensions:
 * [Procedure](https://github.com/open-contracting-extensions/ocds_procedure_extension)
 * [Second Stage Description](https://github.com/open-contracting-extensions/ocds_secondStageDescription_extension)
 * [Submission Terms](https://github.com/open-contracting-extensions/ocds_submissionTerms_extension)
+* [Techniques](https://github.com/open-contracting-extensions/ocds_techniques_extension)
 
 ## We want your feedback!
 
