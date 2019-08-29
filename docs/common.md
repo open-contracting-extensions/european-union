@@ -1,7 +1,3 @@
-```eval_rst
-:orphan:
-```
-
 # Common mappings
 
 All XML notices contain the following elements, which have no form labels:

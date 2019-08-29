@@ -1,7 +1,3 @@
-```eval_rst
-:orphan:
-```
-
 # Common operations
 
 To avoid repetition in the guidance, we refer and link to the following common operations.
