@@ -17,3 +17,17 @@ Add an `Organization` object to the `parties` array, and set its `.id`. A party'
 ## Set time components
 
 If a time component is missing from a date, use `T23:59:59Z` for end dates and `T00:00:00Z` for other dates.
+
+## Get a translation
+
+1. Download "Form labels R2.0.9 (zip)" from [TED schemas](https://publications.europa.eu/en/web/eu-vocabularies/tedschemas)
+
+To translate a label from English to another language:
+
+1. Find the row with the label in the "EN" column
+1. Take the value in the desired column of the same row
+
+To translate a label from another language to English:
+
+1. Find the row with the label in the appropriate column
+1. Take the value in the "EN" column of the same row
