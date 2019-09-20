@@ -17,7 +17,9 @@ deploy:
   on:
     all_branches: true
 env:
-  - BASEDIR="https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master" LANGS="en"
+  global:
+    - BASEDIR="https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master"
+    - LANGS="en"
 install:
   - curl -s -S --retry 3 $BASEDIR/tests/install.sh | bash -
   - curl -O https://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip
