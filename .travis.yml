@@ -13,12 +13,13 @@ addons:
 deploy:
   skip_cleanup: true
   provider: script
-  script: curl -Ss https://raw.githubusercontent.com/open-contracting/deploy/master/deploy-profile.sh | bash -
+  script: curl -Ss https://raw.githubusercontent.com/open-contracting/deploy/master/deploy-docs.sh | bash -
   on:
     all_branches: true
 env:
   global:
     - BASEDIR="https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master"
+    - PATH_PREFIX="profiles/eu/"
     - LANGS="en"
 install:
   - curl -s -S --retry 3 $BASEDIR/tests/install.sh | bash -
