@@ -1,6 +1,18 @@
 # Changelog
 
-## 2019-XX-XX
+## 2019-09-20
+
+### Changed
+
+* Rename OCDS fields:
+  * `requiresStaffNamesQualifications` to `requiresStaffNamesAndQualifications`
+  * `hasRequiredGuarantees` to `requiresGuarantees`
+* Fix the mappings for:
+  * II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
+* Clarify the mappings for:
+  * VI.3 Additional information (`/COMPLEMENTARY_INFO/INFO_ADD`)
+
+## 2019-08-30
 
 ### Added
 
