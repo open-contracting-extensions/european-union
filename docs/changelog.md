@@ -10,6 +10,7 @@
 * Fix the mappings for:
   * `ocid` and `id`
   * II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
+  * III.1.5 Participation in the procedure is reserved to organisations pursuing a public service mission and fulfilling the conditions set in Article 77(2) of Directive 2014/24/EU (`/LEFTI/RESERVED_ORGANISATIONS_SERVICE_MISSION`)
   * IV.2.1 Previous publication concerning this procedure (`/PROCEDURE/NOTICE_NUMBER_OJ`)
 * Clarify the mappings for:
   * VI.3 Additional information (`/COMPLEMENTARY_INFO/INFO_ADD`)
