@@ -1,6 +1,6 @@
 # Changelog
 
-## 2019-09-20
+## 2019-09-24
 
 ### Changed
 
@@ -8,9 +8,12 @@
   * `requiresStaffNamesQualifications` to `requiresStaffNamesAndQualifications`
   * `hasRequiredGuarantees` to `requiresGuarantees`
 * Fix the mappings for:
+  * `ocid` and `id`
   * II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
+  * IV.2.1 Previous publication concerning this procedure (`/PROCEDURE/NOTICE_NUMBER_OJ`)
 * Clarify the mappings for:
   * VI.3 Additional information (`/COMPLEMENTARY_INFO/INFO_ADD`)
+  * F14 (`/CHANGES/CHANGE/NEW_VALUE/NOTHING`)
 
 ## 2019-08-30
 

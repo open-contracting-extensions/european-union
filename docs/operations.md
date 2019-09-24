@@ -4,11 +4,16 @@ To avoid repetition in the guidance, we refer and link to the following common o
 
 ## Create a release
 
-1. Set [`ocid`](http://standard.open-contracting.org/latest/en/schema/identifiers/#contracting-process-identifier-ocid) by prepending your [OCID prefix](http://standard.open-contracting.org/latest/en/implementation/registration/) to `/OBJECT_CONTRACT/REFERENCE_NUMBER` (*Reference number*) if it is available, or to another internal identifier if not.
-    * If this notice is preceded by a Contract notice or Design contest notice (CN), this notice's `ocid` should correspond to the CN's `ocid`.
-    * If this notice is preceded by a Prior information notice or Periodic indicative notice (PIN), this notice's `ocid` should correspond to one of the PIN's `ocid`’s.
-1. Set [`id`](http://standard.open-contracting.org/latest/en/schema/identifiers/#release-id) by appending `/COMPLEMENTARY_INFO/DATE_DISPATCH_NOTICE` (*Date of dispatch of this notice*) to `/OBJECT_CONTRACT/REFERENCE_NUMBER` (*Reference number*) if it is available, or to another internal identifier if not.
+1. Set [`ocid`](http://standard.open-contracting.org/latest/en/schema/identifiers/#contracting-process-identifier-ocid) by prepending your [OCID prefix](http://standard.open-contracting.org/latest/en/implementation/registration/) to a unique identifier of your choice (e.g. a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)).
+    * If there is a previous publication concerning this procedure, this notice's `ocid` should be the same as the previous publication's `ocid`; however, if the previous publication is either a Prior information notice or a Periodic indicative notice that is for prior information only, this notice's `ocid` may differ (see the guidance for `/PROCEDURE/NOTICE_NUMBER_OJ` for details).
+1. Set [`id`](http://standard.open-contracting.org/latest/en/schema/identifiers/#release-id) to the notice number.
 1. Set `initiationType` to 'tender'.
+
+## Reference a previous publication
+
+If the *Previous publication concerning this procedure* is neither a Prior information notice nor a Periodic indicative notice (PIN), or if the PIN is **not** for prior information only, then discard `/PROCEDURE/NOTICE_NUMBER_OJ`. In this case, the *previous publication concerning this procedure* is the OCDS release with the same `ocid` as this release and with the nearest earlier `date` to this release.
+
+Otherwise, if the *Previous publication concerning this procedure* is either a Prior information notice or a Periodic indicative notice (PIN) that is for prior information only, add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id`, set its `.relationship` to 'planning', set its `.scheme` to 'eu-oj' (or to a scheme of your choice if outside the EU), and map `/PROCEDURE/NOTICE_NUMBER_OJ` to `.identifier`.
 
 ## Add a party
 
