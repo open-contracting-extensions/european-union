@@ -1,6 +1,10 @@
 # Changelog
 
-## 2019-09-24
+## 2019-09-27
+
+### Added
+
+* Add missing mappings for F12, F21.
 
 ### Changed
 
@@ -12,6 +16,8 @@
   * II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
   * III.1.5 Participation in the procedure is reserved to organisations pursuing a public service mission and fulfilling the conditions set in Article 77(2) of Directive 2014/24/EU (`/LEFTI/RESERVED_ORGANISATIONS_SERVICE_MISSION`)
   * IV.2.1 Previous publication concerning this procedure (`/PROCEDURE/NOTICE_NUMBER_OJ`)
+  * F12: Don't use the `tender.lots` or `tender.items` arrays
+  * F13: Don't use the 'contract' code, `contracts` array, or `bids.statistics.relatedLot` field
 * Clarify the mappings for:
   * VI.3 Additional information (`/COMPLEMENTARY_INFO/INFO_ADD`)
   * F14 (`/CHANGES/CHANGE/NEW_VALUE/NOTHING`)
@@ -20,7 +26,7 @@
 
 ### Added
 
-* Add all missing mappings.
+* Add missing mappings.
 * Add forms F14, F15, F20, T01, T02.
 * Add "Release model" heading, to set `ocid`, `id`, `initiationType`, `tag` and status fields.
 * Add "What's new" heading, to list new elements on each form.
