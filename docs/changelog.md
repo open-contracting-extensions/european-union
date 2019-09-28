@@ -11,6 +11,7 @@
 * Rename OCDS fields:
   * `requiresStaffNamesQualifications` to `requiresStaffNamesAndQualifications`
   * `hasRequiredGuarantees` to `requiresGuarantees`
+  * `subcontracting.details` to `subcontracting.description`
 * Fix the mappings for:
   * `ocid` and `id`
   * II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
