@@ -12,11 +12,11 @@ To avoid repetition in the guidance, we refer and link to the following common o
 
 If the *Previous publication concerning this procedure* is neither a Prior information notice nor a Periodic indicative notice (PIN), or if the PIN has a single `/OBJECT_CONTRACT` (*Object*) element, then discard `/PROCEDURE/NOTICE_NUMBER_OJ`. In this case, the *previous publication concerning this procedure* is the OCDS release with the same `ocid` as this release and with the nearest earlier `date` to this release.
 
-Otherwise, if the *Previous publication concerning this procedure* is a Prior information notice or Periodic indicative notice that has multiple `/OBJECT_CONTRACT` (*Object*) elements, add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id`, set its `.relationship` to 'planning', set its `.scheme` to 'eu-oj' (or to a scheme of your choice if outside the EU), and map `/PROCEDURE/NOTICE_NUMBER_OJ` to `.identifier`.
+Otherwise, if the *Previous publication concerning this procedure* is a Prior information notice or Periodic indicative notice that has multiple `/OBJECT_CONTRACT` (*Object*) elements, add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id` (string), add 'planning' to its `.relationship` array, set its `.scheme` to 'eu-oj' (or to a scheme of your choice if outside the EU), and map `/PROCEDURE/NOTICE_NUMBER_OJ` to `.identifier`.
 
 ## Add a party
 
-Add an `Organization` object to the `parties` array, and set its `.id`. A party's `.id` needs to be consistent across all forms.
+Add an `Organization` object to the `parties` array, and set its `.id` (string). **A party's `.id` needs to be consistent across all forms.**
 
 ## Set time components
 
