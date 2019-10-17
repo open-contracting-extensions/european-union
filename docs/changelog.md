@@ -1,5 +1,32 @@
 # Changelog
 
+## 2019-10-17
+
+### Added
+
+* Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme.
+* Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays.
+* Clarify that:
+  * `tender.coveredBy` is an array
+  * `tender.lots[].awardCriteria` is an object
+  * `bids.statistics[].id` is a string
+  * `parties[].id` is a string
+  * `relatedProcesses[].id` is a string
+  * 1e9999 is a number, not a string
+* Emphasize that:
+  * `tender.id` is a string (`REFERENCE_NUMBER` is already a string)
+  * `tender.lots[].id` is a string (`LOT_NO` is already a string)
+  * `tender.items[].id` is a string (`LOT_NO` is already a string)
+  * `tender.items[].relatedLot` is a string (`LOT_NO` is already a string)
+  * Each `awards[].relatedLots[]` is a string (`LOT_NO` is already a string)
+
+### Changed
+
+* Fix the guidance to use `relatedProcesses[].relationship` as an array.
+* Fix the mappings for:
+  * III.1.5 The execution of the contract is restricted to the framework of sheltered employment programmes (`/LEFTI/RESTRICTED_SHELTERED_PROGRAM`)
+  * III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION` and `/LEFTI/REFERENCE_TO_LAW`)
+
 ## 2019-10-01
 
 ### Added
