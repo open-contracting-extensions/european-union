@@ -16,7 +16,7 @@ Otherwise, if the *Previous publication concerning this procedure* is a Prior in
 
 ## Add a party
 
-Add an `Organization` object to the `parties` array, and set its `.id` (string). **A party's `.id` needs to be consistent across all forms.**
+Add an `Organization` object to the `parties` array, and set its `.id` (string). **A party's `.id` needs to be consistent across all notices.** It is recommended to implement a register of organization identifiers to assign consistent identifiers.
 
 ## Add a bids statistic
 
