@@ -116,6 +116,7 @@ This guidance makes use of the following extensions:
 
 * [Additional Contact Points](https://extensions.open-contracting.org/en/extensions/additionalContactPoint/master/)
 * [Bid Statistics and Details](https://extensions.open-contracting.org/en/extensions/bids/master/)
+* [Charges](https://extensions.open-contracting.org/en/extensions/charges/master/)
 * [Financing](https://extensions.open-contracting.org/en/extensions/finance/master/)
 * [Location](https://extensions.open-contracting.org/en/extensions/location/master/)
 * [Lots](https://extensions.open-contracting.org/en/extensions/lots/master/)

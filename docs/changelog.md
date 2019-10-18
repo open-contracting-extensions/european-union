@@ -1,10 +1,14 @@
 # Changelog
 
-## 2019-10-17
+## 2019-10-18
+
+### Added
+
+* F25: II.1.5 Method used for calculating the estimated value of the concession (`/OBJECT_CONTRACT/CALCULATION_METHOD`)
 
 ### Changed
 
-* Add additional contact points extension to home page.
+* Add additional contact points and charges extensions to home page.
 * Fix [referencing a previous publication](../operations#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
 * Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme (`/CONTRACTING_BODY/URL_DOCUMENT`)
 * Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays (`/OBJECT_CONTRACT/CPV_MAIN/CPV_SUPPLEMENTARY_CODE` and `/OBJECT_CONTRACT/OBJECT_DESCR/CPV_ADDITIONAL`)
