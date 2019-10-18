@@ -114,6 +114,7 @@ In many cases, the form labels from the PDF files and the element names from the
 
 This guidance makes use of the following extensions:
 
+* [Additional Contact Points](https://extensions.open-contracting.org/en/extensions/additionalContactPoint/master/)
 * [Bid Statistics and Details](https://extensions.open-contracting.org/en/extensions/bids/master/)
 * [Financing](https://extensions.open-contracting.org/en/extensions/finance/master/)
 * [Location](https://extensions.open-contracting.org/en/extensions/location/master/)

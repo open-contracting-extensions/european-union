@@ -2,30 +2,41 @@
 
 ## 2019-10-17
 
-### Added
-
-* Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme.
-* Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays.
-* Clarify that:
-  * `tender.coveredBy` is an array
-  * `tender.lots[].awardCriteria` is an object
-  * `bids.statistics[].id` is a string
-  * `parties[].id` is a string
-  * `relatedProcesses[].id` is a string
-  * 1e9999 is a number, not a string
-* Emphasize that:
-  * `tender.id` is a string (`REFERENCE_NUMBER` is already a string)
-  * `tender.lots[].id` is a string (`LOT_NO` is already a string)
-  * `tender.items[].id` is a string (`LOT_NO` is already a string)
-  * `tender.items[].relatedLot` is a string (`LOT_NO` is already a string)
-  * Each `awards[].relatedLots[]` is a string (`LOT_NO` is already a string)
-
 ### Changed
 
-* Fix the guidance to use `relatedProcesses[].relationship` as an array.
-* Fix the mappings for:
+* Add additional contact points extension to home page.
+* Fix [referencing a previous publication](../operations#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
+* Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme (`/CONTRACTING_BODY/URL_DOCUMENT`)
+* Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays (`/OBJECT_CONTRACT/CPV_MAIN/CPV_SUPPLEMENTARY_CODE` and `/OBJECT_CONTRACT/OBJECT_DESCR/CPV_ADDITIONAL`)
+* Change the mappings for:
   * III.1.5 The execution of the contract is restricted to the framework of sheltered employment programmes (`/LEFTI/RESTRICTED_SHELTERED_PROGRAM`)
   * III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION` and `/LEFTI/REFERENCE_TO_LAW`)
+* Set `id` fields as follows:
+  * `tender.id` has, as its default value, the `ocid` value
+  * `awards[].id` has, as its default value, the notice number and `ITEM` attribute
+  * Set `parties[].id` consistently across all notices
+  * Set `bids.statistics[].id` sequentially across all notices of the same type for the same procedure (`/OBJECT_CONTRACT/VAL_RANGE_TOTAL`, `/AWARD_CONTRACT/AWARDED_CONTRACT/TENDERS`, `/AWARD_CONTRACT/AWARDED_CONTRACT/VALUES/VAL_RANGE_TOTAL`, `/RESULTS/AWARDED_PRIZE/PARTICIPANTS`)
+  * Set `tender.amendments[].id` sequentially across all F14 notices for the same procedure (`/CHANGES`)
+  * Set `contracts[].amendments[].id` sequentially across all F20 notices for the same procedure (`/MODIFICATIONS_CONTRACT/INFO_MODIFICATIONS`)
+  * Set `tender.documents[].id` to either 'economic' or 'technical' (`/LEFTI/ECONOMIC_CRITERIA_DOC`, `/LEFTI/TECHNICAL_CRITERIA_DOC`)
+  * Set `tender.participationFees[0].id` to '1' (`/CONTRACTING_BODY/DOCUMENT_RESTRICTED`)
+  * Set `planning.budget.finance[0].id` to '1' (`/OBJECT_CONTRACT/OBJECT_DESCR/EU_PROGR_RELATED`)
+  * Set `relatedProcesses[0].id` to '1'
+* Clarify the type of fields:
+  * 1e9999 is a number, not a string (`/OBJECT_CONTRACT/LOT_DIVISION/LOT_ALL` and `/PROCEDURE/FRAMEWORK/SEVERAL_OPERATORS`)
+  * `tender.lots[].awardCriteria` is an object (`/OBJECT_CONTRACT/OBJECT_DESCR/AC`)
+  * `tender.coveredBy` is an array (`/PROCEDURE/CONTRACT_COVERED_GPA`)
+* Clarify that `id` fields are strings:
+  * `parties[].id`
+  * `bids.statistics[].id` (`/OBJECT_CONTRACT/VAL_RANGE_TOTAL`, `/AWARD_CONTRACT/AWARDED_CONTRACT/TENDERS`, `/AWARD_CONTRACT/AWARDED_CONTRACT/VALUES/VAL_RANGE_TOTAL`, `/RESULTS/AWARDED_PRIZE/PARTICIPANTS`)
+  * `tender.amendments[].id` (`/CHANGES`)
+  * `contracts[].amendments[].id` (`/MODIFICATIONS_CONTRACT/INFO_MODIFICATIONS`)
+* Emphasize that string elements in TED map to string fields in OCDS:
+  * `tender.id` (`/OBJECT_CONTRACT/REFERENCE_NUMBER`)
+  * `tender.lots[].id` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
+  * `tender.items[].id` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
+  * `tender.items[].relatedLot` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
+  * Each `awards[].relatedLots[]` (`/AWARD_CONTRACT/LOT_NO`)
 
 ## 2019-10-01
 
