@@ -8,7 +8,7 @@
 
 ### Changed
 
-* Add additional contact points and charges extensions to home page.
+* Add Additional Contact Points and Charges extensions to home page.
 * Fix [referencing a previous publication](../operations#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
 * Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme (`/CONTRACTING_BODY/URL_DOCUMENT`)
 * Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays (`/OBJECT_CONTRACT/CPV_MAIN/CPV_SUPPLEMENTARY_CODE` and `/OBJECT_CONTRACT/OBJECT_DESCR/CPV_ADDITIONAL`)
@@ -22,7 +22,7 @@
   * Set `bids.statistics[].id` sequentially across all notices of the same type for the same procedure (`/OBJECT_CONTRACT/VAL_RANGE_TOTAL`, `/AWARD_CONTRACT/AWARDED_CONTRACT/TENDERS`, `/AWARD_CONTRACT/AWARDED_CONTRACT/VALUES/VAL_RANGE_TOTAL`, `/RESULTS/AWARDED_PRIZE/PARTICIPANTS`)
   * Set `tender.amendments[].id` sequentially across all F14 notices for the same procedure (`/CHANGES`)
   * Set `contracts[].amendments[].id` sequentially across all F20 notices for the same procedure (`/MODIFICATIONS_CONTRACT/INFO_MODIFICATIONS`)
-  * Set `tender.documents[].id` to either 'economic' or 'technical' (`/LEFTI/ECONOMIC_CRITERIA_DOC`, `/LEFTI/TECHNICAL_CRITERIA_DOC`)
+  * Set `tender.documents[].id` to either 'economic' or 'technical' (`/LEFTI/ECONOMIC_CRITERIA_DOC` and `/LEFTI/TECHNICAL_CRITERIA_DOC`)
   * Set `tender.participationFees[0].id` to '1' (`/CONTRACTING_BODY/DOCUMENT_RESTRICTED`)
   * Set `planning.budget.finance[0].id` to '1' (`/OBJECT_CONTRACT/OBJECT_DESCR/EU_PROGR_RELATED`)
   * Set `relatedProcesses[0].id` to '1'
