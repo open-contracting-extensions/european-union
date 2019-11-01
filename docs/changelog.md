@@ -1,5 +1,12 @@
 # Changelog
 
+## 2019-11-01
+
+### Changed
+
+* V.2.5 Value or proportion likely to be subcontracted to third parties
+  * *Proportion*: Expand `minPercentage` and `maxPercentage` into `minimumPercentage` and `maximumPercentage` to match other field names.
+
 ## 2019-10-18
 
 ### Added
