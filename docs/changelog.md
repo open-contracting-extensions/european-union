@@ -1,5 +1,13 @@
 # Changelog
 
+## 2019-11-04
+
+## Changed
+
+* III.1.5 Information about reserved contracts
+  * `tender.otherRequirements.reservedParticipation` is an array of strings, instead of a string
+* F20: The mapping assumes that `/AWARD_CONTRACT/CONTRACT_NO` is consistent set across forms
+
 ## 2019-11-01
 
 ### Changed
@@ -64,10 +72,17 @@
 * Fix the mappings for:
   * `ocid` and `id`
   * II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
+    * Support repeated XML elements
+  * II.2.4 Description of the procurement (`/OBJECT_CONTRACT/OBJECT_DESCR/SHORT_DESCR`)
+    * Map only to the lot's `.description`, not to the item's `.description`
   * III.1.5 The execution of the contract is restricted to the framework of sheltered employment programmes (`/LEFTI/RESTRICTED_SHELTERED_PROGRAM`)
+    * Change `tender.contractTerms.reservedExecution` from a boolean to an object, and add `tender.contractTerms.reservedExecution.shelteredEmployment`
   * III.1.5 Participation in the procedure is reserved to organisations pursuing a public service mission and fulfilling the conditions set in Article 77(2) of Directive 2014/24/EU (`/LEFTI/RESERVED_ORGANISATIONS_SERVICE_MISSION`)
+    * Fix a typo, from `tender.selectionCriteria.reservedParticipation` to `tender.otherRequirements.reservedParticipation`
   * III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION` and `/LEFTI/REFERENCE_TO_LAW`)
+    * Change `tender.contractTerms.reservedExecution` from a boolean to an object, and add `tender.contractTerms.reservedExecution.particularProfession` and `tender.contractTerms.reservedExecution.particularProfessionDetails`
   * IV.2.1 Previous publication concerning this procedure (`/PROCEDURE/NOTICE_NUMBER_OJ`)
+    * Don't discard
   * F12: Don't use the `tender.lots` or `tender.items` arrays
   * F13: Don't use the 'contract' code, `contracts` array, or `bids.statistics.relatedLot` field
 * Clarify the mappings for:
@@ -106,7 +121,7 @@
 * II.2.2 Additional CPV code(s)
   * Map to the item's `.additionalClassifications`, instead.
 * II.2.4 Description of the procurement
-  * Map to the item's `.description`, instead.
+  * Map to the item's `.description`, instead of `tender.description`, if the contract isn't divided into lots.
 * II.2.7 Duration of the contract, framework agreement or dynamic purchasing system
   * *This contract is subject to renewal*: Use the lot's `.hasRenewal` and `.renewal.description`, instead of `tender.renewals`.
 * II.2.10 Information about variants
