@@ -2,29 +2,31 @@
 
 ## 2019-11-07
 
-## Changed
+## Fixed
 
-* Fix the mappings for:
-  * II.2.13 Information about European Union funds
-    * Set the `.id` of `Finance` objects incrementally, instead of to '1'
-  * II.2.14 Additional information
-    * Append only to the lot's `.description`, not to the item's `.description`, to be consistent with II.2.4 Description of the procurement
-  * VII.1.3 Place of performance
-    * Reuse the mapping for II.2.3 Place of performance
-  * VII.1.4 Description of the procurement
-    * Reuse the mapping for II.2.4 Description of the procurement
+* II.2.13 Information about European Union funds
+  * Set the `.id` of `Finance` objects incrementally, instead of to '1'
+* II.2.14 Additional information
+  * Append only to the lot's `.description`, not to the item's `.description`, to be consistent with II.2.4 Description of the procurement
+* VII.1.3 NUTS code
+  * Reuse the mapping for II.2.3 NUTS code
+* VII.1.4 Description of the procurement
+  * Reuse the mapping for II.2.4 Description of the procurement
 
 ## 2019-11-04
 
 ## Changed
 
+* F20: Clarify that the mapping assumes that `/AWARD_CONTRACT/CONTRACT_NO` is consistently set across forms
+
+## Fixed
+
 * III.1.5 Information about reserved contracts
   * `tender.otherRequirements.reservedParticipation` is an array of strings, instead of a string
-* F20: The mapping assumes that `/AWARD_CONTRACT/CONTRACT_NO` is consistent set across forms
 
 ## 2019-11-01
 
-### Changed
+### Fixed
 
 * V.2.5 Value or proportion likely to be subcontracted to third parties
   * *Proportion*: Expand `minPercentage` and `maxPercentage` into `minimumPercentage` and `maximumPercentage` to match other field names.
@@ -37,7 +39,25 @@
 
 ### Changed
 
-* Add Additional Contact Points and Charges extensions to home page.
+* Add Additional Contact Points and Charges extensions to home page
+* Clarify the type of fields:
+  * 1e9999 is a number, not a string (`/OBJECT_CONTRACT/LOT_DIVISION/LOT_ALL` and `/PROCEDURE/FRAMEWORK/SEVERAL_OPERATORS`)
+  * `tender.lots[].awardCriteria` is an object (`/OBJECT_CONTRACT/OBJECT_DESCR/AC`)
+  * `tender.coveredBy` is an array (`/PROCEDURE/CONTRACT_COVERED_GPA`)
+* Clarify that `id` fields are strings:
+  * `parties[].id`
+  * `bids.statistics[].id` (`/OBJECT_CONTRACT/VAL_RANGE_TOTAL`, `/AWARD_CONTRACT/AWARDED_CONTRACT/TENDERS`, `/AWARD_CONTRACT/AWARDED_CONTRACT/VALUES/VAL_RANGE_TOTAL`, `/RESULTS/AWARDED_PRIZE/PARTICIPANTS`)
+  * `tender.amendments[].id` (`/CHANGES`)
+  * `contracts[].amendments[].id` (`/MODIFICATIONS_CONTRACT/INFO_MODIFICATIONS`)
+* Emphasize that string elements in TED map to string fields in OCDS:
+  * `tender.id` (`/OBJECT_CONTRACT/REFERENCE_NUMBER`)
+  * `tender.lots[].id` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
+  * `tender.items[].id` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
+  * `tender.items[].relatedLot` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
+  * Each `awards[].relatedLots[]` (`/AWARD_CONTRACT/LOT_NO`)
+
+## Fixed
+
 * Fix [referencing a previous publication](../operations#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
 * Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme (`/CONTRACTING_BODY/URL_DOCUMENT`)
 * Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays (`/OBJECT_CONTRACT/CPV_MAIN/CPV_SUPPLEMENTARY_CODE` and `/OBJECT_CONTRACT/OBJECT_DESCR/CPV_ADDITIONAL`)
@@ -55,21 +75,6 @@
   * Set `tender.participationFees[0].id` to '1' (`/CONTRACTING_BODY/DOCUMENT_RESTRICTED`)
   * Set `planning.budget.finance[0].id` to '1' (`/OBJECT_CONTRACT/OBJECT_DESCR/EU_PROGR_RELATED`)
   * Set `relatedProcesses[0].id` to '1'
-* Clarify the type of fields:
-  * 1e9999 is a number, not a string (`/OBJECT_CONTRACT/LOT_DIVISION/LOT_ALL` and `/PROCEDURE/FRAMEWORK/SEVERAL_OPERATORS`)
-  * `tender.lots[].awardCriteria` is an object (`/OBJECT_CONTRACT/OBJECT_DESCR/AC`)
-  * `tender.coveredBy` is an array (`/PROCEDURE/CONTRACT_COVERED_GPA`)
-* Clarify that `id` fields are strings:
-  * `parties[].id`
-  * `bids.statistics[].id` (`/OBJECT_CONTRACT/VAL_RANGE_TOTAL`, `/AWARD_CONTRACT/AWARDED_CONTRACT/TENDERS`, `/AWARD_CONTRACT/AWARDED_CONTRACT/VALUES/VAL_RANGE_TOTAL`, `/RESULTS/AWARDED_PRIZE/PARTICIPANTS`)
-  * `tender.amendments[].id` (`/CHANGES`)
-  * `contracts[].amendments[].id` (`/MODIFICATIONS_CONTRACT/INFO_MODIFICATIONS`)
-* Emphasize that string elements in TED map to string fields in OCDS:
-  * `tender.id` (`/OBJECT_CONTRACT/REFERENCE_NUMBER`)
-  * `tender.lots[].id` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
-  * `tender.items[].id` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
-  * `tender.items[].relatedLot` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
-  * Each `awards[].relatedLots[]` (`/AWARD_CONTRACT/LOT_NO`)
 
 ## 2019-10-01
 
@@ -79,29 +84,31 @@
 
 ### Changed
 
+* Clarify the mappings for:
+  * VI.3 Additional information (`/COMPLEMENTARY_INFO/INFO_ADD`)
+  * F14 (`/CHANGES/CHANGE/NEW_VALUE/NOTHING`)
+
+## Fixed
+
+* Fix `ocid` and `id` mappings
 * Rename OCDS fields:
   * `requiresStaffNamesQualifications` to `requiresStaffNamesAndQualifications`
   * `hasRequiredGuarantees` to `requiresGuarantees`
   * `subcontracting.details` to `subcontracting.description`
-* Fix the mappings for:
-  * `ocid` and `id`
-  * II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
-    * Support repeated XML elements
-  * II.2.4 Description of the procurement (`/OBJECT_CONTRACT/OBJECT_DESCR/SHORT_DESCR`)
-    * Map only to the lot's `.description`, not to the item's `.description`
-  * III.1.5 The execution of the contract is restricted to the framework of sheltered employment programmes (`/LEFTI/RESTRICTED_SHELTERED_PROGRAM`)
-    * Change `tender.contractTerms.reservedExecution` from a boolean to an object, and add `tender.contractTerms.reservedExecution.shelteredEmployment`
-  * III.1.5 Participation in the procedure is reserved to organisations pursuing a public service mission and fulfilling the conditions set in Article 77(2) of Directive 2014/24/EU (`/LEFTI/RESERVED_ORGANISATIONS_SERVICE_MISSION`)
-    * Fix a typo, from `tender.selectionCriteria.reservedParticipation` to `tender.otherRequirements.reservedParticipation`
-  * III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION` and `/LEFTI/REFERENCE_TO_LAW`)
-    * Change `tender.contractTerms.reservedExecution` from a boolean to an object, and add `tender.contractTerms.reservedExecution.particularProfession` and `tender.contractTerms.reservedExecution.particularProfessionDetails`
-  * IV.2.1 Previous publication concerning this procedure (`/PROCEDURE/NOTICE_NUMBER_OJ`)
-    * Don't discard
-  * F12: Don't use the `tender.lots` or `tender.items` arrays
-  * F13: Don't use the 'contract' code, `contracts` array, or `bids.statistics.relatedLot` field
-* Clarify the mappings for:
-  * VI.3 Additional information (`/COMPLEMENTARY_INFO/INFO_ADD`)
-  * F14 (`/CHANGES/CHANGE/NEW_VALUE/NOTHING`)
+* II.2.3 NUTS code (`/OBJECT_CONTRACT/OBJECT_DESCR/NUTS`)
+  * Support repeated XML elements
+* II.2.4 Description of the procurement (`/OBJECT_CONTRACT/OBJECT_DESCR/SHORT_DESCR`)
+  * Map only to the lot's `.description`, not to the item's `.description`
+* III.1.5 The execution of the contract is restricted to the framework of sheltered employment programmes (`/LEFTI/RESTRICTED_SHELTERED_PROGRAM`)
+  * Change `tender.contractTerms.reservedExecution` from a boolean to an object, and add `tender.contractTerms.reservedExecution.shelteredEmployment`
+* III.1.5 Participation in the procedure is reserved to organisations pursuing a public service mission and fulfilling the conditions set in Article 77(2) of Directive 2014/24/EU (`/LEFTI/RESERVED_ORGANISATIONS_SERVICE_MISSION`)
+  * Fix a typo, from `tender.selectionCriteria.reservedParticipation` to `tender.otherRequirements.reservedParticipation`
+* III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION` and `/LEFTI/REFERENCE_TO_LAW`)
+  * Change `tender.contractTerms.reservedExecution` from a boolean to an object, and add `tender.contractTerms.reservedExecution.particularProfession` and `tender.contractTerms.reservedExecution.particularProfessionDetails`
+* IV.2.1 Previous publication concerning this procedure (`/PROCEDURE/NOTICE_NUMBER_OJ`)
+  * Don't discard
+* F12: Don't use the `tender.lots` or `tender.items` arrays
+* F13: Don't use the 'contract' code, `contracts` array, or `bids.statistics.relatedLot` field
 
 ## 2019-08-30
 
@@ -113,7 +120,7 @@
 * Add "What's new" heading, to list new elements on each form.
 * Update to R2.0.9.S03.E01_007-20181030 from R2.0.9.S03.E01_006-20180608.
 
-### Changed
+### Fixed
 
 #### Section I
 
