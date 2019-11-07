@@ -1,5 +1,19 @@
 # Changelog
 
+## 2019-11-07
+
+## Changed
+
+* Fix the mappings for:
+  * II.2.13 Information about European Union funds
+    * Set the `.id` of `Finance` objects incrementally, instead of to '1'
+  * II.2.14 Additional information
+    * Append only to the lot's `.description`, not to the item's `.description`, to be consistent with II.2.4 Description of the procurement
+  * VII.1.3 Place of performance
+    * Reuse the mapping for II.2.3 Place of performance
+  * VII.1.4 Description of the procurement
+    * Reuse the mapping for II.2.4 Description of the procurement
+
 ## 2019-11-04
 
 ## Changed
