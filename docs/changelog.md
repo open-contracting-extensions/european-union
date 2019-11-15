@@ -1,5 +1,12 @@
 # Changelog
 
+## 2019-11-15
+
+## Added
+
+* F23, F25, T02: Add mapping to `Award.id`.
+* Add missing mappings for F23, F25.
+
 ## 2019-11-07
 
 ## Fixed
