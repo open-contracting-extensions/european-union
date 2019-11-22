@@ -27,7 +27,6 @@ from pathlib import Path
 
 import standard_theme
 from ocds_babel.translate import translate
-from recommonmark.parser import CommonMarkParser
 from recommonmark.transform import AutoStructify
 
 # -- General configuration ------------------------------------------------
