@@ -1,11 +1,15 @@
 #!/bin/bash
+set -e
+
+mkdir -p script
+
 if [ -f standard ]; then
   prefix=standard/
 else
   prefix=
 fi
 
-for f in Makefile common-requirements.txt include/common.mk include/prologue.mk; do
+for f in Makefile common-requirements.txt include/common.mk include/prologue.mk script/diff script/update; do
   curl -sS -o $f https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/$f
 done
 
@@ -16,3 +20,5 @@ done
 if [ ! -f standard ]; then
   curl -sS -o .gitignore https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/.gitignore
 fi
+
+chmod +x script/*

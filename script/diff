@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 for f in .travis.yml docs/conf.py include/config.mk schema/build-profile.py; do
   curl -sS https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/$f | diff -u - $f
 done
