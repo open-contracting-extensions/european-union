@@ -1,5 +1,3 @@
-# Update this file from a profile with:
-# curl -O https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/.travis.yml
 sudo: false
 language: python
 cache: pip
@@ -31,4 +29,4 @@ script:
   - curl -s -S --retry 3 $BASEDIR/tests/script.sh | bash -
   - if [ $TRAVIS_REPO_SLUG = 'open-contracting/standard_profile_template' ]; then python schema/build-profile.py; make extract; fi
   - make
-  - py.test -rs --tb=line
+  - py.test
