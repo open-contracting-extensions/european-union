@@ -1,0 +1,18 @@
+#!/bin/bash
+if [ -f standard ]; then
+  prefix=standard/
+else
+  prefix=
+fi
+
+for f in Makefile common-requirements.txt include/common.mk include/prologue.mk; do
+  curl -sS -o $f https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/$f
+done
+
+for f in tests/conftest.py tests/test_common.py; do
+  curl -sS -o $prefix$f https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/$f
+done
+
+if [ ! -f standard ]; then
+  curl -sS -o .gitignore https://raw.githubusercontent.com/open-contracting/standard_profile_template/master/.gitignore
+fi
