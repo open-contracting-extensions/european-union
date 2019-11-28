@@ -7,6 +7,10 @@
 * V.2.4 Information on value of the contract/lot
   * *Currency*: Clarify the mapping for bid statistics
 
+### Changed
+
+* [Create a release](../operations/#create-a-release): Use a new `ocid` for a Contract award notice for an award within a framework agreement or dynamic purchasing system.
+
 ## 2019-11-15
 
 ### Added
