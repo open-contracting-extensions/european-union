@@ -1,15 +1,22 @@
 # Changelog
 
+## 2019-11-28
+
+### Added
+
+* V.2.4 Information on value of the contract/lot
+  * *Currency*: Clarify the mapping for bid statistics
+
 ## 2019-11-15
 
-## Added
+### Added
 
 * F23, F25, T02: Add mapping to `Award.id`.
 * Add missing mappings for F23, F25.
 
 ## 2019-11-07
 
-## Fixed
+### Fixed
 
 * II.2.13 Information about European Union funds
   * Set the `.id` of `Finance` objects incrementally, instead of to '1'
@@ -22,11 +29,11 @@
 
 ## 2019-11-04
 
-## Changed
+### Changed
 
 * F20: Clarify that the mapping assumes that `/AWARD_CONTRACT/CONTRACT_NO` is consistently set across forms
 
-## Fixed
+### Fixed
 
 * III.1.5 Information about reserved contracts
   * `tender.otherRequirements.reservedParticipation` is an array of strings, instead of a string
