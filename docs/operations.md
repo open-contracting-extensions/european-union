@@ -30,7 +30,7 @@ Add an `Organization` object to the `parties` array, and set its `.id` (string).
 
 ## Add a bids statistic
 
-Add a `BidsStatistic` object to the `bids.statistics` array, and set its `.id` (string) sequentially across all notices of the same type for this procedure. (A first F03 notice for a given procedure uses `id`'s '1' through '9', a second F03 notice for the same procedure uses `id`'s '10' and up, etc.)
+Add a `BidsStatistic` object to the `bids.statistics` array, and set its `.id` (string) sequentially across all notices for this procedure. For example, if a first F03 notice for a given procedure has nine bids statistics, it uses `id`'s '1' through '9'. A second F03 notice for the same procedure then uses `id`'s '10' and up, etc.
 
 ## Set time components
 
