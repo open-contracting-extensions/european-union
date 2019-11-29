@@ -21,7 +21,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import os
-from collections import OrderedDict
 from glob import glob
 from pathlib import Path
 
@@ -137,9 +136,9 @@ gettext_domain_prefix = '{}-'.format(profile_identifier)
 
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/master/extension_versions.csv
-extension_versions = OrderedDict([
-    # ('extension_id_in_registry', 'version'),
-])
+extension_versions = {
+    # 'extension_id_in_registry': 'version',
+}
 
 
 def setup(app):
