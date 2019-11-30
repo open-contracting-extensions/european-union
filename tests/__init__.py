@@ -13,3 +13,5 @@ test_navigation_params = [
 test_search_params = [
     ('en', r'found \d+ page\(s\) matching'),
 ]
+
+last_path = '/changelog/'
