@@ -95,7 +95,6 @@ The guidance on each page above follows the same order as a standard form and is
 
 Most fields map simply and directly from TED XML to OCDS JSON. Badges are used to call attention to special cases:
 
-* <span class="badge badge-proposal">Proposal</span> If there is no field or code in OCDS corresponding to a field or code in TED, the guidance proposes a new field or code. A link is provided to a GitHub issue to discuss the proposal.
 * <span class="badge badge-warning">Attention</span> If there is a potential issue with the guidance, it is described briefly, and a link is provided to a GitHub issue to acknowledge or dismiss the potential issue.
 * <span class="badge badge-issue">Issue</span> If there is a reported issue with the guidance, it is described briefly, and a link is provided to the GitHub issue.
 
@@ -142,4 +141,4 @@ And these draft extensions:
 
 ## We want your feedback!
 
-This is the first public working draft of this website. To contribute, please first read this page, and then dive into the guidance. Feedback is discussed openly on GitHub. For your convenience, we provide links to GitHub for all proposals, potential issues, and reported issues. To browse all issues or open another issue, visit [this website's GitHub issues](https://github.com/open-contracting-extensions/european-union/issues).
+This is the first public working draft of this website. To contribute, please first read this page, and then dive into the guidance. Feedback is discussed openly on GitHub. For your convenience, we provide links to GitHub for all potential and reported issues. To browse all issues or to open another issue, visit [this website's GitHub issues](https://github.com/open-contracting-extensions/european-union/issues).
