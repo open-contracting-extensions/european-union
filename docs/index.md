@@ -131,6 +131,7 @@ And these draft extensions:
 * [Covered By](https://github.com/open-contracting-extensions/ocds_coveredBy_extension)
 * [European Union](https://github.com/open-contracting-extensions/ocds_eu_extension)
 * [Options](https://github.com/open-contracting-extensions/ocds_options_extension)
+* [Organization Classification](https://github.com/open-contracting-extensions/ocds_organizationClassification_extension)
 * [Other Requirements](https://github.com/open-contracting-extensions/ocds_otherRequirements_extension)
 * [Procedure](https://github.com/open-contracting-extensions/ocds_procedure_extension)
 * [Second Stage Description](https://github.com/open-contracting-extensions/ocds_secondStageDescription_extension)
