@@ -16,7 +16,7 @@ The notice's `ocid` will either be a new `ocid`, or the same `ocid` as the previ
 
 If none is true, then set the notice's `ocid` to be the same as the previous publication's `ocid`. Otherwise, set the notice's [`ocid`](https://standard.open-contracting.org/latest/en/schema/identifiers/#contracting-process-identifier-ocid) by prepending your [OCID prefix](https://standard.open-contracting.org/latest/en/implementation/registration/) to a unique identifier of your choice (e.g. a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a suitable system-internal identifier).
 
-If the notice is a Contract award notice for an award within a framework agreement or dynamic purchasing system, you must also add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id` to '1', add 'framework' to its `.relationship` array, set its `.scheme` to 'ocds', and set its `.identifier` to the `ocid` of the procedure that set up the framework agreement or dynamic purchasing system.
+If the notice is a Contract award notice for an award within a framework agreement or dynamic purchasing system, you must also add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id` to '1', add 'framework' to its `.relationship` array, set its `.scheme` to 'ocid', and set its `.identifier` to the `ocid` of the procedure that set up the framework agreement or dynamic purchasing system.
 
 ## Reference a previous publication
 
