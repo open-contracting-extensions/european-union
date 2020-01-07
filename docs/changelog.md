@@ -1,5 +1,22 @@
 # Changelog
 
+## 2020-01-07
+
+### Added
+
+* Add missing mappings for T01, T02.
+
+### Fixed
+
+* `Classification` objects have a `description` field, not a `name` field. Affects:
+  * I.4 Type of the contracting authority
+  * I.5 Main activity
+  * I.6 Main activity
+  * D1.1 Justification for the choice of the negotiated procedure without prior publication of a call for competition in accordance with Article 32 of Directive 2014/24/EU
+  * D2.1 Justification for the choice of the negotiated procedure without prior publication of a call for competition in accordance with Article 50 of Directive 2014/25/EU
+  * D3.1 Justification for the choice of the negotiated procedure without publication of a call for competition in accordance with Article 28 of Directive 2009/81/EC
+  * D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU
+
 ## 2019-11-28
 
 ### Added
