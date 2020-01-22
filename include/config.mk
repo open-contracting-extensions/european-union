@@ -30,7 +30,7 @@ EXTRACT_TARGETS=
 # The path to the branch of the documentation to print to PDF.
 PDF_ROOT=/profiles/eu/master
 # The pattern of pages to print to PDF. Update if the documentation adds, removes or renames pages.
-PDF_PAGES={,F01,F02,F03,F04,F05,F06,F07,F08,F12,F13,F14,F15,F20,F21,F22,F23,F24,F25,T01,T02,changelog,common,operations}
+PDF_PAGES={,F01/,F02/,F03/,F04/,F05/,F06/,F07/,F08/,F12/,F13/,F14/,F15/,F20/,F21/,F22/,F23/,F24/,F25/,T01/,T02/,changelog/,common/,operations/}
 # 15000 may warn: "Warning: Received createRequest signal on a disposed ResourceObject's NetworkAccessManager. This might
 # be an indication of an iframe taking too long to load."
 PDF_DELAY=20000
