@@ -1,5 +1,10 @@
 # Changelog
 
+## 2020-02-05
+
+* II.2.1 Title (`/OBJECT_CONTRACT/OBJECT_DESCR/TITLE`)
+  * Map only to the lot's `.title`, not to the item's `.title` to be consistent with II.2.4 Description of the procurement
+
 ## 2020-01-07
 
 ### Added
