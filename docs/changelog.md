@@ -1,5 +1,10 @@
 # Changelog
 
+## 2020-02-10
+
+* T01, T02: Add "Release model" and "What's new" sections
+* Fix typos that don't affect the mappings
+
 ## 2020-02-05
 
 * II.2.1 Title (`/OBJECT_CONTRACT/OBJECT_DESCR/TITLE`)
