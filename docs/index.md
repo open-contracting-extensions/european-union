@@ -123,6 +123,7 @@ This guidance makes use of the following extensions:
 * [Participation Fees](https://extensions.open-contracting.org/en/extensions/participation_fee/master/)
 * [Party Scale](https://extensions.open-contracting.org/en/extensions/partyScale/master/)
 * [Process-Level Title and Description](https://extensions.open-contracting.org/en/extensions/process_title/master/)
+* [Shareholders](https://extensions.open-contracting.org/en/extensions/shareholders/master/)
 
 And these draft extensions:
 

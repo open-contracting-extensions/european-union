@@ -2,8 +2,8 @@
 
 ## 2020-02-24
 
-* T02: Add Section III mappings
-* Add Metrics extension
+* T02: Add Section III, Section V mappings
+* Add Metrics and Shareholders extensions to home page
 
 ## 2020-02-10
 
