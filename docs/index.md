@@ -119,6 +119,7 @@ This guidance makes use of the following extensions:
 * [Financing](https://extensions.open-contracting.org/en/extensions/finance/master/)
 * [Location](https://extensions.open-contracting.org/en/extensions/location/master/)
 * [Lots](https://extensions.open-contracting.org/en/extensions/lots/master/)
+* [Metrics](https://extensions.open-contracting.org/en/extensions/metrics/master/)
 * [Participation Fees](https://extensions.open-contracting.org/en/extensions/participation_fee/master/)
 * [Party Scale](https://extensions.open-contracting.org/en/extensions/partyScale/master/)
 * [Process-Level Title and Description](https://extensions.open-contracting.org/en/extensions/process_title/master/)

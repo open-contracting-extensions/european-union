@@ -1,5 +1,10 @@
 # Changelog
 
+## 2020-02-24
+
+* T02: Add Section III mappings
+* Add Metrics extension
+
 ## 2020-02-10
 
 * T01, T02: Add "Release model" and "What's new" sections
