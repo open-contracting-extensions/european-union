@@ -11,18 +11,18 @@ To avoid repetition in the guidance, we refer and link to the following common o
 The notice's `ocid` will either be a new `ocid`, or the same `ocid` as the previous publication concerning this procedure. The notice's `ocid` will be a new `ocid` if one of the following is true:
 
 * The notice is the first publication concerning the procedure.
-* The previous publication is a Prior information notice or Periodic indicative notice that has multiple `/OBJECT_CONTRACT` (*Object*) elements.
-* The notice is a Contract award notice for an award within a framework agreement or dynamic purchasing system.
+* The previous publication is a prior information notice or periodic indicative notice that has multiple `/OBJECT_CONTRACT` (*Object*) elements.
+* The notice is a contract award notice for an award within a framework agreement or dynamic purchasing system.
 
 If none is true, then set the notice's `ocid` to be the same as the previous publication's `ocid`. Otherwise, set the notice's [`ocid`](https://standard.open-contracting.org/latest/en/schema/identifiers/#contracting-process-identifier-ocid) by prepending your [OCID prefix](https://standard.open-contracting.org/latest/en/implementation/registration/) to a unique identifier of your choice (e.g. a [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) or a suitable system-internal identifier).
 
-If the notice is a Contract award notice for an award within a framework agreement or dynamic purchasing system, you must also add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id` to '1', add 'framework' to its `.relationship` array, set its `.scheme` to 'ocid', and set its `.identifier` to the `ocid` of the procedure that set up the framework agreement or dynamic purchasing system.
+If the notice is a contract award notice for an award within a framework agreement or dynamic purchasing system, you must also add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id` to '1', add 'framework' to its `.relationship` array, set its `.scheme` to 'ocid', and set its `.identifier` to the `ocid` of the procedure that set up the framework agreement or dynamic purchasing system.
 
 ## Reference a previous publication
 
-If the *Previous publication concerning this procedure* is neither a Prior information notice nor a Periodic indicative notice (PIN), or if the PIN has a single `/OBJECT_CONTRACT` (*Object*) element, then discard `/PROCEDURE/NOTICE_NUMBER_OJ`. In this case, the *previous publication concerning this procedure* is the OCDS release with the same `ocid` as this release and with the nearest earlier `date` to this release.
+If the *Previous publication concerning this procedure* is neither a prior information notice nor a periodic indicative notice (PIN), or if the PIN has a single `/OBJECT_CONTRACT` (*Object*) element, then discard `/PROCEDURE/NOTICE_NUMBER_OJ`. In this case, the *previous publication concerning this procedure* is the OCDS release with the same `ocid` as this release and with the nearest earlier `date` to this release.
 
-Otherwise, if the *Previous publication concerning this procedure* is a Prior information notice or Periodic indicative notice that has multiple `/OBJECT_CONTRACT` (*Object*) elements, add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id` to '1', add 'planning' to its `.relationship` array, set its `.scheme` to 'eu-oj' (or to a scheme of your choice if outside the EU), and map `/PROCEDURE/NOTICE_NUMBER_OJ` to `.identifier`.
+Otherwise, if the *Previous publication concerning this procedure* is a prior information notice or periodic indicative notice that has multiple `/OBJECT_CONTRACT` (*Object*) elements, add a `RelatedProcess` object to the `relatedProcesses` array, set its `.id` to '1', add 'planning' to its `.relationship` array, set its `.scheme` to 'eu-oj' (or to a scheme of your choice if outside the EU), and map `/PROCEDURE/NOTICE_NUMBER_OJ` to `.identifier`.
 
 ## Add a party
 
