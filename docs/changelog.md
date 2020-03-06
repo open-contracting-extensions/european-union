@@ -1,16 +1,34 @@
 # Changelog
 
+## 2020-03-06
+
+### Fixed
+
+* F12: III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION`)
+  * Unlike earlier forms, F12 has `/LEFTI/NO_PARTICULAR_PROFESSION`, and the XML schema for `/LEFTI/PARTICULAR_PROFESSION` differs.
+* F23, F25: D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU
+  * The `.id` was the same (instead of different) for all mappings
+
 ## 2020-02-24
+
+### Added
 
 * T02: Add Section III, Section V mappings
 * Add Metrics and Shareholders extensions to home page
 
 ## 2020-02-10
 
+### Added
+
 * T01, T02: Add "Release model" and "What's new" sections
+
+### Fixed
+
 * Fix typos that don't affect the mappings
 
 ## 2020-02-05
+
+### Fixed
 
 * II.2.1 Title (`/OBJECT_CONTRACT/OBJECT_DESCR/TITLE`)
   * Map only to the lot's `.title`, not to the item's `.title` to be consistent with II.2.4 Description of the procurement
