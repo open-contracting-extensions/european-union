@@ -6,7 +6,7 @@
 
 * F12: III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION`)
   * Unlike earlier forms, F12 has `/LEFTI/NO_PARTICULAR_PROFESSION`, and the XML schema for `/LEFTI/PARTICULAR_PROFESSION` differs.
-* F23, F25: D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU
+* F23, F25: D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU (`/PROCEDURE/DIRECTIVE_2014_23_EU/PT_AWARD_CONTRACT_WITHOUT_PUBLICATION/D_ACCORDANCE_ARTICLE`)
   * The `.id` was the same (instead of different) for all mappings
 
 ## 2020-02-24
