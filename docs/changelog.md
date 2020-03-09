@@ -2,8 +2,13 @@
 
 ## 2020-03-09
 
-* Rename `procurementMethodRationaleClassifications` to `procurementMethodRationaleCodes` to follow schema style guide
+### Added
+
 * Add Procurement Method Rationale Classifications extension to home page
+
+### Changed
+
+* Rename `procurementMethodRationaleClassifications` to `procurementMethodRationaleCodes` to follow schema style guide
 
 ## 2020-03-06
 
