@@ -136,6 +136,7 @@ And these draft extensions:
 * [Organization Classification](https://github.com/open-contracting-extensions/ocds_organizationClassification_extension)
 * [Other Requirements](https://github.com/open-contracting-extensions/ocds_otherRequirements_extension)
 * [Procedure](https://github.com/open-contracting-extensions/ocds_procedure_extension)
+* [Procurement Method Rationale Classifications](https://github.com/open-contracting-extensions/ocds_procurementMethodRationaleClassifications_extension)
 * [Second Stage Description](https://github.com/open-contracting-extensions/ocds_secondStageDescription_extension)
 * [Selection Criteria](https://github.com/open-contracting-extensions/ocds_selectionCriteria_extension)
 * [Subcontracting](https://github.com/open-contracting-extensions/ocds_subcontracting_extension)
