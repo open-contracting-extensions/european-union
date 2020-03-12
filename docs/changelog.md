@@ -1,5 +1,11 @@
 # Changelog
 
+## 2020-03-12
+
+### Added
+
+* Add Communication extension to home page
+
 ## 2020-03-09
 
 ### Added
@@ -8,7 +14,7 @@
 
 ### Changed
 
-* Rename `procurementMethodRationaleClassifications` to `procurementMethodRationaleCodes` to follow schema style guide
+* Rename `procurementMethodRationaleCodes` to `procurementMethodRationaleClassifications` to follow schema style guide
 
 ## 2020-03-06
 

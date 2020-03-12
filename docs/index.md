@@ -129,6 +129,7 @@ And these draft extensions:
 
 * [Award Criteria](https://github.com/open-contracting-extensions/ocds_awardCriteria_extension)
 * [Bid Opening](https://github.com/open-contracting-extensions/ocds_bidOpening_extension)
+* [Communication](https://github.com/open-contracting-extensions/ocds_communication_extension)
 * [Contract Terms](https://github.com/open-contracting-extensions/ocds_contractTerms_extension)
 * [Covered By](https://github.com/open-contracting-extensions/ocds_coveredBy_extension)
 * [European Union](https://github.com/open-contracting-extensions/ocds_eu_extension)
