@@ -147,7 +147,7 @@
   * `tender.items[].relatedLot` (`/OBJECT_CONTRACT/OBJECT_DESCR/LOT_NO`)
   * Each `awards[].relatedLots[]` (`/AWARD_CONTRACT/LOT_NO`)
 
-## Fixed
+### Fixed
 
 * Fix [referencing a previous publication](../operations#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
 * Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme (`/CONTRACTING_BODY/URL_DOCUMENT`)
@@ -179,7 +179,7 @@
   * VI.3 Additional information (`/COMPLEMENTARY_INFO/INFO_ADD`)
   * F14 (`/CHANGES/CHANGE/NEW_VALUE/NOTHING`)
 
-## Fixed
+### Fixed
 
 * Fix `ocid` and `id` mappings
 * Rename OCDS fields:
