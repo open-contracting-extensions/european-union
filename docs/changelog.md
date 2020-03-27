@@ -1,5 +1,12 @@
 # Changelog
 
+## 2020-03-27
+
+### Fixed
+
+* VII Changes (`/CHANGES`)
+  * [See GitHub discussion](https://github.com/open-contracting-extensions/european-union/issues/63)
+
 ## 2020-03-12
 
 ### Added
