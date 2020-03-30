@@ -1,0 +1,13 @@
+on: [push, pull_request]
+env:
+  BASEDIR: https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.6
+    - run: curl -s -S --retry 3 $BASEDIR/tests/install.sh | bash -
+    - run: curl -s -S --retry 3 $BASEDIR/tests/script.sh | bash -
