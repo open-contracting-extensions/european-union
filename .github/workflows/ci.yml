@@ -1,5 +1,4 @@
 name: CI
-name: CI
 on: [push, pull_request]
 env:
   BASEDIR: https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master
