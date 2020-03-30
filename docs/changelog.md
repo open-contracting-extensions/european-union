@@ -1,11 +1,18 @@
 # Changelog
 
+## 2020-03-30
+
+### Fixed
+
+* V.2.5 Information about subcontracting (`/AWARD_CONTRACT/AWARDED_CONTRACT/DIRECTIVE_2009_81_EC`)
+  * Redo mapping of three elements related to Title III of Directive 2009/81/EC
+
 ## 2020-03-27
 
 ### Fixed
 
 * VII Changes (`/CHANGES`)
-  * [See GitHub discussion](https://github.com/open-contracting-extensions/european-union/issues/63)
+  * Redo mapping ([GitHub discussion](https://github.com/open-contracting-extensions/european-union/issues/63))
 
 ## 2020-03-12
 
@@ -45,7 +52,7 @@
 
 * T01, T02: Add "Release model" and "What's new" sections
 
-### Fixed
+### Changed
 
 * Fix typos that don't affect the mappings
 
