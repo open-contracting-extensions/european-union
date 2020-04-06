@@ -132,6 +132,7 @@ And these draft extensions:
 * [Communication](https://github.com/open-contracting-extensions/ocds_communication_extension)
 * [Contract Terms](https://github.com/open-contracting-extensions/ocds_contractTerms_extension)
 * [Covered By](https://github.com/open-contracting-extensions/ocds_coveredBy_extension)
+* [Design Contest](https://github.com/open-contracting-extensions/ocds_designContest_extension)
 * [European Union](https://github.com/open-contracting-extensions/ocds_eu_extension)
 * [Options](https://github.com/open-contracting-extensions/ocds_options_extension)
 * [Organization Classification](https://github.com/open-contracting-extensions/ocds_organizationClassification_extension)
@@ -143,6 +144,7 @@ And these draft extensions:
 * [Subcontracting](https://github.com/open-contracting-extensions/ocds_subcontracting_extension)
 * [Submission Terms](https://github.com/open-contracting-extensions/ocds_submissionTerms_extension)
 * [Techniques](https://github.com/open-contracting-extensions/ocds_techniques_extension)
+* [Unstructured Changes](https://github.com/open-contracting-extensions/ocds_unstructuredChanges_extension)
 
 ## We want your feedback!
 

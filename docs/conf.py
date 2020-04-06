@@ -98,7 +98,24 @@ gettext_domain_prefix = '{}-'.format(profile_identifier)
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/master/extension_versions.csv
 extension_versions = {
-    # 'extension_id_in_registry': 'version',
+    'awardCriteria': 'master',
+    'bidOpening': 'master',
+    'communication': 'master',
+    'contractTerms': 'master',
+    'coveredBy': 'master',
+    'designContest': 'master',
+    # 'eu': 'master',
+    'options': 'master',
+    'organizationClassification': 'master',
+    'otherRequirements': 'master',
+    'procedure': 'master',
+    'procurementMethodRationaleClassifications': 'master',
+    'secondStageDescription': 'master',
+    'selectionCriteria': 'master',
+    'subcontracting': 'master',
+    'submissionTerms': 'master',
+    'techniques': 'master',
+    'unstructuredChanges': 'master',
 }
 
 

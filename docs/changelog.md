@@ -1,5 +1,16 @@
 # Changelog
 
+### Added
+
+* Add Design Contest and Unstructured Changes extensions to home page
+
+## 2020-04-06
+
+### Changed
+
+* IV.3.4 Decision of the jury (`/PROCEDURE/DECISION_BINDING_CONTRACTING` and `/PROCEDURE/NO_DECISION_BINDING_CONTRACTING`)
+  * Rename `isBindingJuryDecision` to `bindingJuryDecision`
+
 ## 2020-03-30
 
 ### Fixed
