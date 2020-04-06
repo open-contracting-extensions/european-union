@@ -1,0 +1,6 @@
+Code,Title,Description,Extension
+invited,Invited,A bid has been invited from the listed tenderer(s).,Bid statistics and details
+pending,Pending,A bid has been submitted but not yet evaluated.,Bid statistics and details
+valid,Valid,The submitted bid met the qualification requirements in order to be evaluated.,Bid statistics and details
+disqualified,Disqualified,The submitted bid did not meet the qualification requirements in order to be evaluated.,Bid statistics and details
+withdrawn,Withdrawn,The submitted bid was withdrawn by the tenderer(s).,Bid statistics and details

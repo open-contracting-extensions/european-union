@@ -1,0 +1,6 @@
+Code,Title,Description
+ordinary,Ordinary voting rights,The shareholder is entitled to a single vote per share in all circumstances
+none,No voting rights,The shareholder is not entitled to vote under any circumstances
+restricted,Restricted voting rights,The shareholder is entitled to vote in specific circumstances only
+additional,Additional voting rights,The shareholder is entitled to more than one vote per share in all circumstances
+enhanced,Enhanced voting rights,The shareholder is entitled to more than one vote per share in specific circumstances only

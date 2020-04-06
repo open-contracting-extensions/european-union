@@ -1,0 +1,5 @@
+Code,Title,Description,Extension
+document,Document,A fee payable for access to bidding documents.,Participation Fees
+deposit,Deposit,A refundable fee payable for the submission of bids.,Participation Fees
+submission,Submission,A non-refundable fee payable for the submission of bids.,Participation Fees
+win,Win,A fee payable by the winning bidder.,Participation Fees

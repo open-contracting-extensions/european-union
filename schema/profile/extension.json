@@ -12,6 +12,16 @@
     "1.1"
   ],
   "codelists": [
+    "bidStatistics.csv",
+    "bidStatus.csv",
+    "chargePaidBy.csv",
+    "financeCategory.csv",
+    "financeType.csv",
+    "locationGazetteers.csv",
+    "geometryType.csv",
+    "participationFeeType.csv",
+    "partyScale.csv",
+    "votingRights.csv",
     "awardCriterionType.csv",
     "awardCriterionFixed.csv",
     "criterionWeight.csv",

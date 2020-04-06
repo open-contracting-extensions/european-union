@@ -1,0 +1,7 @@
+Code,Title,Description,Extension
+Point,Point,"For type 'Point', the 'coordinates' member is a single position.",Location
+MultiPoint,MultiPoint,"For type 'MultiPoint', the 'coordinates' member is an array of positions.",Location
+LineString,LineString,"For type 'LineString', the 'coordinates' member is an array of two or more positions.",Location
+MultiLineString,MultiLineString,"For type 'MultiLineString', the 'coordinates' member is an array of LineString coordinate arrays.",Location
+Polygon,Polygon,"For type 'Polygon', the 'coordinates' member MUST be an array of linear ring coordinate arrays.",Location
+MultiPolygon,MultiPolygon,"For type 'MultiPolygon', the 'coordinates' member is an array of Polygon coordinate arrays.",Location

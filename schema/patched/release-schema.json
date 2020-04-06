@@ -124,6 +124,27 @@
       "description": "The details of related processes: for example, if this process follows on from one or more other processes, represented under a separate open contracting identifier (ocid). This is commonly used to relate mini-competitions to their parent frameworks or individual tenders to a broader planning process.",
       "title": "Related processes",
       "type": "array"
+    },
+    "bids": {
+      "title": "Bids",
+      "description": "The bid section is used to publish summary statistics, and where applicable, individual bid information.",
+      "$ref": "#/definitions/Bids"
+    },
+    "title": {
+      "title": "Title",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "A overall title for this contracting process or release."
+    },
+    "description": {
+      "title": "Description",
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "An overall description for this contracting process or release. This should not replace provision of a detailed breakdown of the objects of the contracting process in the planning, tender, award or contracts section."
     }
   },
   "required": [
@@ -167,6 +188,15 @@
           "items": {
             "$ref": "#/definitions/Milestone"
           }
+        },
+        "forecasts": {
+          "type": "array",
+          "title": "Forecasts",
+          "description": "Any forecasts metrics for this results of this contracting process.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
         }
       },
       "patternProperties": {
@@ -443,6 +473,64 @@
             "deprecatedVersion": "1.1"
           }
         },
+        "lots": {
+          "title": "Lots",
+          "description": "A tender process may be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features can then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values should be interpreted as applicable to the whole tender. Properties of tender can be overridden for a given Lot through their inclusion in the Lot object.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Lot"
+          }
+        },
+        "lotDetails": {
+          "title": "Lot Details",
+          "description": "If this tender is divided into lots, details can be provided here of any criteria that apply to bidding on these lots. This extended property is currently focused on fields required by the EU TED data standard",
+          "type": "object",
+          "properties": {
+            "maximumLotsBidPerSupplier": {
+              "title": "Maximum lots per supplier",
+              "description": "The maximum number of lots that one supplier may bid for as part of this contracting process.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximumLotsAwardedPerSupplier": {
+              "title": "Maximum lots per supplier",
+              "description": "The maximum number of lots that may be awarded to one supplier as part of this contracting process.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        },
+        "lotGroups": {
+          "title": "Lot groups",
+          "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LotGroup"
+          }
+        },
+        "targets": {
+          "type": "array",
+          "title": "Targets",
+          "description": "Any target metrics for this results of this contracting process.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
+        },
+        "participationFees": {
+          "title": "Participation fees",
+          "description": "Any fees applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ParticipationFee"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        },
         "bidOpening": {
           "title": "Bid opening",
           "description": "The date, time, place and other details of the bid opening.",
@@ -704,6 +792,36 @@
             "deprecatedVersion": "1.1"
           }
         },
+        "relatedBid": {
+          "title": "Related bid",
+          "description": "Where bid details are used, a cross reference to the entry in the bids array to which this award relates. Provide the bid identifier here.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "If this award relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "agreedMetrics": {
+          "type": "array",
+          "title": "Agreed metrics",
+          "description": "Any target metrics set out as part of the contract award.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
+        },
         "hasSubcontracting": {
           "title": "Subcontracting involved",
           "description": "Whether a part of the contract will be subcontracted.",
@@ -869,6 +987,24 @@
             "description": "The single amendment object has been deprecated in favour of including amendments in an amendments (plural) array.",
             "deprecatedVersion": "1.1"
           }
+        },
+        "finance": {
+          "title": "Finance",
+          "description": "An array with details of each source of finance arranged for this contract.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Finance"
+          },
+          "uniqueItems": true
+        },
+        "agreedMetrics": {
+          "type": "array",
+          "title": "Agreed metrics",
+          "description": "Any target metrics set out as part of the contract documents.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
         }
       },
       "patternProperties": {
@@ -915,6 +1051,24 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Document"
+          },
+          "uniqueItems": true
+        },
+        "charges": {
+          "type": "array",
+          "title": "Charges",
+          "description": "Information on the revenue to be raised through charges, as set out in the contract or as subsequently revised during the life of the project.",
+          "items": {
+            "$ref": "#/definitions/Charge"
+          },
+          "uniqueItems": true
+        },
+        "metrics": {
+          "type": "array",
+          "title": "Metrics",
+          "description": "Reported results from the delivery of the contracted goods, works or services.",
+          "items": {
+            "$ref": "#/definitions/Metric"
           },
           "uniqueItems": true
         }
@@ -1027,6 +1181,19 @@
             "$ref": "#/definitions/Document"
           },
           "uniqueItems": true
+        },
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "If this milestone relates to a particular lot, provide the identifier(s) of the related lot(s) here.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
         }
       },
       "patternProperties": {
@@ -1129,6 +1296,19 @@
             "string",
             "null"
           ]
+        },
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "If this document relates to a particular lot, provide the identifier(s) of the related lot(s) here.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
         }
       },
       "patternProperties": {
@@ -1451,6 +1631,24 @@
           "description": "Additional classification information about parties can be provided using partyDetail extensions that define particular properties and classification schemes. ",
           "title": "Details",
           "properties": {
+            "scale": {
+              "title": "Scale",
+              "description": "The size or scale of the organization.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "micro",
+                "sme",
+                "small",
+                "medium",
+                "large",
+                null
+              ],
+              "codelist": "partyScale.csv",
+              "openCodelist": false
+            },
             "classifications": {
               "title": "Organization classifications",
               "description": "The classifications that categorize the organization",
@@ -1460,6 +1658,40 @@
               },
               "uniqueItems": true,
               "wholeListMerge": true
+            }
+          }
+        },
+        "additionalContactPoints": {
+          "title": "Additional contact points",
+          "description": "An array of additional contact points that may be consulted for information. Additional contact points should each list the languages they operate in their name, and as structured data in the availableLanguage field.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ContactPoint"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        },
+        "shareholders": {
+          "title": "Organization shareholders",
+          "description": "A list of shareholders in the organization: used to provide company ownership information for firms, primarily in the case of large and complex contracts, or Public Private Partnerships, that require disclosure of this information for certain bidders or awarded parties.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Shareholder"
+          },
+          "uniqueItems": true
+        },
+        "beneficialOwnership": {
+          "type": "object",
+          "title": "Beneficial ownership",
+          "description": "This section can be used to record information concerning individuals or organizations with a beneficial ownership or control interests in this party. Where structured data is available, this section may be extended by embedding or linking to information modelled using the [Beneficial Ownership Data Standard (BODS)](https://github.com/openownership/data-standard).",
+          "properties": {
+            "description": {
+              "title": "Description",
+              "description": "A free text description of beneficial ownership or control arrangements.",
+              "type": [
+                "string",
+                "null"
+              ]
             }
           }
         }
@@ -1576,6 +1808,24 @@
               ]
             }
           }
+        },
+        "deliveryLocation": {
+          "title": "Delivery Location",
+          "description": "The location where activity related to this tender, contract or license will be delivered, or will take place.",
+          "$ref": "#/definitions/Location"
+        },
+        "deliveryAddress": {
+          "title": "Delivery Address",
+          "description": "The address to which, or where, goods or services related to this tender, contract or license will be delivered.",
+          "$ref": "#/definitions/Address"
+        },
+        "relatedLot": {
+          "title": "Related lot",
+          "description": "If this item belongs to a lot, provide the identifier of the related lot here. Each item may only belong to a single lot.",
+          "type": [
+            "string",
+            "null"
+          ]
         }
       },
       "patternProperties": {
@@ -1894,6 +2144,18 @@
           ],
           "description": "A web address for the contact point/person.",
           "format": "uri"
+        },
+        "availableLanguage": {
+          "title": "Available languages",
+          "description": "The languages the contact point operates in, using either two-letter [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), or extended [BCP47 language tags](http://www.w3.org/International/articles/language-tags/). The use of lowercase two-letter codes from [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) is strongly recommended unless there is a clear user need for distinguishing the language subtype.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
         }
       },
       "patternProperties": {
@@ -2337,8 +2599,519 @@
         }
       }
     },
-    "Lot": {
+    "BidsStatistic": {
+      "title": "Bid Statistic",
+      "description": "For reporting aggregate statistics about the bids related to a tender. Where lots are in use, statistics may optionally be broken down by lot. ",
+      "type": "object",
+      "required": [
+        "id",
+        "measure",
+        "value"
+      ],
       "properties": {
+        "id": {
+          "title": "ID",
+          "description": "An internal identifier for this statistical item.",
+          "type": "string"
+        },
+        "measure": {
+          "title": "Measure",
+          "description": "An item from the bidStatistics codelist for the statistic reported in value. This is an open codelist, and other statistics may also be included.",
+          "type": "string",
+          "codelist": "bidStatistics.csv",
+          "openCodelist": true
+        },
+        "date": {
+          "title": "Date",
+          "description": "The date when this statistic was last updated. This is often the closing date of the tender process. This field can be left blank unless either (a) the same statistic is provided from multiple points in time, or (b) there is a specific local requirement for the date when statistics were calculated to be provided.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "value": {
+          "title": "Value",
+          "description": "The value for the measure in question. Total counts should be provided as an integer. Percentages should be presented as a proportion of 1 (e.g. 10% = 0.1)",
+          "type": "number"
+        },
+        "notes": {
+          "title": "Notes",
+          "description": "Any notes required to understand or interpret the given statistic.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relatedLot": {
+          "title": "Related Lot",
+          "description": "Where lots are in use, if this statistic relates to bids on a particular lot, provide the lot identifier here. If left blank, the statistic will be interpreted as applying to the whole tender.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Bids": {
+      "title": "Bids",
+      "description": "Summary and detailed information about bids received and evaluated as part of this contracting process.",
+      "type": "object",
+      "properties": {
+        "statistics": {
+          "title": "Statistics",
+          "description": "Summary statistics on the number and nature of bids received. Where information is provided on individual bids, these statistics should match those that can be calculated from the bid details array.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BidsStatistic"
+          }
+        },
+        "details": {
+          "title": "Bid details",
+          "description": "An array of bids, providing information on the bidders, and where applicable, bid status, bid values and related documents. The extent to which this information can be disclosed varies from jurisdiction to jurisdiction.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Bid"
+          }
+        }
+      }
+    },
+    "Bid": {
+      "title": "Bid",
+      "description": "For representing a bid in response to the tender or qualification stage in this contracting process.",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "A local identifier for this bid",
+          "type": [
+            "string"
+          ]
+        },
+        "date": {
+          "title": "Date",
+          "description": "The date when this bid was received.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "status": {
+          "title": "Status",
+          "description": "The status of the bid, drawn from the bidStatus codelist",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "bidStatus.csv",
+          "openCodelist": false,
+          "enum": [
+            "invited",
+            "pending",
+            "valid",
+            "disqualified",
+            "withdrawn",
+            null
+          ]
+        },
+        "tenderers": {
+          "title": "Tenderer",
+          "description": "The party, or parties, responsible for this bid. This should provide a name and identifier, cross-referenced to an entry in the parties array at the top level of the release.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          }
+        },
+        "value": {
+          "title": "Value",
+          "description": "The total value of the bid.",
+          "$ref": "#/definitions/Value"
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "All documents and attachments related to the bid and its evaluation.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Document"
+          },
+          "uniqueItems": true
+        },
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "If this bid relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        }
+      }
+    },
+    "Charge": {
+      "type": "object",
+      "title": "Charge",
+      "description": "A charge to be incurred by users or government over the course of the contract. Charge information can be broken down by period. Information on the unit prices upon which total values are based can be provided in the tariffs section. ",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Charge identifier",
+          "description": "A local identifier for this specific charge. This field is used to keep track of revisions of a charge across multiple OCDS releases.",
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "title": "Charge title",
+          "description": "A descriptive title for this charge.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "paidBy": {
+          "title": "Paid by",
+          "description": "Is this a user charge (paid by businesses or citizens using the facilities provided by the contract), or a charge paid by the government?",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "chargePaidBy.csv",
+          "openCodelist": false,
+          "enum": [
+            "government",
+            "user",
+            null
+          ]
+        },
+        "period": {
+          "title": "Period",
+          "description": "The period to which this charge applies.",
+          "$ref": "#/definitions/Period"
+        },
+        "estimatedValue": {
+          "title": "Estimated value",
+          "description": "What is the estimated total value to be raised from this charge during this period.",
+          "$ref": "#/definitions/Value"
+        },
+        "actualValue": {
+          "title": "Actual value",
+          "description": "In the implementation section, this field may be updated with the total revenue raised from this charge during this period.",
+          "$ref": "#/definitions/Value"
+        },
+        "notes": {
+          "title": "Notes",
+          "description": "Any notes on this charge. This may include clarifying information.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Finance": {
+      "title": "Financing arrangements",
+      "description": "This block can be used to model details of each of the parties financing a contract or project. Note: If the finance is syndicated, and all the parties to the syndication are known, this section may be further extended with an array of syndicate partners. No schema for this is currently provided.",
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "ID",
+          "description": "An identifier for this financing arrangement.",
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "title": "Title",
+          "description": "A short title for this financing arrangement.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "A short description of this financing arrangement. This may include details of lender rights, step in arrangements, exchange rate guarantees, and for syndicated loans, details of syndication and any banks who are known parties to the loan.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "financingParty": {
+          "title": "Financing party",
+          "description": "The party providing this financing arrangement.",
+          "$ref": "#/definitions/OrganizationReference"
+        },
+        "financeType": {
+          "title": "Finance type",
+          "description": "The type of finance arranged, from the finance type codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "financeType.csv",
+          "openCodelist": false,
+          "enum": [
+            "institutional",
+            "commercial",
+            "bilateral",
+            "multilateral",
+            "publicBondIssue",
+            "supplierCredit",
+            "other",
+            null
+          ]
+        },
+        "financeCategory": {
+          "title": "Finance category",
+          "description": "For categorizing the nature of any financial investment. This field must be filled in for debt finance. This information can be used to identify the order of preference for investors to get their money back in cases of liquidation.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "financeCategory.csv",
+          "openCodelist": false,
+          "enum": [
+            "equity",
+            "seniorDebt",
+            "mezzanineDebt",
+            "grant",
+            "guarantee",
+            "other",
+            null
+          ]
+        },
+        "value": {
+          "title": "Value",
+          "description": "The total value of this finance.",
+          "$ref": "#/definitions/Value"
+        },
+        "period": {
+          "title": "Finance period",
+          "description": "What period is covered by this finance.",
+          "$ref": "#/definitions/Period"
+        },
+        "interestRate": {
+          "type": "object",
+          "title": "Interest rate",
+          "description": "The interest rate associated with this finance.",
+          "properties": {
+            "base": {
+              "title": "Base",
+              "description": "The variable to which an additional margin amount is added to get the Interest amount. This can be specified as a fixed number, as a known variable (e.g. LIBOR), or can be omitted if margin specifies the entire interest rate.",
+              "type": [
+                "string",
+                "number",
+                "null"
+              ]
+            },
+            "margin": {
+              "title": "Margin",
+              "description": "The variable added to the base to give the Interest amount expressed as a decimal fraction (e.g. 12.5% = 0.125).",
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "fixed": {
+              "title": "Fixed rate",
+              "description": "A boolean field. If this interest rate of fixed, set to true. Otherwise, set to false.",
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "notes": {
+              "title": "Notes",
+              "description": "Any explanatory notes concerning the interest rate.",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "repaymentFrequency": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Repayment frequency (days)",
+          "description": "What is the average repayment frequency (in days) for this source of finance. For example, for yearly, use 365; for monthly repayment use 30.4; for daily use 1. User interfaces may wish to translate this into a more user-friendly presentation, such as 'daily','monthly' or 'yearly'.",
+          "minimum": 0
+        },
+        "stepInRights": {
+          "title": "Step in rights",
+          "description": "Does provision of this finance confer any step in rights on the financing party? Step in rights are the lender's option to assume certain contractual responsibilities of a project party through managing their contract in cases when that party is not meeting its obligations under such a contract. This is a true/false field to indicate when step in rights exist. If there are step in rights, details should be provided in the description field, and in additional contract documents.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "exchangeRateGuarantee": {
+          "title": "Exchange rate guarantees",
+          "description": "Is there an associated exchange rate guarantee with this source of finance. This is a true/false field to indicate when exchange rate guarantees exist. Details of any guarantees can be provided in the finance description, or in associated documents.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "Location": {
+      "type": "object",
+      "title": "Delivery Location",
+      "description": "The location where activity related to this tender, contract or license will be delivered, or will take place. A location can be described by either a geometry (point location, line or polygon), or a gazetteer entry, or both.",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "A name or description of this location. This might include the name(s) of the location(s), or might provide a human readable description of the location to be covered. This description may be used in a user-interface.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "geometry": {
+          "type": "object",
+          "title": "Geometry",
+          "description": "We follow the [GeoJSON standard](http://geojson.org/) to express basic location information, using longitude, latitude, and (optionally) elevation values in the [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System) (EPSG:4326) projection. A point location can be identified by geocoding a delivery address. For concession licenses, or other contracts covering a polygon location which is not contained in a known gazetteer, polygon and multi-polygon can be used.",
+          "properties": {
+            "type": {
+              "title": "Type",
+              "description": "The type of [GeoJSON Geometry Objects](http://geojson.org/geojson-spec.html#geometry-objects) being provided. To provide longitude, latitude, and (optionally) elevation, use 'Point', and enter an array of [longitude, latitude] or [longitude, latitude, elevation] as the value of the coordinates field: e.g. [-122.085, 37.42]. Note the capitalization of type values, in order to maintain compatibility with GeoJSON.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "Point",
+                "MultiPoint",
+                "LineString",
+                "MultiLineString",
+                "Polygon",
+                "MultiPolygon",
+                null
+              ],
+              "codelist": "geometryType.csv",
+              "openCodelist": false
+            },
+            "coordinates": {
+              "title": "Coordinates",
+              "description": "The relevant array of points, e.g. [longitude, latitude] or [longitude, latitude, elevation], or a nested array of points, for the GeoJSON geometry being described. The longitude and latitude MUST be expressed in decimal degrees in the WGS84 (EPSG:4326) projection.",
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "number",
+                  "array"
+                ]
+              }
+            }
+          }
+        },
+        "gazetteer": {
+          "type": "object",
+          "title": "Gazetteer",
+          "description": "A gazetteer is a geographical index or directory. The specific gazetteer used should be specified in scheme, and one or more codes from that gazetteer used in identifier.",
+          "properties": {
+            "scheme": {
+              "title": "Gazetteer scheme",
+              "description": "The entry of the selected gazetteer in the gazetteers codelist. The codelist provides details of services, where available, that can resolve a gazetteer entry to provide location names.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "codelist": "locationGazetteers.csv",
+              "openCodelist": true
+            },
+            "identifiers": {
+              "title": "Identifiers",
+              "description": "An array of one or more codes drawn from the gazetteer indicated in scheme.",
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": [
+                  "string"
+                ]
+              }
+            }
+          }
+        },
+        "uri": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "URI",
+          "description": "A URI to a further description of the activity location. This may be a human readable document with information on the location, or a machine-readable description of the location."
+        }
+      }
+    },
+    "Lot": {
+      "title": "Lots",
+      "description": "A lot is a grouping of items within a tender that can be bid on or awarded together.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Lot ID",
+          "type": "string",
+          "description": "A local identifier for this lot, such as a lot number. This is used in relatedLots references at the item, document and award level."
+        },
+        "title": {
+          "title": "Title",
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A title for this lot."
+        },
+        "description": {
+          "title": "Description",
+          "description": "A description of this lot.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "title": "Lot Status",
+          "description": "The current status of the process related to this lot based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1/en/schema/codelists/#tender-status)",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "tenderStatus.csv",
+          "openCodelist": false,
+          "enum": [
+            "planning",
+            "planned",
+            "active",
+            "cancelled",
+            "unsuccessful",
+            "complete",
+            "withdrawn",
+            null
+          ]
+        },
+        "value": {
+          "title": "Lot value",
+          "$ref": "#/definitions/Value",
+          "description": "The maximum estimated value of this lot."
+        },
         "awardCriteria": {
           "title": "Award criteria",
           "description": "Information about the award criteria for the lot.",
@@ -2386,6 +3159,336 @@
           "title": "Techniques",
           "description": "Information about the use of techniques, such as framework agreements, dynamic purchasing systems and electronic auctions.",
           "$ref": "#/definitions/Techniques"
+        }
+      }
+    },
+    "LotGroup": {
+      "title": "Lot group",
+      "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Lot group identifier",
+          "type": "string",
+          "description": "A local identifier for this group of lots."
+        },
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "A list of the identifiers of the lots that form this group. Lots may appear in more than one group.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "optionToCombine": {
+          "title": "Option to combine",
+          "description": "The buyer reserves the right to combine the lots in this group when awarding a contract.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "maximumValue": {
+          "title": "Maximum value",
+          "description": "The maximum estimated value of the lots in this group. This may be lower than the sum total of lot values",
+          "$ref": "#/definitions/Value"
+        }
+      }
+    },
+    "Metric": {
+      "type": "object",
+      "title": "Metric",
+      "description": "Metrics are used to set out targets and results from a contracting process. During the planning and tender sections, a metric indicates the anticipated results. In award and contract sections it indicates the awarded/contracted results. In the implementation section it is used to provide updates on actually delivered results, also known as outputs.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "description": "An identifier for this metric. In some cases this may be drawn from a codelist of metrics required for this type of contracting process, or in other instances may be an arbitrary identifier.",
+          "type": [
+            "string"
+          ],
+          "minLength": 1
+        },
+        "title": {
+          "title": "Title",
+          "description": "The title of this metric",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "A short description of the metric. This may include short details of measurement methods.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "observations": {
+          "type": "array",
+          "title": "Observations",
+          "description": "An array of target or actual values for this metric.",
+          "items": {
+            "$ref": "#/definitions/Observation"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "Observation": {
+      "type": "object",
+      "title": "Observation",
+      "description": "An actual or target observation. Observations should include either a value (for financial metrics) or measure (for other metrics). ",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Identifier",
+          "description": "A local identifier for this specific observation. This may be an arbitrary identifier, or could be a composite of the metric identifier, and the date and other dimensions of this observation.",
+          "type": "string",
+          "minLength": 1
+        },
+        "period": {
+          "title": "Period",
+          "description": "The period over which this observation is measured.",
+          "$ref": "#/definitions/Period"
+        },
+        "value": {
+          "title": "Value",
+          "description": "For financial metrics, the value of this forecast, target or actual observation.",
+          "$ref": "#/definitions/Value"
+        },
+        "measure": {
+          "title": "Measure",
+          "description": "For non-financial metrics, the measure of this forecast, target or actual observation. Measures may be provided as free text or numerical values.",
+          "type": [
+            "string",
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": "object",
+          "title": "Unit",
+          "description": "Unit",
+          "properties": {
+            "name": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Unit name",
+              "description": "The name of the unit."
+            },
+            "scheme": {
+              "title": "Scheme",
+              "description": "The list from which units of measure identifiers are taken. This should be an entry in the unitClassificationScheme codelist. Use of the scheme 'UNCEFACT' for the UN/CEFACT Recommendation 20 list of 'Codes for Units of Measure Used in International Trade' is recommended.   ",
+              "type": [
+                "string",
+                "null"
+              ],
+              "codelist": "unitClassificationScheme.csv",
+              "openCodelist": true
+            },
+            "id": {
+              "title": "ID",
+              "description": "The identifier from the codelist referenced in the schema property. For example, with UNCEFACT, this is the value of the 'Common Code' column. From this identifier, applications can look-up the human readable name or symbol for this unit of measure. ",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "uri": {
+              "title": "URI",
+              "description": "If the scheme used provide a machine-readable URI for this unit of measure, this can be given.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            }
+          }
+        },
+        "dimensions": {
+          "type": "object",
+          "title": "Dimensions",
+          "description": "Any number of dimensions can be recorded within this object. Dimensions names should follow the camelCase conventions of OCDS.",
+          "patternProperties": {
+            "^.*": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "notes": {
+          "title": "Notes",
+          "description": "Any notes on this observation. This may include clarifying information.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relatedImplementationMilestone": {
+          "title": "Related implementation milestone",
+          "description": "A link to the milestone in the implementation section of OCDS to which this forecast, target or actual observation relates.",
+          "$ref": "#/definitions/MilestoneReference"
+        }
+      }
+    },
+    "MilestoneReference": {
+      "type": "object",
+      "title": "Milestone Reference",
+      "description": "A block used to reference a milestone, including the ID and title of the milestone being referenced.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Milestone ID",
+          "description": "The ID of the milestone being referenced, this must match the ID of a milestone described elsewhere in a release about this contracting process.",
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "title": "Milestone title",
+          "description": "The title of the milestone being referenced, this must match the title of a milestone described elsewhere in a release about this contracting process.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ParticipationFee": {
+      "title": "Participation fee",
+      "description": "A fee applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Fee ID",
+          "description": "A local identifier for this fee, unique within this block. This field is used to keep track of multiple revisions of a fee through the compilation from release to record mechanism.",
+          "type": "string"
+        },
+        "type": {
+          "title": "Fee type",
+          "description": "A fees applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "document",
+              "deposit",
+              "submission",
+              "win"
+            ]
+          },
+          "codelist": "participationFeeType.csv",
+          "openCodelist": false
+        },
+        "value": {
+          "title": "Value",
+          "description": "The monetary value of this fee.",
+          "$ref": "#/definitions/Value"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Optional information about the way in which fees are levied, or the exact nature of the fees.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "methodOfPayment": {
+          "title": "Method(s) of payment",
+          "description": "Optional information about the way in which fees can be paid.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Shareholder": {
+      "type": "object",
+      "title": "Shareholder",
+      "description": "A shareholder in an organization.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Shareholder ID",
+          "description": "A local identifier for this shareholder, unique within this block. This field is used to keep track of multiple revisions of a shareholder through the compilation from release to record mechanism.",
+          "type": [
+            "string"
+          ],
+          "minLength": 1
+        },
+        "shareholder": {
+          "title": "Shareholder organization reference.",
+          "description": "An organization reference pointing the entry in the parties section for the shareholding organization.",
+          "$ref": "#/definitions/OrganizationReference"
+        },
+        "shareholding": {
+          "title": "Shareholding",
+          "description": "The percentage of shares held by the shareholder, expressed as a decimal value between 0 and 1.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "votingRights": {
+          "title": "Shareholder voting rights",
+          "description": "Specify the type of voting rights associated with the shares held by the shareholder against the voting rights codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "votingRights.csv",
+          "openCodelist": false,
+          "enum": [
+            "ordinary",
+            "none",
+            "restricted",
+            "additional",
+            "enhanced",
+            null
+          ]
+        },
+        "votingRightsDetails": {
+          "title": "Shareholder voting rights details",
+          "description": "Detailed information about the shareholder's voting rights. This field should be completed when the shareholder voting rights are restricted, additional or enhanced.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "title": "Shareholder notes",
+          "description": "Additional notes on this shareholder. This field should be used to provide details on any caps on equity transfer, or lock-in arrangements, applicable to this shareholder.",
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
