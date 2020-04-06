@@ -1,0 +1,4 @@
+Code,Title,Description,Extension
+price,Price,The criterion concerns the acquisition price of the bid.,Award criteria breakdown
+cost,Cost,The criterion concerns any other non-price monetary attribute of the bid.,Award criteria breakdown
+quality,Quality,"The criterion concerns a non-price, non-cost attribute of the bid.",Award criteria breakdown

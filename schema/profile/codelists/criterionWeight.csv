@@ -1,0 +1,8 @@
+Code,Title,Description
+percentageExact,"Weight (percentage, exact)",The number is an exact percentage. The numbers must add up to 100.
+percentageRangeMiddle,"Weight (percentage, middle of a range)",The weighting is expressed as a range of percentages. The sum of the minima must be less than or equal to 100. The sum of the maxima must be equal to or greater than 100.
+decimalExact,"Weight (decimal, exact)",The number is an exact finite decimal proper fraction. The numbers must add up to 1.
+decimalRangeMiddle,"Weight (decimal, middle of a range)",The weighting is expressed as a range of finite decimal proper fractions. The sum of the minima must be less than or equal to 1. The sum of the maxima must be equal to or greater than 1.
+pointsExact,"Weight (points, exact)",The weighting is expressed as an exact number of points.
+pointsRangeMiddle,"Weight (points, middle of a range)",The weighting is expressed as a range of numbers of points.
+order,Order of importance,The number indicates an order of importance.

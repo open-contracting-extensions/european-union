@@ -1,0 +1,4 @@
+Code,Title,Description,Extension
+withReopeningCompetition,With reopening of competition,Contracts are awarded by reopening the competition (e.g. mini-competition or mini-tender).,Techniques
+withoutReopeningCompetition,Without reopening of competition,Contracts are awarded without the reopening of competition (e.g. direct call-off or direct award).,Techniques
+withAndWithoutReopeningCompetition,With and without reopening of competition,Contracts are awarded both with and without the reopening of competition.,Techniques

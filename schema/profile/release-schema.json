@@ -1,0 +1,1183 @@
+{
+  "definitions": {
+    "Lot": {
+      "properties": {
+        "awardCriteria": {
+          "title": "Award criteria",
+          "description": "Information about the award criteria for the lot.",
+          "$ref": "#/definitions/AwardCriteria"
+        },
+        "contractTerms": {
+          "title": "Contract terms",
+          "description": "Information about the terms governing the future contracts for the lot.",
+          "$ref": "#/definitions/ContractTerms"
+        },
+        "options": {
+          "title": "Options",
+          "description": "A description of the options.",
+          "$ref": "#/definitions/Options"
+        },
+        "hasOptions": {
+          "title": "Options used",
+          "description": "Whether the buyer reserves the right to make additional purchases from the supplier, as long as the contract is valid.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "otherRequirements": {
+          "title": "Other requirements",
+          "description": "Other requirements to participate in the lot.",
+          "$ref": "#/definitions/OtherRequirements"
+        },
+        "secondStage": {
+          "title": "Second stage",
+          "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
+          "$ref": "#/definitions/SecondStage"
+        },
+        "selectionCriteria": {
+          "title": "Selection criteria",
+          "description": "Information about the conditions for participation in a lot.",
+          "$ref": "#/definitions/SelectionCriteria"
+        },
+        "submissionTerms": {
+          "title": "Submission terms",
+          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids for the lot.",
+          "$ref": "#/definitions/SubmissionTerms"
+        },
+        "techniques": {
+          "title": "Techniques",
+          "description": "Information about the use of techniques, such as framework agreements, dynamic purchasing systems and electronic auctions.",
+          "$ref": "#/definitions/Techniques"
+        }
+      }
+    },
+    "AwardCriteria": {
+      "title": "Award criteria",
+      "description": "Information about the award criteria.",
+      "type": "object",
+      "properties": {
+        "weightingDescription": {
+          "title": "Complicated weighting description",
+          "description": "When the weighting cannot be expressed per criterion, the mathematical equation (or other description) that expresses the complicated (e.g. non-linear) weighting.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "orderRationale": {
+          "title": "Justification for order of importance",
+          "description": "The justification for only indicating the award criteria's order of importance, not their weighting.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "criteria": {
+          "title": "Award criteria",
+          "description": "The award criteria.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AwardCriterion"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "AwardCriterion": {
+      "title": "Award criterion",
+      "description": "Information about the award criterion.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "description": "The aspect of the bid that the criterion concerns.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "awardCriterionType.csv",
+          "openCodelist": true
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the criterion.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the criterion.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "numbers": {
+          "title": "Numbers",
+          "description": "Numbers linked to the criterion.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AwardCriterionNumber"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "AwardCriterionNumber": {
+      "title": "Award criterion number",
+      "description": "Information about a number linked to an award criterion.",
+      "type": "object",
+      "properties": {
+        "number": {
+          "title": "Number",
+          "description": "The number.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "weight": {
+          "title": "Weight",
+          "description": "Whether the number is a type of weight.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "criterionWeight.csv",
+          "openCodelist": false,
+          "enum": [
+            "percentageExact",
+            "percentageRangeMiddle",
+            "decimalExact",
+            "decimalRangeMiddle",
+            "pointsExact",
+            "pointsRangeMiddle",
+            "order",
+            null
+          ]
+        },
+        "fixed": {
+          "title": "Fixed",
+          "description": "Whether the number is a fixed value.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "awardCriterionFixed.csv",
+          "openCodelist": false,
+          "enum": [
+            "total",
+            "unit",
+            null
+          ]
+        },
+        "threshold": {
+          "title": "Threshold",
+          "description": "Whether the number is a type of threshold.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "criterionThreshold.csv",
+          "openCodelist": false,
+          "enum": [
+            "minimumScore",
+            "maximumBids",
+            null
+          ]
+        }
+      }
+    },
+    "Tender": {
+      "properties": {
+        "bidOpening": {
+          "title": "Bid opening",
+          "description": "The date, time, place and other details of the bid opening.",
+          "$ref": "#/definitions/BidOpening"
+        },
+        "communication": {
+          "title": "Communication",
+          "description": "Modalities of communication about key events.",
+          "type": "object",
+          "properties": {
+            "atypicalToolUrl": {
+              "title": "Atypical tool URL",
+              "description": "Electronic communication with the procuring entity requires the use of tools and devices that are not generally available. These tools are accessible via this URL.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "futureNoticeDate": {
+              "title": "Future notice date",
+              "description": "The estimated date of publication of the next sequential notice.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "date-time"
+            }
+          }
+        },
+        "contractTerms": {
+          "title": "Contract terms",
+          "description": "Information about the terms governing the future contracts from the procedure.",
+          "$ref": "#/definitions/ContractTerms"
+        },
+        "coveredBy": {
+          "title": "Covered by",
+          "description": "The treaties, laws, regulations or other instruments that the contracting process is covered by.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "codelist": "coveredBy.csv",
+          "openCodelist": true,
+          "uniqueItems": true
+        },
+        "designContest": {
+          "title": "Design contest",
+          "description": "Information about the organization of a design contest.",
+          "$ref": "#/definitions/DesignContest"
+        },
+        "options": {
+          "title": "Options",
+          "description": "A description of the options.",
+          "$ref": "#/definitions/Options"
+        },
+        "hasOptions": {
+          "title": "Options used",
+          "description": "Whether or not the buyer reserves the right to make additional purchases from the supplier, as long as the contract is valid.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "otherRequirements": {
+          "title": "Other requirements",
+          "description": "Other requirements to participate in the procedure.",
+          "$ref": "#/definitions/OtherRequirements"
+        },
+        "procedure": {
+          "title": "Procedure",
+          "description": "Information about the procurement procedure.",
+          "$ref": "#/definitions/Procedure"
+        },
+        "procurementMethodRationaleClassifications": {
+          "title": "Procurement method rationale classifications",
+          "description": "The classifications of the procurement method rationale.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Classification"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        },
+        "secondStage": {
+          "title": "Second stage",
+          "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
+          "$ref": "#/definitions/SecondStage"
+        },
+        "selectionCriteria": {
+          "title": "Selection criteria",
+          "description": "Information about the conditions for participation in a procedure.",
+          "$ref": "#/definitions/SelectionCriteria"
+        },
+        "submissionTerms": {
+          "title": "Submission terms",
+          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids for the procedure.",
+          "$ref": "#/definitions/SubmissionTerms"
+        },
+        "techniques": {
+          "title": "Techniques",
+          "description": "Information about the use of techniques, such as framework agreements, dynamic purchasing systems and electronic auctions.",
+          "$ref": "#/definitions/Techniques"
+        }
+      }
+    },
+    "BidOpening": {
+      "title": "Bid opening",
+      "description": "The date, time, place and other details of the bid opening.",
+      "type": "object",
+      "properties": {
+        "date": {
+          "title": "Date and time",
+          "description": "The date and time of the bid opening.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "location": {
+          "title": "Location",
+          "description": "The place where the bid opening occurs.",
+          "$ref": "#/definitions/Location"
+        },
+        "address": {
+          "title": "Address",
+          "description": "The address of the place where the bid opening occurs.",
+          "$ref": "#/definitions/Address"
+        },
+        "description": {
+          "title": "Details",
+          "description": "Any other details about the bid opening (who can participate, whether authorization is needed, etc.).",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ContractTerms": {
+      "title": "Contract terms",
+      "description": "Information about the terms governing the future contracts.",
+      "type": "object",
+      "properties": {
+        "hasElectronicPayment": {
+          "title": "Electronic payment used",
+          "description": "Whether electronic payment is used.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "hasElectronicOrdering": {
+          "title": "Electronic ordering used",
+          "description": "Whether electronic ordering is used.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "electronicInvoicingPolicy": {
+          "title": "Electronic invoicing policy",
+          "description": "Whether the buyer will require, allow or not allow electronic invoices.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "permission.csv",
+          "enum": [
+            "required",
+            "allowed",
+            "notAllowed",
+            null
+          ]
+        },
+        "reservedExecution": {
+          "title": "Reserved execution",
+          "description": "Whether the execution of the contract is restricted to the framework of sheltered employment programmes.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "performanceTerms": {
+          "title": "Terms performance",
+          "description": "The main information about the performance of the contract (e.g. intermediary deliverables, compensation for damages, intellectual property rights).",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "financialTerms": {
+          "title": "Financial terms",
+          "description": "The main information about financing and payment and/or reference to any provisions that govern them.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tendererLegalForm": {
+          "title": "Tenderer legal form",
+          "description": "A certain legal form that must be taken by a group of tenderers that is awarded a contract.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hasExclusiveRights": {
+          "title": "Has exclusive rights",
+          "description": "A right entitling a public service operator to operate certain public passenger transport services on a particular route or network or in a particular area, to the exclusion of any other such operator.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "exclusiveRights": {
+          "title": "Exclusive rights",
+          "description": "The nature and extent of the exclusive rights granted by the procuring entity to the contractor.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "operatorRevenueShare": {
+          "title": "Operator revenue share",
+          "description": "The percentage of revenue from the sale of tickets allocated to the contractor.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 1,
+          "minimum": 0
+        },
+        "otherTerms": {
+          "title": "Other terms",
+          "description": "Other contract terms that do not fit the semantics of any other OCDS field.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rewardsAndPenalties": {
+          "title": "Rewards and penalties",
+          "description": "Information about rewards and penalties relating to quality targets.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "socialStandards": {
+          "title": "Social standards",
+          "description": "The required social standards, for example: detail of the contractual rights of the staff concerned, and conditions under which employees are considered to be linked to the services.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "DesignContest": {
+      "title": "Design contest",
+      "description": "Information about the organization of a design contest.",
+      "type": "object",
+      "properties": {
+        "selectedParticipants": {
+          "title": "Selected participants",
+          "description": "The parties that have already been selected to participate to the design contest.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          },
+          "uniqueItems": true
+        },
+        "hasPrizes": {
+          "title": "Has prizes",
+          "description": "Whether prizes will be awarded in the design contest.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "prizes": {
+          "title": "Prizes",
+          "description": "Information about the prizes awarded in the design contest.",
+          "type": "object",
+          "properties": {
+            "description": {
+              "title": "Description",
+              "description": "The description of the prizes.",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "rewardsDetails": {
+          "title": "Rewards details",
+          "description": "The details and conditions of the payments to be made to the participants.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "followUpContracts": {
+          "title": "Follow-up contracts",
+          "description": "Whether any contracts following the design contest will be awarded to the winner or winners of the design contest.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "bindingJuryDecision": {
+          "title": "Binding jury decision",
+          "description": "Whether the jury’s decision is binding on the procuring entity.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "juryMembers": {
+          "title": "Jury members",
+          "description": "The members of the jury.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JuryMember"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "JuryMember": {
+      "title": "Jury member",
+      "description": "Member of the jury.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "The name of the jury member.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Options": {
+      "title": "Options",
+      "description": "A description of the options.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "A description of the options.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Organization": {
+      "properties": {
+        "details": {
+          "properties": {
+            "classifications": {
+              "title": "Organization classifications",
+              "description": "The classifications that categorize the organization",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Classification"
+              },
+              "uniqueItems": true,
+              "wholeListMerge": true
+            }
+          }
+        }
+      }
+    },
+    "OtherRequirements": {
+      "title": "Other requirements",
+      "description": "Other requirements to participate in the procedure or lot.",
+      "type": "object",
+      "properties": {
+        "requiresStaffNamesAndQualifications": {
+          "title": "Requires staff names and qualifications",
+          "description": "Whether the bidders are obligated to indicate the names and professional qualifications of the staff assigned to performing the contract.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "reservedParticipation": {
+          "title": "Reserved participation",
+          "description": "The types of organizations to which participation is reserved.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "codelist": "reservedParticipation.csv",
+          "openCodelist": true
+        },
+        "qualificationSystemConditions": {
+          "title": "Qualification system conditions",
+          "description": "The conditions to be fulfilled by candidates in view of their qualification for the system.",
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "qualificationSystemMethods": {
+          "title": "Qualification system methods",
+          "description": "The methods according to which each of the qualification system conditions will be verified.",
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "reductionCriteria": {
+          "title": "Reduction criteria",
+          "description": "The criteria or rules for selecting a limited number of qualified candidates to submit bids.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Procedure": {
+      "title": "Procedure",
+      "description": "Information about the procurement procedure.",
+      "type": "object",
+      "properties": {
+        "isAccelerated": {
+          "title": "Accelerated procedure used",
+          "description": "Whether the time limit for receipt of bids or requests to participate can be reduced due to a state of urgency.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "acceleratedRationale": {
+          "title": "Accelerated procedure rationale",
+          "description": "The justification for using an accelerated procedure.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "SecondStage": {
+      "title": "Second stage",
+      "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
+      "type": "object",
+      "properties": {
+        "minimumCandidates": {
+          "title": "Minimum number of candidates",
+          "description": "The minimum number of candidates to be invited for the second stage of the procedure. If there is an exact limit on the number of candidates, set `minimumCandidates` and `maximumCandidates` to the same number.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "maximumCandidates": {
+          "title": "Maximum number of candidates",
+          "description": "The maximum number of candidates to be invited for the second stage of the procedure. If there is an exact limit on the number of candidates, set `minimumCandidates` and `maximumCandidates` to the same number.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "successiveReduction": {
+          "title": "Successive reduction",
+          "description": "The procedure will take place in successive stages. In each stage, some participants might be eliminated.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "noNegotiationNecessary": {
+          "title": "No negotiation necessary",
+          "description": "The buyer or procuring entity reserves the right to award the contract on the basis of the initial bids without any further negotiations.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "invitationDate": {
+          "title": "Invitation date",
+          "description": "The estimated date of dispatch of the invitations to participate or to submit bids.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "SelectionCriteria": {
+      "title": "Selection criteria",
+      "description": "Information about conditions for participation.",
+      "type": "object",
+      "properties": {
+        "criteria": {
+          "title": "Selection criteria",
+          "description": "The selection criteria.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SelectionCriterion"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "SelectionCriterion": {
+      "title": "Selection criterion",
+      "description": "Information about the selection criterion.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "description": "The type of the criterion.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "technical",
+            "economic",
+            "suitability",
+            "other",
+            null
+          ],
+          "codelist": "selectionCriterionType.csv",
+          "openCodelist": false
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the criterion.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "minimum": {
+          "title": "Minimum value or level",
+          "description": "The minimum value or level of compliance a candidate needs to meet in order to participate.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Award": {
+      "properties": {
+        "hasSubcontracting": {
+          "title": "Subcontracting involved",
+          "description": "Whether a part of the contract will be subcontracted.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "subcontracting": {
+          "title": "Subcontracting",
+          "description": "Information about the parts of the contract that the supplier will subcontract to third parties.",
+          "$ref": "#/definitions/Subcontracting"
+        }
+      }
+    },
+    "Subcontracting": {
+      "title": "Subcontracting",
+      "description": "Information about the parts of the contract that the supplier will subcontract to third parties.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "The description of the part of the contract that the supplier will subcontract to third parties.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maximumPercentage": {
+          "title": "Maximum percentage of contract value",
+          "description": "The maximum percentage of the contract value that will be subcontracted.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 1,
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "minimumPercentage": {
+          "title": "Minimum percentage of contract value",
+          "description": "The minimum percentage of the contract value that will be subcontracted.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 1,
+          "minimum": 0
+        },
+        "competitiveMaximumPercentage": {
+          "title": "Maximum percentage of contract value for competitive subcontracting",
+          "description": "The maximum percentage of the contract value that the procuring entity requires the supplier to subcontract to third parties through a competitive procedure.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 1,
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "competitiveMinimumPercentage": {
+          "title": "Minimum percentage of contract value for competitive subcontracting",
+          "description": "The minimum percentage of the contract value that the procuring entity requires the supplier to subcontract to third parties through a competitive procedure.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 1,
+          "minimum": 0
+        },
+        "value": {
+          "title": "Subcontracted value",
+          "description": "The estimated value of the part of the contract that the supplier will subcontract to third parties.",
+          "$ref": "#/definitions/Value"
+        },
+        "competitive": {
+          "title": "Competitive subcontracting",
+          "description": "Whether the supplier will subcontract part of the contract to third parties through a competitive procedure.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "SubmissionTerms": {
+      "title": "Submission terms",
+      "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids.",
+      "type": "object",
+      "properties": {
+        "electronicSubmissionPolicy": {
+          "title": "Electronic submission policy",
+          "description": "Whether tenderers are required, allowed or not allowed to submit bids electronically.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "permission.csv",
+          "enum": [
+            "required",
+            "allowed",
+            "notAllowed",
+            null
+          ]
+        },
+        "variantPolicy": {
+          "title": "Variant policy",
+          "description": "Whether tenderers are required, allowed or not allowed to submit tenders which fulfill the buyer's needs differently than as proposed in the procurement documents.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "permission.csv",
+          "enum": [
+            "required",
+            "allowed",
+            "notAllowed",
+            null
+          ]
+        },
+        "electronicCataloguePolicy": {
+          "title": "Electronic catalogue policy",
+          "description": "Whether tenderers are required, allowed or not allowed to submit bids as electronic catalogues.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "permission.csv",
+          "enum": [
+            "required",
+            "allowed",
+            "notAllowed",
+            null
+          ]
+        },
+        "languages": {
+          "title": "Submission language",
+          "description": "One or more languages in which bids or requests to participate can be submitted, using either two-letter [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), or extended [BCP47 language tags](http://www.w3.org/International/articles/language-tags/). The use of lowercase two-letter codes from [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) is recommended.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "bidValidityPeriod": {
+          "title": "Bid valididity period",
+          "description": "The period, from the bid submission deadline, for which bids must remain valid.",
+          "$ref": "#/definitions/Period"
+        },
+        "requiresGuarantees": {
+          "title": "Guarantees required",
+          "description": "Whether or not a financial guarantee is required.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "Techniques": {
+      "title": "Techniques",
+      "description": "Information about the use of techniques, such as framework agreements, dynamic purchasing systems and electronic auctions.",
+      "type": "object",
+      "properties": {
+        "hasFrameworkAgreement": {
+          "title": "Framework agreement involved",
+          "description": "Whether a framework agreement is involved.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "frameworkAgreement": {
+          "title": "Framework agreement",
+          "description": "Information about the framework agreement.",
+          "$ref": "#/definitions/FrameworkAgreement"
+        },
+        "hasDynamicPurchasingSystem": {
+          "title": "Dynamic purchasing system involved",
+          "description": "Whether a dynamic purchasing system is involved.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "dynamicPurchasingSystem": {
+          "title": "Dynamic purchasing system",
+          "description": "Information about the dynamic purchasing system.",
+          "$ref": "#/definitions/DynamicPurchasingSystem"
+        },
+        "hasElectronicAuction": {
+          "title": "Electronic auction used",
+          "description": "Whether an electronic auction is used.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "electronicAuction": {
+          "title": "Electronic auction",
+          "description": "Information about the electronic auction.",
+          "$ref": "#/definitions/ElectronicAuction"
+        }
+      }
+    },
+    "FrameworkAgreement": {
+      "title": "Framework agreement",
+      "description": "Information about the framework agreement.",
+      "type": "object",
+      "properties": {
+        "maximumParticipants": {
+          "title": "Maximum number of participants",
+          "description": "The maximum number of participants in the framework agreement. If there is no maximum, set to 1e9999 (which parses to infinity).",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "method": {
+          "title": "Method",
+          "description": "Whether contracts are awarded with, without, or both with and without the reopening of competition.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "frameworkAgreementMethod.csv",
+          "enum": [
+            "withReopeningCompetition",
+            "withoutReopeningCompetition",
+            "withAndWithoutReopeningCompetition",
+            null
+          ]
+        },
+        "periodRationale": {
+          "title": "Duration rationale",
+          "description": "The justification for exceptional cases when the duration of a framework agreement exceeds the legal limits.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "buyerCategories": {
+          "title": "Buyer categories",
+          "description": "Any additional categories of buyers participating in the framework agreement and not mentioned by name (e.g. 'all hospitals in the Tuscany region').",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "DynamicPurchasingSystem": {
+      "title": "Dynamic purchasing system",
+      "description": "Information about the dynamic purchasing system.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "description": "In the case of central purchasing bodies, whether the dynamic purchasing system can be used by buyers not listed in the contracting process.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "dynamicPurchasingSystemType.csv",
+          "enum": [
+            "open",
+            "closed",
+            null
+          ]
+        },
+        "status": {
+          "title": "Status",
+          "description": "The status of the dynamic purchasing system.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "dynamicPurchasingSystemStatus.csv",
+          "enum": [
+            "pending",
+            "active",
+            "cancelled",
+            "terminated",
+            null
+          ]
+        }
+      }
+    },
+    "ElectronicAuction": {
+      "title": "Electronic auction",
+      "description": "Information about the electronic auction.",
+      "type": "object",
+      "properties": {
+        "url": {
+          "title": "URL",
+          "description": "The internet address of the electronic auction.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "Any additional information about the electronic auction.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Amendment": {
+      "properties": {
+        "unstructuredChanges": {
+          "title": "Unstructured changes",
+          "description": "Unstructured or semi-structured changes to an earlier notice.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/UnstructuredChange"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        }
+      }
+    },
+    "UnstructuredChange": {
+      "title": "Unstructured change",
+      "description": "Unstructured or semi-structured change to an earlier notice.",
+      "type": "object",
+      "properties": {
+        "relatedLot": {
+          "title": "Related lot",
+          "description": "The identifier of the lot to which this change relates, if any.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "oldValue": {
+          "title": "Old value",
+          "description": "The value of the data element referenced by the `where` field, before the change.",
+          "$ref": "#/definitions/UnstructuredChangeValue"
+        },
+        "newValue": {
+          "title": "New value",
+          "description": "The value of the data element referenced by the `where` field, after the change.",
+          "$ref": "#/definitions/UnstructuredChangeValue"
+        },
+        "where": {
+          "title": "Where",
+          "description": "A reference to a data element on an earlier notice that is being changed.",
+          "type": "object",
+          "properties": {
+            "section": {
+              "title": "Section",
+              "description": "The identifier of the section containing the data element, if the earlier notice is organized into sections.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "label": {
+              "title": "Label",
+              "description": "The label for the data element.",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "UnstructuredChangeValue": {
+      "title": "Unstructured change value",
+      "description": "A value of a data element. The value must be described using only one of the fields `text`, `classifications` or `date`.",
+      "type": "object",
+      "properties": {
+        "text": {
+          "title": "Text value",
+          "description": "A text. If the change deleted or erased the data element, use the empty string (\"\").",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "classifications": {
+          "title": "Classifications",
+          "description": "A list of classifications.",
+          "type": [
+            "array"
+          ],
+          "items": {
+            "$ref": "#/definitions/Classification"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        },
+        "date": {
+          "title": "Date",
+          "description": "A date.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

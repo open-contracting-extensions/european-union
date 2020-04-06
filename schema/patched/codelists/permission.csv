@@ -1,0 +1,4 @@
+Code,Title,Description,Extension
+required,Required,The activity is required.,Contract terms
+allowed,Allowed,The activity is allowed.,Contract terms
+notAllowed,Not allowed,The activity is not allowed.,Contract terms

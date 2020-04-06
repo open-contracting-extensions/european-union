@@ -1,0 +1,3 @@
+Code,Title,Description
+total,Fixed (total),"The number is the fixed price or fixed cost for the bid. For example: 'The price of a bid must be $100,000.'"
+unit,Fixed (per unit),The number is the fixed price or fixed cost for a unit. For example: 'The price of each widget must be $100.'

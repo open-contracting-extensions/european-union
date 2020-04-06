@@ -10,5 +10,18 @@
   },
   "compatibility": [
     "1.1"
+  ],
+  "codelists": [
+    "awardCriterionType.csv",
+    "awardCriterionFixed.csv",
+    "criterionWeight.csv",
+    "criterionThreshold.csv",
+    "permission.csv",
+    "coveredBy.csv",
+    "reservedParticipation.csv",
+    "selectionCriterionType.csv",
+    "dynamicPurchasingSystemType.csv",
+    "dynamicPurchasingSystemStatus.csv",
+    "frameworkAgreementMethod.csv"
   ]
 }

@@ -1,0 +1,5 @@
+Code,Title,Description
+pending,Pending,The DPS has not yet started.
+active,Active,The DPS has started.
+cancelled,Cancelled,The DPS has been cancelled prior to starting.
+terminated,Terminated,"The DPS had started, and has now come to a close. This might be due to its successful completion, or might be early termination due to some non-completion."
