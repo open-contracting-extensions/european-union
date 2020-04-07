@@ -6,19 +6,19 @@
 
 * Add Design Contest and Unstructured Changes extensions to home page
 * I.1 National registration number (`/CONTRACTING_BODY/ADDRESS_CONTRACTING_BODY/NATIONALID`)
-  * Add a link to the [identifiers reference](https://standard.open-contracting.org/1.1/en/schema/identifiers/#organization-ids)
+  * Add a link to the [identifiers reference](https://standard.open-contracting.org/1.1/en/schema/identifiers/#organization-ids) in the OCDS documentation
 * I.3 Tenders or requests to participate must be submitted to the following address (`/CONTRACTING_BODY/ADDRESS_PARTICIPATION`)
   * Clarify that the XML elements are mapped as a formatted string
 
 ### Changed
 
 * IV.3.4 Decision of the jury (`/PROCEDURE/DECISION_BINDING_CONTRACTING` and `/PROCEDURE/NO_DECISION_BINDING_CONTRACTING`)
-  * Rename `isBindingJuryDecision` to `bindingJuryDecision`
+  * Rename `isBindingJuryDecision` to `bindingJuryDecision` to follow schema style guide
 
 ### Fixed
 
 * II.2.13 Information about European Union funds (`/OBJECT_CONTRACT/OBJECT_DESCR/EU_PROGR_RELATED`)
-  * Fix indentation of instruction for `relatedLots`
+  * Fix the indentation of the instruction for `relatedLots`
 
 ## 2020-03-30
 
@@ -32,7 +32,7 @@
 ### Fixed
 
 * VII Changes (`/CHANGES`)
-  * Redo mapping ([GitHub discussion](https://github.com/open-contracting-extensions/european-union/issues/63))
+  * Redo mapping of all elements ([GitHub discussion](https://github.com/open-contracting-extensions/european-union/issues/63))
 
 ## 2020-03-12
 
@@ -55,7 +55,7 @@
 ### Fixed
 
 * F12: III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION`)
-  * Unlike earlier forms, F12 has `/LEFTI/NO_PARTICULAR_PROFESSION`, and the XML schema for `/LEFTI/PARTICULAR_PROFESSION` differs.
+  * Unlike earlier forms, F12 has `/LEFTI/NO_PARTICULAR_PROFESSION`, and the XML schema for `/LEFTI/PARTICULAR_PROFESSION` differs
 * F23, F25: D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU (`/PROCEDURE/DIRECTIVE_2014_23_EU/PT_AWARD_CONTRACT_WITHOUT_PUBLICATION/D_ACCORDANCE_ARTICLE`)
   * The `.id` was the same (instead of different) for all mappings
 
@@ -87,7 +87,7 @@
 
 ### Added
 
-* Add missing mappings for T01, T02.
+* Add missing mappings for T01, T02
 
 ### Fixed
 
@@ -109,14 +109,14 @@
 
 ### Changed
 
-* [Create a release](../operations/#create-a-release): Use a new `ocid` for a contract award notice for an award within a framework agreement or dynamic purchasing system.
+* [Create a release](../operations/#create-a-release): Use a new `ocid` for a contract award notice for an award within a framework agreement or dynamic purchasing system
 
 ## 2019-11-15
 
 ### Added
 
-* F23, F25, T02: Add mapping to `Award.id`.
-* Add missing mappings for F23, F25.
+* F23, F25, T02: Add mapping to `Award.id`
+* Add missing mappings for F23, F25
 
 ## 2019-11-07
 
@@ -147,7 +147,7 @@
 ### Fixed
 
 * V.2.5 Value or proportion likely to be subcontracted to third parties
-  * *Proportion*: Expand `minPercentage` and `maxPercentage` into `minimumPercentage` and `maximumPercentage` to match other field names.
+  * *Proportion*: Expand `minPercentage` and `maxPercentage` into `minimumPercentage` and `maximumPercentage` to match other field names
 
 ## 2019-10-18
 
@@ -198,7 +198,7 @@
 
 ### Added
 
-* Add missing mappings for F12, F21.
+* Add missing mappings for F12, F21
 
 ### Changed
 
