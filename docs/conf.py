@@ -39,6 +39,8 @@ release = '1.0.0-rc.1'
 # ones.
 extensions = [
     'recommonmark',
+    'sphinxcontrib.jsonschema',
+    'sphinxcontrib.opendataservices',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
