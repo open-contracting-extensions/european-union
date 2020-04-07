@@ -6,11 +6,13 @@ The release schema below is patched with the extensions referenced on the home p
 
 Its JSON Schema file can be downloaded from <https://standard.open-contracting.org/profiles/eu/master/en/_static/patched/release-schema.json>.
 
+You can browse the schema using either the [interactive browser](#schema-browser) or [fields table](#fields-table) below.
+
 ## Schema browser
 
 <script src="../../_static/docson/widget.js" data-schema="../../_static/patched/release-schema.json"></script>
 
-## Field reference
+## Fields table
 
 ```eval_rst
 .. jsonschema:: ../_static/patched/release-schema.json
