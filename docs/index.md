@@ -24,7 +24,7 @@ The European Commission also provides [template PDF files](https://publications.
 
 This guidance is based on the TED publication XML schema R2.0.9 (007, 2018-10-30).
 
-## TED and OCDS
+## TED-to-OCDS Mapping
 
 This website takes the human-readable form labels from the standard form PDF files, pairs them with the machine-readable element names from the TED XML files, and provides guidance on how to express the information in OCDS.
 
@@ -32,31 +32,11 @@ In this way, a policy analyst can see the relationship to the standard forms est
 
 ```eval_rst
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
-   F01
-   F02
-   F03
-   F04
-   F05
-   F06
-   F07
-   F08
-   F12
-   F13
-   F14
-   F15
-   F20
-   F21
-   F22
-   F23
-   F24
-   F25
-   T01
-   T02
+   forms/index
    common
    operations
-   changelog
 ```
 
 ### Reading this website
@@ -109,42 +89,15 @@ In many cases, the form labels from the PDF files and the element names from the
 * the description of corresponding business terms in the European Commission's [eForms consultation](https://github.com/eForms/eForms/blob/master/20180604_eForms_consultation.xls?raw=true)
 * any TED notices that use the field
 
-## Technical details
+## Technical reference
 
-This guidance makes use of the following extensions:
+```eval_rst
+.. toctree::
+   :maxdepth: 2
 
-* [Additional Contact Points](https://extensions.open-contracting.org/en/extensions/additionalContactPoint/master/)
-* [Bid Statistics and Details](https://extensions.open-contracting.org/en/extensions/bids/master/)
-* [Charges](https://extensions.open-contracting.org/en/extensions/charges/master/)
-* [Financing](https://extensions.open-contracting.org/en/extensions/finance/master/)
-* [Location](https://extensions.open-contracting.org/en/extensions/location/master/)
-* [Lots](https://extensions.open-contracting.org/en/extensions/lots/master/)
-* [Metrics](https://extensions.open-contracting.org/en/extensions/metrics/master/)
-* [Participation Fees](https://extensions.open-contracting.org/en/extensions/participation_fee/master/)
-* [Party Scale](https://extensions.open-contracting.org/en/extensions/partyScale/master/)
-* [Process-Level Title and Description](https://extensions.open-contracting.org/en/extensions/process_title/master/)
-* [Shareholders](https://extensions.open-contracting.org/en/extensions/shareholders/master/)
-
-And these draft extensions:
-
-* [Award Criteria](https://github.com/open-contracting-extensions/ocds_awardCriteria_extension)
-* [Bid Opening](https://github.com/open-contracting-extensions/ocds_bidOpening_extension)
-* [Communication](https://github.com/open-contracting-extensions/ocds_communication_extension)
-* [Contract Terms](https://github.com/open-contracting-extensions/ocds_contractTerms_extension)
-* [Covered By](https://github.com/open-contracting-extensions/ocds_coveredBy_extension)
-* [Design Contest](https://github.com/open-contracting-extensions/ocds_designContest_extension)
-* [European Union](https://github.com/open-contracting-extensions/ocds_eu_extension)
-* [Options](https://github.com/open-contracting-extensions/ocds_options_extension)
-* [Organization Classification](https://github.com/open-contracting-extensions/ocds_organizationClassification_extension)
-* [Other Requirements](https://github.com/open-contracting-extensions/ocds_otherRequirements_extension)
-* [Procedure](https://github.com/open-contracting-extensions/ocds_procedure_extension)
-* [Procurement Method Rationale Classifications](https://github.com/open-contracting-extensions/ocds_procurementMethodRationaleClassifications_extension)
-* [Second Stage Description](https://github.com/open-contracting-extensions/ocds_secondStageDescription_extension)
-* [Selection Criteria](https://github.com/open-contracting-extensions/ocds_selectionCriteria_extension)
-* [Subcontracting](https://github.com/open-contracting-extensions/ocds_subcontracting_extension)
-* [Submission Terms](https://github.com/open-contracting-extensions/ocds_submissionTerms_extension)
-* [Techniques](https://github.com/open-contracting-extensions/ocds_techniques_extension)
-* [Unstructured Changes](https://github.com/open-contracting-extensions/ocds_unstructuredChanges_extension)
+   reference/index
+   changelog
+```
 
 ## We want your feedback!
 

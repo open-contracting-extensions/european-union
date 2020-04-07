@@ -4,7 +4,7 @@
 
 ### Added
 
-* Add schema and codelist [reference pages](reference)
+* Add schema and codelist [reference pages](../reference/index)
 * Add Design Contest and Unstructured Changes extensions to home page
 * I.1 National registration number (`/CONTRACTING_BODY/ADDRESS_CONTRACTING_BODY/NATIONALID`)
   * Add a link to the [identifiers reference](https://standard.open-contracting.org/1.1/en/schema/identifiers/#organization-ids) in the OCDS documentation
