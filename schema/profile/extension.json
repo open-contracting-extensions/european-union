@@ -11,6 +11,9 @@
   "compatibility": [
     "1.1"
   ],
+  "schemas": [
+    "release-schema.json"
+  ],
   "codelists": [
     "bidStatistics.csv",
     "bidStatus.csv",
