@@ -1,15 +1,24 @@
 # Changelog
 
+## 2020-04-06
+
 ### Added
 
 * Add Design Contest and Unstructured Changes extensions to home page
-
-## 2020-04-06
+* I.1 National registration number (`/CONTRACTING_BODY/ADDRESS_CONTRACTING_BODY/NATIONALID`)
+  * Add a link to the [identifiers reference](https://standard.open-contracting.org/1.1/en/schema/identifiers/#organization-ids)
+* I.3 Tenders or requests to participate must be submitted to the following address (`/CONTRACTING_BODY/ADDRESS_PARTICIPATION`)
+  * Clarify that the XML elements are mapped as a formatted string
 
 ### Changed
 
 * IV.3.4 Decision of the jury (`/PROCEDURE/DECISION_BINDING_CONTRACTING` and `/PROCEDURE/NO_DECISION_BINDING_CONTRACTING`)
   * Rename `isBindingJuryDecision` to `bindingJuryDecision`
+
+### Fixed
+
+* II.2.13 Information about European Union funds (`/OBJECT_CONTRACT/OBJECT_DESCR/EU_PROGR_RELATED`)
+  * Fix indentation of instruction for `relatedLots`
 
 ## 2020-03-30
 
