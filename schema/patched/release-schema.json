@@ -585,6 +585,22 @@
           "description": "Information about the organization of a design contest.",
           "$ref": "#/definitions/DesignContest"
         },
+        "reviewDetails": {
+          "title": "Review details",
+          "description": "Precise information concerning the time limits for the review procedures or contact information from which it can be obtained.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "valueCalculationMethod": {
+          "title": "Value calculation method",
+          "description": "The method used for calculating the estimated value of the concession.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "options": {
           "title": "Options",
           "description": "A description of the options.",
@@ -822,6 +838,14 @@
           },
           "uniqueItems": true
         },
+        "valueCalculationMethod": {
+          "title": "Value calculation method",
+          "description": "Any details relevant to the value of the concession according to article 8(3) of Directive 2014/23/EU on concession contracts.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "hasSubcontracting": {
           "title": "Subcontracting involved",
           "description": "Whether a part of the contract will be subcontracted.",
@@ -1005,6 +1029,23 @@
             "$ref": "#/definitions/Metric"
           },
           "uniqueItems": true
+        },
+        "periodRationale": {
+          "title": "Contract period rationale",
+          "description": "The rationale for the duration of the contract.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publicPassengerTransportServicesKilometers": {
+          "title": "Kilometers of public passenger transport services",
+          "description": "The number of kilometers of public passenger transport services provided by a public service contract.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
         }
       },
       "patternProperties": {
@@ -1648,6 +1689,22 @@
               ],
               "codelist": "partyScale.csv",
               "openCodelist": false
+            },
+            "url": {
+              "title": "Website URL",
+              "description": "The website of the organization.",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "buyerProfile": {
+              "title": "Buyer profile URL",
+              "description": "The Web address of the buyer profile.",
+              "type": [
+                "string",
+                "null"
+              ]
             },
             "classifications": {
               "title": "Organization classifications",

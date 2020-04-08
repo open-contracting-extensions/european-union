@@ -118,7 +118,7 @@ extension_versions = {
     'contractTerms': 'master',
     'coveredBy': 'master',
     'designContest': 'master',
-    # 'eu': 'master',
+    'eu': 'master',
     'options': 'master',
     'organizationClassification': 'master',
     'otherRequirements': 'master',
