@@ -8,7 +8,6 @@ The codelists below are from the OCDS and its extensions, and are provided here 
 
 The CSV codelist files can be downloaded from <https://standard.open-contracting.org/profiles/eu/master/en/_static/patched/codelists/>.
 
-
 ## Award Criteria
 
 ```eval_rst
