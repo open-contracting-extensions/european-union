@@ -6,7 +6,7 @@ For more information on codelists, refer to the [codelists reference](https://st
 
 The codelists below are from the OCDS and its extensions, and are provided here for convenience only.
 
-The CSV codelist files can be downloaded from <https://standard.open-contracting.org/profiles/eu/master/en/_static/patched/codelists/>.
+The codelists can be downloaded as CSV files from <https://standard.open-contracting.org/profiles/eu/master/en/_static/patched/codelists/>.
 
 ## Award Criteria
 

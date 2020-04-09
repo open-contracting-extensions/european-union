@@ -10,7 +10,15 @@ Please refer to the following pages:
    codelists
 ```
 
-This guidance makes use of these extensions:
+This profile makes use of the extensions below. Instead of declaring each extension in your OCDS packages, you can declare the consolidated OCDS for EU extension:
+
+```json
+{
+  "extensions": [
+    "https://standard.open-contracting.org/profiles/eu/master/en/extension.json"
+  ]
+}
+```
 
 * [Additional Contact Points](https://extensions.open-contracting.org/en/extensions/additionalContactPoint/master/)
 * [Award Criteria](https://extensions.open-contracting.org/en/extensions/awardCriteria/master/)
