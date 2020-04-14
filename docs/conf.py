@@ -13,6 +13,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
+import json
 import os
 from glob import glob
 from pathlib import Path
@@ -99,38 +100,8 @@ gettext_domain_prefix = '{}-'.format(profile_identifier)
 
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
 # the extension registry: https://github.com/open-contracting/extension_registry/blob/master/extension_versions.csv
-extension_versions = {
-    'additionalContactPoint': 'master',
-    'bids': 'v1.1.4',
-    'charges': 'master',
-    'finance': 'master',
-    'location': 'v1.1.4',
-    'lots': 'v1.1.4',
-    'metrics': 'master',
-    'participation_fee': 'v1.1.4',
-    'partyScale': 'master',
-    'process_title': 'v1.1.4',
-    'shareholders': 'master',
-    # EU
-    'awardCriteria': 'master',
-    'bidOpening': 'master',
-    'communication': 'master',
-    'contractTerms': 'master',
-    'coveredBy': 'master',
-    'designContest': 'master',
-    'eu': 'master',
-    'options': 'master',
-    'organizationClassification': 'master',
-    'otherRequirements': 'master',
-    'procedure': 'master',
-    'procurementMethodRationaleClassifications': 'master',
-    'secondStageDescription': 'master',
-    'selectionCriteria': 'master',
-    'subcontracting': 'master',
-    'submissionTerms': 'master',
-    'techniques': 'master',
-    'unstructuredChanges': 'master',
-}
+with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'extension_versions.json')) as f:
+    extension_versions = json.load(f)
 
 
 def setup(app):
