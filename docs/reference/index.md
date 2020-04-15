@@ -29,6 +29,7 @@ This profile makes use of the extensions below. Instead of declaring each extens
 * [Contract Terms](https://extensions.open-contracting.org/en/extensions/contractTerms/master/)
 * [Covered By](https://extensions.open-contracting.org/en/extensions/coveredBy/master/)
 * [Design Contest](https://extensions.open-contracting.org/en/extensions/designContest/master/)
+* [Essential Assets](https://extensions.open-contracting.org/en/extensions/essentialAssets/master/)
 * [European Union](https://extensions.open-contracting.org/en/extensions/eu/master/)
 * [Financing](https://extensions.open-contracting.org/en/extensions/finance/master/)
 * [Location](https://extensions.open-contracting.org/en/extensions/location/master/)

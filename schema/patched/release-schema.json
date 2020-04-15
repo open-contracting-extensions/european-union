@@ -473,64 +473,6 @@
             "deprecatedVersion": "1.1"
           }
         },
-        "lots": {
-          "title": "Lots",
-          "description": "A tender process may be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features can then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values should be interpreted as applicable to the whole tender. Properties of tender can be overridden for a given Lot through their inclusion in the Lot object.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Lot"
-          }
-        },
-        "lotDetails": {
-          "title": "Lot Details",
-          "description": "If this tender is divided into lots, details can be provided here of any criteria that apply to bidding on these lots. This extended property is currently focused on fields required by the EU TED data standard",
-          "type": "object",
-          "properties": {
-            "maximumLotsBidPerSupplier": {
-              "title": "Maximum lots per supplier",
-              "description": "The maximum number of lots that one supplier may bid for as part of this contracting process.",
-              "type": [
-                "integer",
-                "null"
-              ]
-            },
-            "maximumLotsAwardedPerSupplier": {
-              "title": "Maximum lots per supplier",
-              "description": "The maximum number of lots that may be awarded to one supplier as part of this contracting process.",
-              "type": [
-                "integer",
-                "null"
-              ]
-            }
-          }
-        },
-        "lotGroups": {
-          "title": "Lot groups",
-          "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/LotGroup"
-          }
-        },
-        "targets": {
-          "type": "array",
-          "title": "Targets",
-          "description": "Any target metrics for this results of this contracting process.",
-          "items": {
-            "$ref": "#/definitions/Metric"
-          },
-          "uniqueItems": true
-        },
-        "participationFees": {
-          "title": "Participation fees",
-          "description": "Any fees applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/ParticipationFee"
-          },
-          "uniqueItems": true,
-          "wholeListMerge": true
-        },
         "bidOpening": {
           "title": "Bid opening",
           "description": "The date, time, place and other details of the bid opening.",
@@ -585,6 +527,19 @@
           "description": "Information about the organization of a design contest.",
           "$ref": "#/definitions/DesignContest"
         },
+        "essentialAssets": {
+          "title": "Essentials assets",
+          "description": "Information about the assets used for the provision of public services.",
+          "$ref": "#/definitions/EssentialAssets"
+        },
+        "hasEssentialAssets": {
+          "title": "Has essential assets",
+          "description": "Whether there is information about the assets used for the provision of public services.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
         "reviewDetails": {
           "title": "Review details",
           "description": "Precise information concerning the time limits for the review procedures or contact information from which it can be obtained.",
@@ -600,6 +555,54 @@
             "string",
             "null"
           ]
+        },
+        "lots": {
+          "title": "Lots",
+          "description": "A tender process may be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features can then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values should be interpreted as applicable to the whole tender. Properties of tender can be overridden for a given Lot through their inclusion in the Lot object.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Lot"
+          }
+        },
+        "lotDetails": {
+          "title": "Lot Details",
+          "description": "If this tender is divided into lots, details can be provided here of any criteria that apply to bidding on these lots. This extended property is currently focused on fields required by the EU TED data standard",
+          "type": "object",
+          "properties": {
+            "maximumLotsBidPerSupplier": {
+              "title": "Maximum lots per supplier",
+              "description": "The maximum number of lots that one supplier may bid for as part of this contracting process.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "maximumLotsAwardedPerSupplier": {
+              "title": "Maximum lots per supplier",
+              "description": "The maximum number of lots that may be awarded to one supplier as part of this contracting process.",
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        },
+        "lotGroups": {
+          "title": "Lot groups",
+          "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LotGroup"
+          }
+        },
+        "targets": {
+          "type": "array",
+          "title": "Targets",
+          "description": "Any target metrics for this results of this contracting process.",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          },
+          "uniqueItems": true
         },
         "options": {
           "title": "Options",
@@ -618,6 +621,16 @@
           "title": "Other requirements",
           "description": "Other requirements to participate in the procedure.",
           "$ref": "#/definitions/OtherRequirements"
+        },
+        "participationFees": {
+          "title": "Participation fees",
+          "description": "Any fees applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ParticipationFee"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
         },
         "procedure": {
           "title": "Procedure",
@@ -816,6 +829,14 @@
             "null"
           ]
         },
+        "valueCalculationMethod": {
+          "title": "Value calculation method",
+          "description": "Any details relevant to the value of the concession according to article 8(3) of Directive 2014/23/EU on concession contracts.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "relatedLots": {
           "title": "Related lot(s)",
           "description": "If this award relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
@@ -837,14 +858,6 @@
             "$ref": "#/definitions/Metric"
           },
           "uniqueItems": true
-        },
-        "valueCalculationMethod": {
-          "title": "Value calculation method",
-          "description": "Any details relevant to the value of the concession according to article 8(3) of Directive 2014/23/EU on concession contracts.",
-          "type": [
-            "string",
-            "null"
-          ]
         },
         "hasSubcontracting": {
           "title": "Subcontracting involved",
@@ -1012,6 +1025,23 @@
             "deprecatedVersion": "1.1"
           }
         },
+        "periodRationale": {
+          "title": "Contract period rationale",
+          "description": "The rationale for the duration of the contract.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publicPassengerTransportServicesKilometers": {
+          "title": "Kilometers of public passenger transport services",
+          "description": "The number of kilometers of public passenger transport services provided by a public service contract.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
         "finance": {
           "title": "Finance",
           "description": "An array with details of each source of finance arranged for this contract.",
@@ -1029,23 +1059,6 @@
             "$ref": "#/definitions/Metric"
           },
           "uniqueItems": true
-        },
-        "periodRationale": {
-          "title": "Contract period rationale",
-          "description": "The rationale for the duration of the contract.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "publicPassengerTransportServicesKilometers": {
-          "title": "Kilometers of public passenger transport services",
-          "description": "The number of kilometers of public passenger transport services provided by a public service contract.",
-          "type": [
-            "number",
-            "null"
-          ],
-          "minimum": 0
         }
       },
       "patternProperties": {
@@ -1672,24 +1685,6 @@
           "description": "Additional classification information about parties can be provided using partyDetail extensions that define particular properties and classification schemes. ",
           "title": "Details",
           "properties": {
-            "scale": {
-              "title": "Scale",
-              "description": "The size or scale of the organization.",
-              "type": [
-                "string",
-                "null"
-              ],
-              "enum": [
-                "micro",
-                "sme",
-                "small",
-                "medium",
-                "large",
-                null
-              ],
-              "codelist": "partyScale.csv",
-              "openCodelist": false
-            },
             "url": {
               "title": "Website URL",
               "description": "The website of the organization.",
@@ -1715,6 +1710,24 @@
               },
               "uniqueItems": true,
               "wholeListMerge": true
+            },
+            "scale": {
+              "title": "Scale",
+              "description": "The size or scale of the organization.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "micro",
+                "sme",
+                "small",
+                "medium",
+                "large",
+                null
+              ],
+              "codelist": "partyScale.csv",
+              "openCodelist": false
             }
           }
         },
@@ -2656,6 +2669,282 @@
         }
       }
     },
+    "Lot": {
+      "properties": {
+        "awardCriteria": {
+          "title": "Award criteria",
+          "description": "Information about the award criteria for the lot.",
+          "$ref": "#/definitions/AwardCriteria"
+        },
+        "contractTerms": {
+          "title": "Contract terms",
+          "description": "Information about the terms governing the future contracts for the lot.",
+          "$ref": "#/definitions/ContractTerms"
+        },
+        "id": {
+          "title": "Lot ID",
+          "type": "string",
+          "description": "A local identifier for this lot, such as a lot number. This is used in relatedLots references at the item, document and award level."
+        },
+        "title": {
+          "title": "Title",
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "A title for this lot."
+        },
+        "description": {
+          "title": "Description",
+          "description": "A description of this lot.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "title": "Lot Status",
+          "description": "The current status of the process related to this lot based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1/en/schema/codelists/#tender-status)",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "tenderStatus.csv",
+          "openCodelist": false,
+          "enum": [
+            "planning",
+            "planned",
+            "active",
+            "cancelled",
+            "unsuccessful",
+            "complete",
+            "withdrawn",
+            null
+          ]
+        },
+        "value": {
+          "title": "Lot value",
+          "$ref": "#/definitions/Value",
+          "description": "The maximum estimated value of this lot."
+        },
+        "options": {
+          "title": "Options",
+          "description": "A description of the options.",
+          "$ref": "#/definitions/Options"
+        },
+        "hasOptions": {
+          "title": "Options used",
+          "description": "Whether the buyer reserves the right to make additional purchases from the supplier, as long as the contract is valid.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "otherRequirements": {
+          "title": "Other requirements",
+          "description": "Other requirements to participate in the lot.",
+          "$ref": "#/definitions/OtherRequirements"
+        },
+        "secondStage": {
+          "title": "Second stage",
+          "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
+          "$ref": "#/definitions/SecondStage"
+        },
+        "selectionCriteria": {
+          "title": "Selection criteria",
+          "description": "Information about the conditions for participation in a lot.",
+          "$ref": "#/definitions/SelectionCriteria"
+        },
+        "submissionTerms": {
+          "title": "Submission terms",
+          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids for the lot.",
+          "$ref": "#/definitions/SubmissionTerms"
+        },
+        "techniques": {
+          "title": "Techniques",
+          "description": "Information about the use of techniques, such as framework agreements, dynamic purchasing systems and electronic auctions.",
+          "$ref": "#/definitions/Techniques"
+        }
+      },
+      "title": "Lots",
+      "description": "A lot is a grouping of items within a tender that can be bid on or awarded together.",
+      "type": "object"
+    },
+    "AwardCriteria": {
+      "title": "Award criteria",
+      "description": "Information about the award criteria.",
+      "type": "object",
+      "properties": {
+        "weightingDescription": {
+          "title": "Complicated weighting description",
+          "description": "When the weighting cannot be expressed per criterion, the mathematical equation (or other description) that expresses the complicated (e.g. non-linear) weighting.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "orderRationale": {
+          "title": "Justification for order of importance",
+          "description": "The justification for only indicating the award criteria's order of importance, not their weighting.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "criteria": {
+          "title": "Award criteria",
+          "description": "The award criteria.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AwardCriterion"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "AwardCriterion": {
+      "title": "Award criterion",
+      "description": "Information about the award criterion.",
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "description": "The aspect of the bid that the criterion concerns.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "awardCriterionType.csv",
+          "openCodelist": true
+        },
+        "name": {
+          "title": "Name",
+          "description": "The name of the criterion.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the criterion.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "numbers": {
+          "title": "Numbers",
+          "description": "Numbers linked to the criterion.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AwardCriterionNumber"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "AwardCriterionNumber": {
+      "title": "Award criterion number",
+      "description": "Information about a number linked to an award criterion.",
+      "type": "object",
+      "properties": {
+        "number": {
+          "title": "Number",
+          "description": "The number.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "weight": {
+          "title": "Weight",
+          "description": "Whether the number is a type of weight.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "criterionWeight.csv",
+          "openCodelist": false,
+          "enum": [
+            "percentageExact",
+            "percentageRangeMiddle",
+            "decimalExact",
+            "decimalRangeMiddle",
+            "pointsExact",
+            "pointsRangeMiddle",
+            "order",
+            null
+          ]
+        },
+        "fixed": {
+          "title": "Fixed",
+          "description": "Whether the number is a fixed value.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "awardCriterionFixed.csv",
+          "openCodelist": false,
+          "enum": [
+            "total",
+            "unit",
+            null
+          ]
+        },
+        "threshold": {
+          "title": "Threshold",
+          "description": "Whether the number is a type of threshold.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "criterionThreshold.csv",
+          "openCodelist": false,
+          "enum": [
+            "minimumScore",
+            "maximumBids",
+            null
+          ]
+        }
+      }
+    },
+    "BidOpening": {
+      "title": "Bid opening",
+      "description": "The date, time, place and other details of the bid opening.",
+      "type": "object",
+      "properties": {
+        "date": {
+          "title": "Date and time",
+          "description": "The date and time of the bid opening.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "location": {
+          "title": "Location",
+          "description": "The place where the bid opening occurs.",
+          "$ref": "#/definitions/Location"
+        },
+        "address": {
+          "title": "Address",
+          "description": "The address of the place where the bid opening occurs.",
+          "$ref": "#/definitions/Address"
+        },
+        "description": {
+          "title": "Details",
+          "description": "Any other details about the bid opening (who can participate, whether authorization is needed, etc.).",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
     "BidsStatistic": {
       "title": "Bid Statistic",
       "description": "For reporting aggregate statistics about the bids related to a tender. Where lots are in use, statistics may optionally be broken down by lot. ",
@@ -2867,6 +3156,246 @@
         "notes": {
           "title": "Notes",
           "description": "Any notes on this charge. This may include clarifying information.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ContractTerms": {
+      "title": "Contract terms",
+      "description": "Information about the terms governing the future contracts.",
+      "type": "object",
+      "properties": {
+        "hasElectronicPayment": {
+          "title": "Electronic payment used",
+          "description": "Whether electronic payment is used.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "hasElectronicOrdering": {
+          "title": "Electronic ordering used",
+          "description": "Whether electronic ordering is used.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "electronicInvoicingPolicy": {
+          "title": "Electronic invoicing policy",
+          "description": "Whether the buyer will require, allow or not allow electronic invoices.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "openCodelist": false,
+          "codelist": "permission.csv",
+          "enum": [
+            "required",
+            "allowed",
+            "notAllowed",
+            null
+          ]
+        },
+        "reservedExecution": {
+          "title": "Reserved execution",
+          "description": "Whether the execution of the contract is restricted to the framework of sheltered employment programmes.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "performanceTerms": {
+          "title": "Terms performance",
+          "description": "The main information about the performance of the contract (e.g. intermediary deliverables, compensation for damages, intellectual property rights).",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "financialTerms": {
+          "title": "Financial terms",
+          "description": "The main information about financing and payment and/or reference to any provisions that govern them.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tendererLegalForm": {
+          "title": "Tenderer legal form",
+          "description": "A certain legal form that must be taken by a group of tenderers that is awarded a contract.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hasExclusiveRights": {
+          "title": "Has exclusive rights",
+          "description": "A right entitling a public service operator to operate certain public passenger transport services on a particular route or network or in a particular area, to the exclusion of any other such operator.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "exclusiveRights": {
+          "title": "Exclusive rights",
+          "description": "The nature and extent of the exclusive rights granted by the procuring entity to the contractor.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "operatorRevenueShare": {
+          "title": "Operator revenue share",
+          "description": "The percentage of revenue from the sale of tickets allocated to the contractor.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 1,
+          "minimum": 0
+        },
+        "otherTerms": {
+          "title": "Other terms",
+          "description": "Other contract terms that do not fit the semantics of any other OCDS field.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "rewardsAndPenalties": {
+          "title": "Rewards and penalties",
+          "description": "Information about rewards and penalties relating to quality targets.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "socialStandards": {
+          "title": "Social standards",
+          "description": "The required social standards, for example: detail of the contractual rights of the staff concerned, and conditions under which employees are considered to be linked to the services.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "DesignContest": {
+      "title": "Design contest",
+      "description": "Information about the organization of a design contest.",
+      "type": "object",
+      "properties": {
+        "selectedParticipants": {
+          "title": "Selected participants",
+          "description": "The parties that have already been selected to participate to the design contest.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OrganizationReference"
+          },
+          "uniqueItems": true
+        },
+        "hasPrizes": {
+          "title": "Has prizes",
+          "description": "Whether prizes will be awarded in the design contest.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "prizes": {
+          "title": "Prizes",
+          "description": "Information about the prizes awarded in the design contest.",
+          "type": "object",
+          "properties": {
+            "description": {
+              "title": "Description",
+              "description": "The description of the prizes.",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "rewardsDetails": {
+          "title": "Rewards details",
+          "description": "The details and conditions of the payments to be made to the participants.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "followUpContracts": {
+          "title": "Follow-up contracts",
+          "description": "Whether any contracts following the design contest will be awarded to the winner or winners of the design contest.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "bindingJuryDecision": {
+          "title": "Binding jury decision",
+          "description": "Whether the jury’s decision is binding on the procuring entity.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "juryMembers": {
+          "title": "Jury members",
+          "description": "The members of the jury.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/JuryMember"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true
+        }
+      }
+    },
+    "JuryMember": {
+      "title": "Jury member",
+      "description": "Member of the jury.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "description": "The name of the jury member.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "EssentialAssets": {
+      "title": "Essential assets",
+      "description": "Information about the assets used for the provision of public services.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "Description of the essential assets.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "significance": {
+          "title": "Significance",
+          "description": "Share of the essential assets provided in relation to the overall assets needed for the provision of the public services.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "predominance": {
+          "title": "Predominance",
+          "description": "Estimated share of assets provided compared to assets used for activities other than the public services.",
           "type": [
             "string",
             "null"
@@ -3118,107 +3647,6 @@
         }
       }
     },
-    "Lot": {
-      "title": "Lots",
-      "description": "A lot is a grouping of items within a tender that can be bid on or awarded together.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Lot ID",
-          "type": "string",
-          "description": "A local identifier for this lot, such as a lot number. This is used in relatedLots references at the item, document and award level."
-        },
-        "title": {
-          "title": "Title",
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "A title for this lot."
-        },
-        "description": {
-          "title": "Description",
-          "description": "A description of this lot.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "status": {
-          "title": "Lot Status",
-          "description": "The current status of the process related to this lot based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1/en/schema/codelists/#tender-status)",
-          "type": [
-            "string",
-            "null"
-          ],
-          "codelist": "tenderStatus.csv",
-          "openCodelist": false,
-          "enum": [
-            "planning",
-            "planned",
-            "active",
-            "cancelled",
-            "unsuccessful",
-            "complete",
-            "withdrawn",
-            null
-          ]
-        },
-        "value": {
-          "title": "Lot value",
-          "$ref": "#/definitions/Value",
-          "description": "The maximum estimated value of this lot."
-        },
-        "awardCriteria": {
-          "title": "Award criteria",
-          "description": "Information about the award criteria for the lot.",
-          "$ref": "#/definitions/AwardCriteria"
-        },
-        "contractTerms": {
-          "title": "Contract terms",
-          "description": "Information about the terms governing the future contracts for the lot.",
-          "$ref": "#/definitions/ContractTerms"
-        },
-        "options": {
-          "title": "Options",
-          "description": "A description of the options.",
-          "$ref": "#/definitions/Options"
-        },
-        "hasOptions": {
-          "title": "Options used",
-          "description": "Whether the buyer reserves the right to make additional purchases from the supplier, as long as the contract is valid.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "otherRequirements": {
-          "title": "Other requirements",
-          "description": "Other requirements to participate in the lot.",
-          "$ref": "#/definitions/OtherRequirements"
-        },
-        "secondStage": {
-          "title": "Second stage",
-          "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
-          "$ref": "#/definitions/SecondStage"
-        },
-        "selectionCriteria": {
-          "title": "Selection criteria",
-          "description": "Information about the conditions for participation in a lot.",
-          "$ref": "#/definitions/SelectionCriteria"
-        },
-        "submissionTerms": {
-          "title": "Submission terms",
-          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids for the lot.",
-          "$ref": "#/definitions/SubmissionTerms"
-        },
-        "techniques": {
-          "title": "Techniques",
-          "description": "Information about the use of techniques, such as framework agreements, dynamic purchasing systems and electronic auctions.",
-          "$ref": "#/definitions/Techniques"
-        }
-      }
-    },
     "LotGroup": {
       "title": "Lot group",
       "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
@@ -3427,512 +3855,6 @@
         }
       }
     },
-    "ParticipationFee": {
-      "title": "Participation fee",
-      "description": "A fee applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
-      "type": "object",
-      "properties": {
-        "id": {
-          "title": "Fee ID",
-          "description": "A local identifier for this fee, unique within this block. This field is used to keep track of multiple revisions of a fee through the compilation from release to record mechanism.",
-          "type": "string"
-        },
-        "type": {
-          "title": "Fee type",
-          "description": "A fees applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": "string",
-            "enum": [
-              "document",
-              "deposit",
-              "submission",
-              "win"
-            ]
-          },
-          "codelist": "participationFeeType.csv",
-          "openCodelist": false
-        },
-        "value": {
-          "title": "Value",
-          "description": "The monetary value of this fee.",
-          "$ref": "#/definitions/Value"
-        },
-        "description": {
-          "title": "Description",
-          "description": "Optional information about the way in which fees are levied, or the exact nature of the fees.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "methodOfPayment": {
-          "title": "Method(s) of payment",
-          "description": "Optional information about the way in which fees can be paid.",
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "Shareholder": {
-      "type": "object",
-      "title": "Shareholder",
-      "description": "A shareholder in an organization.",
-      "required": [
-        "id"
-      ],
-      "properties": {
-        "id": {
-          "title": "Shareholder ID",
-          "description": "A local identifier for this shareholder, unique within this block. This field is used to keep track of multiple revisions of a shareholder through the compilation from release to record mechanism.",
-          "type": [
-            "string"
-          ],
-          "minLength": 1
-        },
-        "shareholder": {
-          "title": "Shareholder organization reference.",
-          "description": "An organization reference pointing the entry in the parties section for the shareholding organization.",
-          "$ref": "#/definitions/OrganizationReference"
-        },
-        "shareholding": {
-          "title": "Shareholding",
-          "description": "The percentage of shares held by the shareholder, expressed as a decimal value between 0 and 1.",
-          "type": [
-            "number",
-            "null"
-          ],
-          "minimum": 0,
-          "maximum": 1
-        },
-        "votingRights": {
-          "title": "Shareholder voting rights",
-          "description": "Specify the type of voting rights associated with the shares held by the shareholder against the voting rights codelist.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "codelist": "votingRights.csv",
-          "openCodelist": false,
-          "enum": [
-            "ordinary",
-            "none",
-            "restricted",
-            "additional",
-            "enhanced",
-            null
-          ]
-        },
-        "votingRightsDetails": {
-          "title": "Shareholder voting rights details",
-          "description": "Detailed information about the shareholder's voting rights. This field should be completed when the shareholder voting rights are restricted, additional or enhanced.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "notes": {
-          "title": "Shareholder notes",
-          "description": "Additional notes on this shareholder. This field should be used to provide details on any caps on equity transfer, or lock-in arrangements, applicable to this shareholder.",
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
-    "AwardCriteria": {
-      "title": "Award criteria",
-      "description": "Information about the award criteria.",
-      "type": "object",
-      "properties": {
-        "weightingDescription": {
-          "title": "Complicated weighting description",
-          "description": "When the weighting cannot be expressed per criterion, the mathematical equation (or other description) that expresses the complicated (e.g. non-linear) weighting.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "orderRationale": {
-          "title": "Justification for order of importance",
-          "description": "The justification for only indicating the award criteria's order of importance, not their weighting.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "criteria": {
-          "title": "Award criteria",
-          "description": "The award criteria.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AwardCriterion"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true
-        }
-      }
-    },
-    "AwardCriterion": {
-      "title": "Award criterion",
-      "description": "Information about the award criterion.",
-      "type": "object",
-      "properties": {
-        "type": {
-          "title": "Type",
-          "description": "The aspect of the bid that the criterion concerns.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "codelist": "awardCriterionType.csv",
-          "openCodelist": true
-        },
-        "name": {
-          "title": "Name",
-          "description": "The name of the criterion.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "description": {
-          "title": "Description",
-          "description": "The description of the criterion.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "numbers": {
-          "title": "Numbers",
-          "description": "Numbers linked to the criterion.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AwardCriterionNumber"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true
-        }
-      }
-    },
-    "AwardCriterionNumber": {
-      "title": "Award criterion number",
-      "description": "Information about a number linked to an award criterion.",
-      "type": "object",
-      "properties": {
-        "number": {
-          "title": "Number",
-          "description": "The number.",
-          "type": [
-            "number",
-            "null"
-          ]
-        },
-        "weight": {
-          "title": "Weight",
-          "description": "Whether the number is a type of weight.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "codelist": "criterionWeight.csv",
-          "openCodelist": false,
-          "enum": [
-            "percentageExact",
-            "percentageRangeMiddle",
-            "decimalExact",
-            "decimalRangeMiddle",
-            "pointsExact",
-            "pointsRangeMiddle",
-            "order",
-            null
-          ]
-        },
-        "fixed": {
-          "title": "Fixed",
-          "description": "Whether the number is a fixed value.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "codelist": "awardCriterionFixed.csv",
-          "openCodelist": false,
-          "enum": [
-            "total",
-            "unit",
-            null
-          ]
-        },
-        "threshold": {
-          "title": "Threshold",
-          "description": "Whether the number is a type of threshold.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "codelist": "criterionThreshold.csv",
-          "openCodelist": false,
-          "enum": [
-            "minimumScore",
-            "maximumBids",
-            null
-          ]
-        }
-      }
-    },
-    "BidOpening": {
-      "title": "Bid opening",
-      "description": "The date, time, place and other details of the bid opening.",
-      "type": "object",
-      "properties": {
-        "date": {
-          "title": "Date and time",
-          "description": "The date and time of the bid opening.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        },
-        "location": {
-          "title": "Location",
-          "description": "The place where the bid opening occurs.",
-          "$ref": "#/definitions/Location"
-        },
-        "address": {
-          "title": "Address",
-          "description": "The address of the place where the bid opening occurs.",
-          "$ref": "#/definitions/Address"
-        },
-        "description": {
-          "title": "Details",
-          "description": "Any other details about the bid opening (who can participate, whether authorization is needed, etc.).",
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
-    "ContractTerms": {
-      "title": "Contract terms",
-      "description": "Information about the terms governing the future contracts.",
-      "type": "object",
-      "properties": {
-        "hasElectronicPayment": {
-          "title": "Electronic payment used",
-          "description": "Whether electronic payment is used.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "hasElectronicOrdering": {
-          "title": "Electronic ordering used",
-          "description": "Whether electronic ordering is used.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "electronicInvoicingPolicy": {
-          "title": "Electronic invoicing policy",
-          "description": "Whether the buyer will require, allow or not allow electronic invoices.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "openCodelist": false,
-          "codelist": "permission.csv",
-          "enum": [
-            "required",
-            "allowed",
-            "notAllowed",
-            null
-          ]
-        },
-        "reservedExecution": {
-          "title": "Reserved execution",
-          "description": "Whether the execution of the contract is restricted to the framework of sheltered employment programmes.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "performanceTerms": {
-          "title": "Terms performance",
-          "description": "The main information about the performance of the contract (e.g. intermediary deliverables, compensation for damages, intellectual property rights).",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "financialTerms": {
-          "title": "Financial terms",
-          "description": "The main information about financing and payment and/or reference to any provisions that govern them.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "tendererLegalForm": {
-          "title": "Tenderer legal form",
-          "description": "A certain legal form that must be taken by a group of tenderers that is awarded a contract.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "hasExclusiveRights": {
-          "title": "Has exclusive rights",
-          "description": "A right entitling a public service operator to operate certain public passenger transport services on a particular route or network or in a particular area, to the exclusion of any other such operator.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "exclusiveRights": {
-          "title": "Exclusive rights",
-          "description": "The nature and extent of the exclusive rights granted by the procuring entity to the contractor.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "operatorRevenueShare": {
-          "title": "Operator revenue share",
-          "description": "The percentage of revenue from the sale of tickets allocated to the contractor.",
-          "type": [
-            "number",
-            "null"
-          ],
-          "maximum": 1,
-          "minimum": 0
-        },
-        "otherTerms": {
-          "title": "Other terms",
-          "description": "Other contract terms that do not fit the semantics of any other OCDS field.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "rewardsAndPenalties": {
-          "title": "Rewards and penalties",
-          "description": "Information about rewards and penalties relating to quality targets.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "socialStandards": {
-          "title": "Social standards",
-          "description": "The required social standards, for example: detail of the contractual rights of the staff concerned, and conditions under which employees are considered to be linked to the services.",
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
-    "DesignContest": {
-      "title": "Design contest",
-      "description": "Information about the organization of a design contest.",
-      "type": "object",
-      "properties": {
-        "selectedParticipants": {
-          "title": "Selected participants",
-          "description": "The parties that have already been selected to participate to the design contest.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/OrganizationReference"
-          },
-          "uniqueItems": true
-        },
-        "hasPrizes": {
-          "title": "Has prizes",
-          "description": "Whether prizes will be awarded in the design contest.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "prizes": {
-          "title": "Prizes",
-          "description": "Information about the prizes awarded in the design contest.",
-          "type": "object",
-          "properties": {
-            "description": {
-              "title": "Description",
-              "description": "The description of the prizes.",
-              "type": [
-                "string",
-                "null"
-              ]
-            }
-          }
-        },
-        "rewardsDetails": {
-          "title": "Rewards details",
-          "description": "The details and conditions of the payments to be made to the participants.",
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "followUpContracts": {
-          "title": "Follow-up contracts",
-          "description": "Whether any contracts following the design contest will be awarded to the winner or winners of the design contest.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "bindingJuryDecision": {
-          "title": "Binding jury decision",
-          "description": "Whether the jury’s decision is binding on the procuring entity.",
-          "type": [
-            "boolean",
-            "null"
-          ]
-        },
-        "juryMembers": {
-          "title": "Jury members",
-          "description": "The members of the jury.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/JuryMember"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true
-        }
-      }
-    },
-    "JuryMember": {
-      "title": "Jury member",
-      "description": "Member of the jury.",
-      "type": "object",
-      "properties": {
-        "name": {
-          "title": "Name",
-          "description": "The name of the jury member.",
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
     "Options": {
       "title": "Options",
       "description": "A description of the options.",
@@ -3997,6 +3919,61 @@
             "string",
             "null"
           ]
+        }
+      }
+    },
+    "ParticipationFee": {
+      "title": "Participation fee",
+      "description": "A fee applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "title": "Fee ID",
+          "description": "A local identifier for this fee, unique within this block. This field is used to keep track of multiple revisions of a fee through the compilation from release to record mechanism.",
+          "type": "string"
+        },
+        "type": {
+          "title": "Fee type",
+          "description": "A fees applicable to bidders wishing to participate in the tender process. Fees may apply for access to bidding documents, for the submission of bids or there may be a win fee payable by the successful bidder.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "document",
+              "deposit",
+              "submission",
+              "win"
+            ]
+          },
+          "codelist": "participationFeeType.csv",
+          "openCodelist": false
+        },
+        "value": {
+          "title": "Value",
+          "description": "The monetary value of this fee.",
+          "$ref": "#/definitions/Value"
+        },
+        "description": {
+          "title": "Description",
+          "description": "Optional information about the way in which fees are levied, or the exact nature of the fees.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "methodOfPayment": {
+          "title": "Method(s) of payment",
+          "description": "Optional information about the way in which fees can be paid.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         }
       }
     },
@@ -4121,6 +4098,73 @@
         "minimum": {
           "title": "Minimum value or level",
           "description": "The minimum value or level of compliance a candidate needs to meet in order to participate.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "Shareholder": {
+      "type": "object",
+      "title": "Shareholder",
+      "description": "A shareholder in an organization.",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "title": "Shareholder ID",
+          "description": "A local identifier for this shareholder, unique within this block. This field is used to keep track of multiple revisions of a shareholder through the compilation from release to record mechanism.",
+          "type": [
+            "string"
+          ],
+          "minLength": 1
+        },
+        "shareholder": {
+          "title": "Shareholder organization reference.",
+          "description": "An organization reference pointing the entry in the parties section for the shareholding organization.",
+          "$ref": "#/definitions/OrganizationReference"
+        },
+        "shareholding": {
+          "title": "Shareholding",
+          "description": "The percentage of shares held by the shareholder, expressed as a decimal value between 0 and 1.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "votingRights": {
+          "title": "Shareholder voting rights",
+          "description": "Specify the type of voting rights associated with the shares held by the shareholder against the voting rights codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "votingRights.csv",
+          "openCodelist": false,
+          "enum": [
+            "ordinary",
+            "none",
+            "restricted",
+            "additional",
+            "enhanced",
+            null
+          ]
+        },
+        "votingRightsDetails": {
+          "title": "Shareholder voting rights details",
+          "description": "Detailed information about the shareholder's voting rights. This field should be completed when the shareholder voting rights are restricted, additional or enhanced.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "title": "Shareholder notes",
+          "description": "Additional notes on this shareholder. This field should be used to provide details on any caps on equity transfer, or lock-in arrangements, applicable to this shareholder.",
           "type": [
             "string",
             "null"
