@@ -1,5 +1,16 @@
 # Changelog
 
+## 2020-04-17
+
+### Added
+
+* T02: V.2.3: National registration number (`/AWARD_CONTRACT/AWARDED_CONTRACT/CONTRACTORS/CONTRACTOR/ADDRESS_PARTY/NATIONALID`)
+
+### Changed
+
+* Clarify mapping of `/LEGAL_BASIS` and `/LEGAL_BASIS_OTHER`
+* Move common mappings to individual pages
+
 ## 2020-04-07
 
 ### Added
