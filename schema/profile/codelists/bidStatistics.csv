@@ -2,6 +2,8 @@ Category,Code,Title,Description
 bids,requests,Requests to participate,The total number of unique requests to participate received
 bids,bids,Bids,The total number of unique bids received (prior to any being discounted for not meeting essential criteria).
 bids,validBids,Valid bids,"The total number of unique bids received that were considered valid against relevant criteria (either of the bidder, or the bid submission itself). All valid bids should be considered during the tender evaluation stage."
+bids,lowestValidBidValue,Lowest valid bid value,The value of the lowest valid bid.
+bids,highestValidBidValue,Highest valid bid value,The value of the highest valid bid.
 bidders,bidders,Bidders,The total number of unique organizations or consortia submitting bids  (prior to any being discounted for not meeting essential criteria).
 bidders,qualifiedBidders,Qualified bidders,The total number of unique organizations or consortia passing the qualification stage of the evaluation process.
 bidders,disqualifiedBidders,Disqualified bidders,The total number of unique organizations or consortia that did not pass the qualification stage of the evaluation process.
