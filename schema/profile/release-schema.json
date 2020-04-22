@@ -950,7 +950,7 @@
         },
         "exclusiveRights": {
           "title": "Exclusive rights",
-          "description": "The nature and extent of the exclusive rights granted by the procuring entity to the contractor.",
+          "description": "The nature and extent of the exclusive rights granted by the procuring entity to the supplier.",
           "type": [
             "string",
             "null"
@@ -958,7 +958,7 @@
         },
         "operatorRevenueShare": {
           "title": "Operator revenue share",
-          "description": "The percentage of revenue from the sale of tickets allocated to the contractor.",
+          "description": "The percentage of revenue from the sale of tickets allocated to the supplier.",
           "type": [
             "number",
             "null"
@@ -1150,6 +1150,19 @@
         }
       }
     },
+    "Budget": {
+      "properties": {
+        "finance": {
+          "title": "Finance",
+          "description": "An array with details of each source of finance planned for this procedure.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Finance"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
     "Finance": {
       "title": "Financing arrangements",
       "description": "This block can be used to model details of each of the parties financing a contract or project. Note: If the finance is syndicated, and all the parties to the syndication are known, this section may be further extended with an array of syndicate partners. No schema for this is currently provided.",
@@ -1207,7 +1220,7 @@
         },
         "financeCategory": {
           "title": "Finance category",
-          "description": "For categorizing the nature of any financial investment. This field must be filled in for debt finance. This information can be used to identify the order of preference for investors to get their money back in cases of liquidation.",
+          "description": "The nature of the finance. This information can be used when determining the order of preference for investors to get their money back in cases of liquidation.",
           "type": [
             "string",
             "null"
@@ -1241,7 +1254,7 @@
           "properties": {
             "base": {
               "title": "Base",
-              "description": "The variable to which an additional margin amount is added to get the Interest amount. This can be specified as a fixed number, as a known variable (e.g. LIBOR), or can be omitted if margin specifies the entire interest rate.",
+              "description": "The variable to which an additional margin amount is added to get the Interest amount. This can be specified as a fixed number, as a known variable (e.g. LIBOR or LIBOR+1%), or can be omitted if margin specifies the entire interest rate.",
               "type": [
                 "string",
                 "number",

@@ -24,6 +24,7 @@
     "chargePaidBy.csv",
     "permission.csv",
     "coveredBy.csv",
+    "+partyRole.csv",
     "financeCategory.csv",
     "financeType.csv",
     "locationGazetteers.csv",
