@@ -183,6 +183,19 @@
           "description": "Other requirements to participate in the lot.",
           "$ref": "#/definitions/OtherRequirements"
         },
+        "hasRenewal": {
+          "title": "Has renewal",
+          "description": "Whether the contract related to the lot can be renewed.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "renewal": {
+          "title": "Renewal",
+          "description": "The options for the renewal of the contract related to the lot.",
+          "$ref": "#/definitions/Renewal"
+        },
         "secondStage": {
           "title": "Second stage",
           "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
@@ -565,6 +578,21 @@
           "title": "Techniques",
           "description": "Information about the use of techniques, such as framework agreements, dynamic purchasing systems and electronic auctions.",
           "$ref": "#/definitions/Techniques"
+        },
+        "classification": {
+          "title": "Tender classification",
+          "description": "The primary classification of the contracting process.",
+          "$ref": "#/definitions/Classification"
+        },
+        "additionalClassifications": {
+          "title": "Tender additional classifications",
+          "description": "Additional classifications of the contracting process.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Classification"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
         }
       }
     },
@@ -2183,6 +2211,21 @@
         }
       }
     },
+    "Renewal": {
+      "title": "Renewal",
+      "description": "Information about the options for the renewal of a contract.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "A description of the options for the renewal of the contract.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
     "SecondStage": {
       "title": "Second stage",
       "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
@@ -2245,6 +2288,14 @@
           },
           "wholeListMerge": true,
           "uniqueItems": true
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the criteria used to select the economic operators who will be allowed to bid.",
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
