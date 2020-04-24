@@ -1,5 +1,11 @@
 # Changelog
 
+## 2020-04-23
+
+### Added
+
+* F13: V Results of contest (`/RESULTS`)
+
 ## 2020-04-17
 
 ### Added
