@@ -10,7 +10,8 @@
             "$ref": "#/definitions/ContactPoint"
           },
           "wholeListMerge": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "details": {
           "properties": {
@@ -20,7 +21,8 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             },
             "buyerProfile": {
               "title": "Buyer profile URL",
@@ -28,7 +30,8 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             },
             "classifications": {
               "title": "Organization classifications",
@@ -38,7 +41,8 @@
                 "$ref": "#/definitions/Classification"
               },
               "uniqueItems": true,
-              "wholeListMerge": true
+              "wholeListMerge": true,
+              "minItems": 1
             },
             "scale": {
               "title": "Scale",
@@ -67,7 +71,8 @@
           "items": {
             "$ref": "#/definitions/Shareholder"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "beneficialOwnership": {
           "type": "object",
@@ -80,9 +85,11 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         }
       }
     },
@@ -96,9 +103,11 @@
             "null"
           ],
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -183,6 +192,19 @@
           "description": "Other requirements to participate in the lot.",
           "$ref": "#/definitions/OtherRequirements"
         },
+        "recurrence": {
+          "title": "Recurrence",
+          "description": "Information on the recurrence of the lot.",
+          "$ref": "#/definitions/Recurrence"
+        },
+        "hasRecurrence": {
+          "title": "Has recurrence",
+          "description": "Whether the contracting process is recurrent.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
         "hasRenewal": {
           "title": "Has renewal",
           "description": "Whether the contract related to the lot can be renewed.",
@@ -232,7 +254,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "orderRationale": {
           "title": "Justification for order of importance",
@@ -240,7 +263,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "criteria": {
           "title": "Award criteria",
@@ -250,9 +274,11 @@
             "$ref": "#/definitions/AwardCriterion"
           },
           "wholeListMerge": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "AwardCriterion": {
       "title": "Award criterion",
@@ -267,7 +293,8 @@
             "null"
           ],
           "codelist": "awardCriterionType.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "minLength": 1
         },
         "name": {
           "title": "Name",
@@ -275,7 +302,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "description": {
           "title": "Description",
@@ -283,7 +311,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "numbers": {
           "title": "Numbers",
@@ -293,9 +322,11 @@
             "$ref": "#/definitions/AwardCriterionNumber"
           },
           "wholeListMerge": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "AwardCriterionNumber": {
       "title": "Award criterion number",
@@ -360,7 +391,8 @@
             null
           ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "Tender": {
       "properties": {
@@ -392,7 +424,8 @@
               ],
               "format": "date-time"
             }
-          }
+          },
+          "minProperties": 1
         },
         "contractTerms": {
           "title": "Contract terms",
@@ -407,11 +440,13 @@
             "null"
           ],
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "codelist": "coveredBy.csv",
           "openCodelist": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "designContest": {
           "title": "Design contest",
@@ -437,7 +472,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "valueCalculationMethod": {
           "title": "Value calculation method",
@@ -445,7 +481,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "crossBorderLaw": {
           "title": "Cross-border law",
@@ -453,7 +490,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "legalBasis": {
           "title": "Legal basis",
@@ -514,7 +552,8 @@
           "items": {
             "$ref": "#/definitions/Metric"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "options": {
           "title": "Options",
@@ -557,7 +596,21 @@
             "$ref": "#/definitions/Classification"
           },
           "wholeListMerge": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "recurrence": {
+          "title": "Recurrence",
+          "description": "Information on the recurrence of the contracting process.",
+          "$ref": "#/definitions/Recurrence"
+        },
+        "hasRecurrence": {
+          "title": "Has recurrence",
+          "description": "Whether the contracting process is recurrent.",
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "secondStage": {
           "title": "Second stage",
@@ -592,7 +645,8 @@
             "$ref": "#/definitions/Classification"
           },
           "uniqueItems": true,
-          "wholeListMerge": true
+          "wholeListMerge": true,
+          "minItems": 1
         }
       }
     },
@@ -626,9 +680,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Award": {
       "properties": {
@@ -646,7 +702,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "relatedLots": {
           "title": "Related lot(s)",
@@ -668,7 +725,8 @@
           "items": {
             "$ref": "#/definitions/Metric"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "hasSubcontracting": {
           "title": "Subcontracting involved",
@@ -1165,7 +1223,8 @@
           "items": {
             "$ref": "#/definitions/Charge"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "metrics": {
           "type": "array",
@@ -1174,7 +1233,8 @@
           "items": {
             "$ref": "#/definitions/Metric"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -1198,7 +1258,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "paidBy": {
           "title": "Paid by",
@@ -1236,9 +1297,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "ContractTerms": {
       "title": "Contract terms",
@@ -1291,7 +1354,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "financialTerms": {
           "title": "Financial terms",
@@ -1299,7 +1363,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "tendererLegalForm": {
           "title": "Tenderer legal form",
@@ -1307,7 +1372,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "hasExclusiveRights": {
           "title": "Has exclusive rights",
@@ -1323,7 +1389,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "operatorRevenueShare": {
           "title": "Operator revenue share",
@@ -1341,7 +1408,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "rewardsAndPenalties": {
           "title": "Rewards and penalties",
@@ -1349,7 +1417,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "socialStandards": {
           "title": "Social standards",
@@ -1357,9 +1426,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "DesignContest": {
       "title": "Design contest",
@@ -1373,7 +1444,8 @@
           "items": {
             "$ref": "#/definitions/OrganizationReference"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "hasPrizes": {
           "title": "Has prizes",
@@ -1394,9 +1466,11 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         },
         "rewardsDetails": {
           "title": "Rewards details",
@@ -1404,7 +1478,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "followUpContracts": {
           "title": "Follow-up contracts",
@@ -1430,9 +1505,11 @@
             "$ref": "#/definitions/JuryMember"
           },
           "wholeListMerge": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "JuryMember": {
       "title": "Jury member",
@@ -1445,9 +1522,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "EssentialAssets": {
       "title": "Essential assets",
@@ -1460,7 +1539,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "significance": {
           "title": "Significance",
@@ -1468,7 +1548,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "predominance": {
           "title": "Predominance",
@@ -1476,9 +1557,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Contract": {
       "properties": {
@@ -1488,7 +1571,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "publicPassengerTransportServicesKilometers": {
           "title": "Kilometers of public passenger transport services",
@@ -1506,7 +1590,8 @@
           "items": {
             "$ref": "#/definitions/Finance"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "agreedMetrics": {
           "type": "array",
@@ -1515,7 +1600,8 @@
           "items": {
             "$ref": "#/definitions/Metric"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -1528,7 +1614,8 @@
           "items": {
             "$ref": "#/definitions/Finance"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -1552,7 +1639,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "description": {
           "title": "Description",
@@ -1560,7 +1648,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "financingParty": {
           "title": "Financing party",
@@ -1628,7 +1717,8 @@
                 "string",
                 "number",
                 "null"
-              ]
+              ],
+              "minLength": 1
             },
             "margin": {
               "title": "Margin",
@@ -1652,9 +1742,11 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         },
         "repaymentFrequency": {
           "type": [
@@ -1694,7 +1786,8 @@
             ]
           }
         }
-      }
+      },
+      "minProperties": 1
     },
     "Item": {
       "properties": {
@@ -1892,7 +1985,8 @@
           "items": {
             "$ref": "#/definitions/Metric"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -1918,7 +2012,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "description": {
           "title": "Description",
@@ -1926,7 +2021,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "observations": {
           "type": "array",
@@ -1935,9 +2031,11 @@
           "items": {
             "$ref": "#/definitions/Observation"
           },
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Observation": {
       "type": "object",
@@ -1970,7 +2068,8 @@
             "string",
             "number",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "unit": {
           "type": "object",
@@ -1983,7 +2082,8 @@
                 "null"
               ],
               "title": "Unit name",
-              "description": "The name of the unit."
+              "description": "The name of the unit.",
+              "minLength": 1
             },
             "scheme": {
               "title": "Scheme",
@@ -1993,7 +2093,8 @@
                 "null"
               ],
               "codelist": "unitClassificationScheme.csv",
-              "openCodelist": true
+              "openCodelist": true,
+              "minLength": 1
             },
             "id": {
               "title": "ID",
@@ -2001,7 +2102,8 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             },
             "uri": {
               "title": "URI",
@@ -2012,7 +2114,8 @@
               ],
               "format": "uri"
             }
-          }
+          },
+          "minProperties": 1
         },
         "dimensions": {
           "type": "object",
@@ -2023,9 +2126,11 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         },
         "notes": {
           "title": "Notes",
@@ -2033,14 +2138,16 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "relatedImplementationMilestone": {
           "title": "Related implementation milestone",
           "description": "A link to the milestone in the implementation section of OCDS to which this forecast, target or actual observation relates.",
           "$ref": "#/definitions/MilestoneReference"
         }
-      }
+      },
+      "minProperties": 1
     },
     "MilestoneReference": {
       "type": "object",
@@ -2062,9 +2169,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Options": {
       "title": "Options",
@@ -2077,9 +2186,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "OtherRequirements": {
       "title": "Other requirements",
@@ -2102,10 +2213,13 @@
             "null"
           ],
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "codelist": "reservedParticipation.csv",
-          "openCodelist": true
+          "openCodelist": true,
+          "minItems": 1,
+          "uniqueItems": true
         },
         "qualificationSystemConditions": {
           "title": "Qualification system conditions",
@@ -2113,7 +2227,9 @@
           "type": [
             "array",
             "null"
-          ]
+          ],
+          "minItems": 1,
+          "uniqueItems": true
         },
         "qualificationSystemMethods": {
           "title": "Qualification system methods",
@@ -2121,7 +2237,9 @@
           "type": [
             "array",
             "null"
-          ]
+          ],
+          "minItems": 1,
+          "uniqueItems": true
         },
         "reductionCriteria": {
           "title": "Reduction criteria",
@@ -2129,9 +2247,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "ParticipationFee": {
       "title": "Participation fee",
@@ -2207,9 +2327,47 @@
           "type": [
             "string",
             "null"
+          ],
+          "minLength": 1
+        },
+        "features": {
+          "title": "Features",
+          "description": "The main features of the procedure (e.g. description of the individual stages) and information about where the full rules for the procedure can be found.",
+          "type": [
+            "string",
+            "null"
           ]
         }
-      }
+      },
+      "minProperties": 1
+    },
+    "Recurrence": {
+      "title": "Recurrence",
+      "description": "Information on the recurrence of the contracting process.",
+      "type": "object",
+      "properties": {
+        "dates": {
+          "title": "Estimated dates",
+          "description": "An estimate of the timing of subsequent initiations of contracting processes (e.g. notices of intended procurement).",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Period"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "description": {
+          "title": "Further information",
+          "description": "Any further information on the recurrence of the contracting process.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "minProperties": 1
     },
     "Renewal": {
       "title": "Renewal",
@@ -2222,9 +2380,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "SecondStage": {
       "title": "Second stage",
@@ -2272,7 +2432,8 @@
           ],
           "format": "date-time"
         }
-      }
+      },
+      "minProperties": 1
     },
     "SelectionCriteria": {
       "title": "Selection criteria",
@@ -2287,7 +2448,8 @@
             "$ref": "#/definitions/SelectionCriterion"
           },
           "wholeListMerge": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "description": {
           "title": "Description",
@@ -2297,7 +2459,8 @@
             "null"
           ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "SelectionCriterion": {
       "title": "Selection criterion",
@@ -2327,7 +2490,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "minimum": {
           "title": "Minimum value or level",
@@ -2335,9 +2499,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Shareholder": {
       "type": "object",
@@ -2394,7 +2560,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "notes": {
           "title": "Shareholder notes",
@@ -2402,9 +2569,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Subcontracting": {
       "title": "Subcontracting",
@@ -2417,7 +2586,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "maximumPercentage": {
           "title": "Maximum percentage of contract value",
@@ -2474,7 +2644,8 @@
             "null"
           ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "SubmissionTerms": {
       "title": "Submission terms",
@@ -2537,8 +2708,11 @@
             "null"
           ],
           "items": {
-            "type": "string"
-          }
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
         },
         "bidValidityPeriod": {
           "title": "Bid valididity period",
@@ -2553,7 +2727,8 @@
             "null"
           ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "Techniques": {
       "title": "Techniques",
@@ -2599,7 +2774,8 @@
           "description": "Information about the electronic auction.",
           "$ref": "#/definitions/ElectronicAuction"
         }
-      }
+      },
+      "minProperties": 1
     },
     "FrameworkAgreement": {
       "title": "Framework agreement",
@@ -2636,7 +2812,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "buyerCategories": {
           "title": "Buyer categories",
@@ -2644,9 +2821,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "DynamicPurchasingSystem": {
       "title": "Dynamic purchasing system",
@@ -2685,7 +2864,8 @@
             null
           ]
         }
-      }
+      },
+      "minProperties": 1
     },
     "ElectronicAuction": {
       "title": "Electronic auction",
@@ -2698,7 +2878,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "description": {
           "title": "Description",
@@ -2706,9 +2887,11 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "Amendment": {
       "properties": {
@@ -2720,7 +2903,8 @@
             "$ref": "#/definitions/UnstructuredChange"
           },
           "uniqueItems": true,
-          "wholeListMerge": true
+          "wholeListMerge": true,
+          "minItems": 1
         }
       }
     },
@@ -2735,7 +2919,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "oldValue": {
           "title": "Old value",
@@ -2758,7 +2943,8 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             },
             "label": {
               "title": "Label",
@@ -2766,11 +2952,14 @@
               "type": [
                 "string",
                 "null"
-              ]
+              ],
+              "minLength": 1
             }
-          }
+          },
+          "minProperties": 1
         }
-      }
+      },
+      "minProperties": 1
     },
     "UnstructuredChangeValue": {
       "title": "Unstructured change value",
@@ -2783,7 +2972,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         },
         "classifications": {
           "title": "Classifications",
@@ -2795,7 +2985,8 @@
             "$ref": "#/definitions/Classification"
           },
           "wholeListMerge": true,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         },
         "date": {
           "title": "Date",
@@ -2806,7 +2997,8 @@
           ],
           "format": "date-time"
         }
-      }
+      },
+      "minProperties": 1
     }
   },
   "properties": {
