@@ -1,5 +1,16 @@
 # Changelog
 
+## 2020-04-28
+
+### Added
+
+* Add Legal Basis, Recurrence, Renewal, Tender Classifications extensions
+
+### Fixed
+
+* F15: D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU (`/PROCEDURE/DIRECTIVE_2014_23_EU/PT_AWARD_CONTRACT_WITHOUT_PUBLICATION/D_ACCORDANCE_ARTICLE`)
+  * The `.id` was the same (instead of different) for all mappings
+
 ## 2020-04-23
 
 ### Added
@@ -10,19 +21,20 @@
 
 ### Added
 
+* Add Essential Assets extension
 * T02: V.2.3: National registration number (`/AWARD_CONTRACT/AWARDED_CONTRACT/CONTRACTORS/CONTRACTOR/ADDRESS_PARTY/NATIONALID`)
 
 ### Changed
 
-* Clarify mapping of `/LEGAL_BASIS` and `/LEGAL_BASIS_OTHER`
 * Move common mappings to individual pages
+* Clarify mapping of `/LEGAL_BASIS` and `/LEGAL_BASIS_OTHER`
 
 ## 2020-04-07
 
 ### Added
 
 * Add schema and codelist [reference pages](../reference/index)
-* Add Design Contest and Unstructured Changes extensions to home page
+* Add Design Contest and Unstructured Changes extensions
 * I.1 National registration number (`/CONTRACTING_BODY/ADDRESS_CONTRACTING_BODY/NATIONALID`)
   * Add a link to the [identifiers reference](https://standard.open-contracting.org/1.1/en/schema/identifiers/#organization-ids) in the OCDS documentation
 * I.3 Tenders or requests to participate must be submitted to the following address (`/CONTRACTING_BODY/ADDRESS_PARTICIPATION`)
@@ -56,13 +68,13 @@
 
 ### Added
 
-* Add Communication extension to home page
+* Add Communication extension
 
 ## 2020-03-09
 
 ### Added
 
-* Add Procurement Method Rationale Classifications extension to home page
+* Add Procurement Method Rationale Classifications extension
 
 ### Changed
 
@@ -70,11 +82,15 @@
 
 ## 2020-03-06
 
+### Added
+
+* Clarify changes in mappings between forms
+
 ### Fixed
 
 * F12: III.2.1 Information about a particular profession (`/LEFTI/PARTICULAR_PROFESSION`)
   * Unlike earlier forms, F12 has `/LEFTI/NO_PARTICULAR_PROFESSION`, and the XML schema for `/LEFTI/PARTICULAR_PROFESSION` differs
-* F23, F25: D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU (`/PROCEDURE/DIRECTIVE_2014_23_EU/PT_AWARD_CONTRACT_WITHOUT_PUBLICATION/D_ACCORDANCE_ARTICLE`)
+* F23, F25: D4.1 Justification for the award of the concession without publication of a concession notice in accordance with Article 31(4) and (5) of Directive 2014/23/EU (`/PROCEDURE/PT_AWARD_CONTRACT_WITHOUT_PUBLICATION/D_ACCORDANCE_ARTICLE`)
   * The `.id` was the same (instead of different) for all mappings
 
 ## 2020-02-24
@@ -82,7 +98,7 @@
 ### Added
 
 * T02: Add Section III, Section V mappings
-* Add Metrics and Shareholders extensions to home page
+* Add Metrics and Shareholders extensions
 
 ## 2020-02-10
 
@@ -175,7 +191,7 @@
 
 ### Changed
 
-* Add Additional Contact Points and Charges extensions to home page
+* Add Additional Contact Points and Charges extensions
 * Clarify the type of fields:
   * 1e9999 is a number, not a string (`/OBJECT_CONTRACT/LOT_DIVISION/LOT_ALL` and `/PROCEDURE/FRAMEWORK/SEVERAL_OPERATORS`)
   * `tender.lots[].awardCriteria` is an object (`/OBJECT_CONTRACT/OBJECT_DESCR/AC`)
