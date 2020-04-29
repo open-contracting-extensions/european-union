@@ -1605,6 +1605,40 @@
         }
       }
     },
+    "Item": {
+      "properties": {
+        "deliveryAddresses": {
+          "title": "Delivery addresses",
+          "description": "The addresse(s) to which the supplier delivers the item.",
+          "type": [
+            "array"
+          ],
+          "items": {
+            "$ref": "#/definitions/Address"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        },
+        "deliveryLocation": {
+          "title": "Delivery Location",
+          "description": "The location where activity related to this tender, contract or license will be delivered, or will take place.",
+          "$ref": "#/definitions/Location"
+        },
+        "deliveryAddress": {
+          "title": "Delivery Address",
+          "description": "The address to which, or where, goods or services related to this tender, contract or license will be delivered.",
+          "$ref": "#/definitions/Address"
+        },
+        "relatedLot": {
+          "title": "Related lot",
+          "description": "If this item belongs to a lot, provide the identifier of the related lot here. Each item may only belong to a single lot.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
     "Budget": {
       "properties": {
         "finance": {
@@ -1788,28 +1822,6 @@
         }
       },
       "minProperties": 1
-    },
-    "Item": {
-      "properties": {
-        "deliveryLocation": {
-          "title": "Delivery Location",
-          "description": "The location where activity related to this tender, contract or license will be delivered, or will take place.",
-          "$ref": "#/definitions/Location"
-        },
-        "deliveryAddress": {
-          "title": "Delivery Address",
-          "description": "The address to which, or where, goods or services related to this tender, contract or license will be delivered.",
-          "$ref": "#/definitions/Address"
-        },
-        "relatedLot": {
-          "title": "Related lot",
-          "description": "If this item belongs to a lot, provide the identifier of the related lot here. Each item may only belong to a single lot.",
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
     },
     "Location": {
       "type": "object",

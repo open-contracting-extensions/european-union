@@ -1962,6 +1962,18 @@
             }
           }
         },
+        "deliveryAddresses": {
+          "title": "Delivery addresses",
+          "description": "The addresse(s) to which the supplier delivers the item.",
+          "type": [
+            "array"
+          ],
+          "items": {
+            "$ref": "#/definitions/Address"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        },
         "deliveryLocation": {
           "title": "Delivery Location",
           "description": "The location where activity related to this tender, contract or license will be delivered, or will take place.",
