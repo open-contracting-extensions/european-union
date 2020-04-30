@@ -434,7 +434,7 @@
         },
         "coveredBy": {
           "title": "Covered by",
-          "description": "The treaties, laws, regulations or other instruments that the contracting process is covered by.",
+          "description": "The treaties that the contracting process is covered by.",
           "type": [
             "array",
             "null"
@@ -622,6 +622,22 @@
           "description": "Information about the conditions for participation in a procedure.",
           "$ref": "#/definitions/SelectionCriteria"
         },
+        "mainProcurementCategoryDetails": {
+          "title": "Main Procurement Category Details",
+          "description": "The local name of the Main Procurement Category",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "statusDetails": {
+          "title": "Status Details",
+          "description": "Additional detail on the status of the tender. This field can be used to provide the local name of the status.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "submissionTerms": {
           "title": "Submission terms",
           "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids for the procedure.",
@@ -727,6 +743,14 @@
           },
           "uniqueItems": true,
           "minItems": 1
+        },
+        "statusDetails": {
+          "title": "Status Details",
+          "description": "Additional detail on the status of the award. This field can be used to provide the local name of the status.",
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "hasSubcontracting": {
           "title": "Subcontracting involved",
@@ -1602,6 +1626,14 @@
           },
           "uniqueItems": true,
           "minItems": 1
+        },
+        "statusDetails": {
+          "title": "Status Details",
+          "description": "Additional detail on the status of the contract. This field can be used to provide the local name of the status",
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
