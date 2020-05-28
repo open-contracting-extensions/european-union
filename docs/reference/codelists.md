@@ -80,6 +80,15 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
       :file: ../_static/patched/codelists/contractStatus.csv
 ```
 
+## Country
+
+```eval_rst
+   .. csv-table-no-translate::
+      :header-rows: 1
+      :class: codelist-table
+      :file: ../_static/patched/codelists/country.csv
+```
+
 ## Covered By
 
 ```eval_rst

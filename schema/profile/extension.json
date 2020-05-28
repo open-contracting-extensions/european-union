@@ -23,6 +23,7 @@
     "bidStatus.csv",
     "chargePaidBy.csv",
     "permission.csv",
+    "country.csv",
     "coveredBy.csv",
     "+partyRole.csv",
     "financeCategory.csv",
