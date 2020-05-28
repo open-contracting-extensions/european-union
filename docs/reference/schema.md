@@ -8,7 +8,7 @@ You can browse the schema using either the [interactive browser](#schema-browser
 
 ## Schema browser
 
-<script src="../../_static/docson/widget.js" data-schema="../../_static/patched/release-schema.json"></script>
+<script src="../../_static/docson/public/js/widget.js" data-schema="../../../_static/patched/release-schema.json"></script>
 
 ## Fields table
 
