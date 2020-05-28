@@ -100,4 +100,4 @@ In many cases, the form labels from the PDF files and the element names from the
 
 ## We want your feedback!
 
-This is the first public working draft of this website. To contribute, please first read this page, and then dive into the guidance. Feedback is discussed openly on GitHub. For your convenience, we provide links to GitHub for all potential and reported issues. To browse all issues or to open another issue, visit [this website's GitHub issues](https://github.com/open-contracting-extensions/european-union/issues).
+To contribute, please first read this page, and then dive into the guidance. Feedback is discussed openly on GitHub. To browse all issues or to open another issue, visit [this website's GitHub issues](https://github.com/open-contracting-extensions/european-union/issues).

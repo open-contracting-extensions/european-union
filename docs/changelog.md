@@ -1,5 +1,17 @@
 # Changelog
 
+## 2020-05-28
+
+### Added
+
+* Add Country Code extension
+
+## 2020-04-30
+
+### Added
+
+* Add Status Details extension
+
 ## 2020-04-28
 
 ### Added
