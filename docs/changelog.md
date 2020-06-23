@@ -1,5 +1,11 @@
 # Changelog
 
+## 2020-06-22
+
+### Changed
+
+* F21, F22: Clarify mapping of `/NOTICE/@TYPE`
+
 ## 2020-05-28
 
 ### Added
