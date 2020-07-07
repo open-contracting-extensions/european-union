@@ -1,5 +1,18 @@
 # Changelog
 
+## 2020-07-06
+
+### Changed
+
+* F20: II.2 Description (`/OBJECT_CONTRACT/OBJECT_DESCR`)
+  * Remove mapping for the lot's `.status`
+* F20: VII.1.4 Description of the procurement (`//MODIFICATIONS_CONTRACT/DESCRIPTION_PROCUREMENT/SHORT_DESCR`) and VII.2.3 Total contract value after the modifications (`/MODIFICATIONS_CONTRACT/INFO_MODIFICATIONS/VALUES/VAL_TOTAL_AFTER`)
+  * Clarify precedence
+
+### Fixed
+
+* F14, F20: Set `Amendment.id` to guarantee global unique values
+
 ## 2020-06-22
 
 ### Changed
