@@ -147,7 +147,7 @@
         },
         "status": {
           "title": "Lot Status",
-          "description": "The current status of the process related to this lot based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1/en/schema/codelists/#tender-status)",
+          "description": "The current status of the process related to this lot.",
           "type": [
             "string",
             "null"
@@ -172,7 +172,7 @@
         },
         "contractPeriod": {
           "title": "Contract period",
-          "description": "The period over which the contract is estimated or required to be active. If the lot does not specify explicit dates, the duration field may be used.",
+          "description": "The period over which the contract is estimated or specified to be active. If the lot does not specify explicit dates, the duration field can be used.",
           "$ref": "#/definitions/Period"
         },
         "options": {
@@ -501,7 +501,7 @@
         },
         "lots": {
           "title": "Lots",
-          "description": "A tender process may be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features can then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values should be interpreted as applicable to the whole tender. Properties of tender can be overridden for a given Lot through their inclusion in the Lot object.",
+          "description": "A tender process can be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features may then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values ought to be interpreted as applicable to the whole tender. Properties of tender can be overridden for a given Lot through their inclusion in the Lot object.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Lot"
@@ -509,12 +509,12 @@
         },
         "lotDetails": {
           "title": "Lot Details",
-          "description": "If this tender is divided into lots, details can be provided here of any criteria that apply to bidding on these lots. This extended property is currently focused on fields required by the EU TED data standard",
+          "description": "If this tender is divided into lots, details can be provided here of any criteria that apply to bidding on these lots.",
           "type": "object",
           "properties": {
             "maximumLotsBidPerSupplier": {
               "title": "Maximum lots per supplier",
-              "description": "The maximum number of lots that one supplier may bid for as part of this contracting process.",
+              "description": "The maximum number of lots that one supplier can bid on as part of this contracting process.",
               "type": [
                 "integer",
                 "null"
@@ -522,7 +522,7 @@
             },
             "maximumLotsAwardedPerSupplier": {
               "title": "Maximum lots per supplier",
-              "description": "The maximum number of lots that may be awarded to one supplier as part of this contracting process.",
+              "description": "The maximum number of lots that can be awarded to one supplier as part of this contracting process.",
               "type": [
                 "integer",
                 "null"
@@ -770,7 +770,7 @@
     },
     "BidsStatistic": {
       "title": "Bid Statistic",
-      "description": "For reporting aggregate statistics about the bids related to a tender. Where lots are in use, statistics may optionally be broken down by lot. ",
+      "description": "For reporting aggregate statistics about the bids related to a tender. Where lots are in use, statistics can be broken down by lot.",
       "type": "object",
       "required": [
         "id",
@@ -780,19 +780,19 @@
       "properties": {
         "id": {
           "title": "ID",
-          "description": "An internal identifier for this statistical item.",
+          "description": "An internal identifier for this statistic.",
           "type": "string"
         },
         "measure": {
           "title": "Measure",
-          "description": "An item from the bidStatistics codelist for the statistic reported in value. This is an open codelist, and other statistics may also be included.",
+          "description": "The statistic reported in the value.",
           "type": "string",
           "codelist": "bidStatistics.csv",
           "openCodelist": true
         },
         "date": {
           "title": "Date",
-          "description": "The date when this statistic was last updated. This is often the closing date of the tender process. This field can be left blank unless either (a) the same statistic is provided from multiple points in time, or (b) there is a specific local requirement for the date when statistics were calculated to be provided.",
+          "description": "The date when this statistic was last updated. This is often the closing date of the tender process. This field may be omitted unless either (a) the same statistic is provided from multiple points in time, or (b) there is a specific local requirement for the date when statistics were calculated to be provided.",
           "type": [
             "string",
             "null"
@@ -801,12 +801,12 @@
         },
         "value": {
           "title": "Value",
-          "description": "The value for the measure in question. Total counts should be provided as an integer. Percentages should be presented as a proportion of 1 (e.g. 10% = 0.1)",
+          "description": "The value for the measure in question. Total counts should be provided as an integer. Percentages should be provided as a proportion of 1 (e.g. 10% = 0.1)",
           "type": "number"
         },
         "currency": {
           "title": "Currency",
-          "description": "The currency of the amount in the `value` field, from the closed [currency](https://standard.open-contracting.org/latest/en/schema/codelists/#currency) codelist, if the statistic has a monetary value.",
+          "description": "The currency of the amount in the `value` field, if the statistic has a monetary value.",
           "type": [
             "string",
             "null"
@@ -1121,7 +1121,7 @@
         },
         "notes": {
           "title": "Notes",
-          "description": "Any notes required to understand or interpret the given statistic.",
+          "description": "Any notes needed to understand or interpret the given statistic.",
           "type": [
             "string",
             "null"
@@ -1186,7 +1186,7 @@
         },
         "status": {
           "title": "Status",
-          "description": "The status of the bid, drawn from the bidStatus codelist",
+          "description": "The status of the bid.",
           "type": [
             "string",
             "null"
@@ -1204,7 +1204,7 @@
         },
         "tenderers": {
           "title": "Tenderer",
-          "description": "The party, or parties, responsible for this bid. This should provide a name and identifier, cross-referenced to an entry in the parties array at the top level of the release.",
+          "description": "The party, or parties, responsible for this bid.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/OrganizationReference"
@@ -1461,7 +1461,7 @@
       "properties": {
         "countryCode": {
           "title": "Country code",
-          "description": "The country where the address is located, using the closed country codelist. If you need to use a user-assigned code, [create an issue](https://github.com/open-contracting/standard/issues) to discuss its addition to the codelist.",
+          "description": "The country where the address is located. If you need to use a user-assigned code from ISO 3166-1 alpha-2, [create an issue](https://github.com/open-contracting/standard/issues) to discuss its addition to the `country.csv` codelist.",
           "type": [
             "string",
             "null"
@@ -1931,7 +1931,7 @@
         },
         "relatedLot": {
           "title": "Related lot",
-          "description": "If this item belongs to a lot, provide the identifier of the related lot here. Each item may only belong to a single lot.",
+          "description": "If this item belongs to a lot, provide the identifier of the related lot here.",
           "type": [
             "string",
             "null"
@@ -1992,7 +1992,7 @@
         },
         "financeType": {
           "title": "Finance type",
-          "description": "The type of finance arranged, from the finance type codelist.",
+          "description": "The type of finance arranged.",
           "type": [
             "string",
             "null"
@@ -2262,7 +2262,7 @@
         },
         "relatedLots": {
           "title": "Related lot(s)",
-          "description": "A list of the identifiers of the lots that form this group. Lots may appear in more than one group.",
+          "description": "A list of the identifiers of the lots that form this group. Lots can appear in more than one group.",
           "type": [
             "array",
             "null"
@@ -2283,7 +2283,7 @@
         },
         "maximumValue": {
           "title": "Maximum value",
-          "description": "The maximum estimated value of the lots in this group. This may be lower than the sum total of lot values",
+          "description": "The maximum estimated value of the lots in this group. This can be lower than the sum total of lot values",
           "$ref": "#/definitions/Value"
         }
       }
@@ -2399,7 +2399,7 @@
             },
             "scheme": {
               "title": "Scheme",
-              "description": "The list from which units of measure identifiers are taken. This should be an entry in the unitClassificationScheme codelist. Use of the scheme 'UNCEFACT' for the UN/CEFACT Recommendation 20 list of 'Codes for Units of Measure Used in International Trade' is recommended.   ",
+              "description": "The list from which units of measure identifiers are taken. Use of the scheme 'UNCEFACT' for the UN/CEFACT Recommendation 20 list of \"Codes for Units of Measure Used in International Trade\" is recommended.",
               "type": [
                 "string",
                 "null"
@@ -2813,6 +2813,24 @@
             "null"
           ],
           "minLength": 1
+        },
+        "appliesTo": {
+          "title": "Applies to",
+          "description": "Whether the criterion applies to suppliers, subcontractors, or both.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "supplier",
+              "subcontractor"
+            ]
+          },
+          "codelist": "appliesTo.csv",
+          "openCodelist": false,
+          "uniqueItems": true
         }
       },
       "minProperties": 1
@@ -2850,7 +2868,7 @@
         },
         "votingRights": {
           "title": "Shareholder voting rights",
-          "description": "Specify the type of voting rights associated with the shares held by the shareholder against the voting rights codelist.",
+          "description": "The type of voting rights associated with the shares held by the shareholder.",
           "type": [
             "string",
             "null"
@@ -3027,7 +3045,7 @@
           "uniqueItems": true
         },
         "bidValidityPeriod": {
-          "title": "Bid valididity period",
+          "title": "Bid validity period",
           "description": "The period, from the bid submission deadline, for which bids must remain valid.",
           "$ref": "#/definitions/Period"
         },
@@ -3275,7 +3293,7 @@
     },
     "UnstructuredChangeValue": {
       "title": "Unstructured change value",
-      "description": "A value of a data element. The value must be described using only one of the fields `text`, `classifications` or `date`.",
+      "description": "A value of a data element. The value must be described using exactly one of the fields `text`, `classifications` or `date`.",
       "type": "object",
       "properties": {
         "text": {
@@ -3307,7 +3325,7 @@
             "string",
             "null"
           ],
-          "format": "date-time"
+          "pattern": "^\\d{4}-[01]\\d-[0-3]\\d(T[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:?[0-5]\\d|Z))?$"
         }
       },
       "minProperties": 1

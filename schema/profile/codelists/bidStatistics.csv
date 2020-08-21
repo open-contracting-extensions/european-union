@@ -1,7 +1,7 @@
 Category,Code,Title,Description
 bids,requests,Requests to participate,The total number of unique requests to participate received
 bids,bids,Bids,The total number of unique bids received (prior to any being discounted for not meeting essential criteria).
-bids,validBids,Valid bids,"The total number of unique bids received that were considered valid against relevant criteria (either of the bidder, or the bid submission itself). All valid bids should be considered during the tender evaluation stage."
+bids,validBids,Valid bids,"The total number of unique bids received that were considered valid against relevant criteria (either of the bidder, or the bid submission itself). All valid bids are considered during the tender evaluation stage."
 bids,lowestValidBidValue,Lowest valid bid value,The value of the lowest valid bid.
 bids,highestValidBidValue,Highest valid bid value,The value of the highest valid bid.
 bidders,bidders,Bidders,The total number of unique organizations or consortia submitting bids  (prior to any being discounted for not meeting essential criteria).
@@ -12,4 +12,4 @@ EU,smeBids,Bids from SMEs,The number of bids received from small and medium-size
 EU,foreignBids,Bids from foreign firms,The number of bids received from bidders from outside the country where the tender is issued.
 EU,foreignBidsFromEU,Bids from firms in other European Economic Area countries,The number of bids received from tenderers from other European Economic Area countries.
 EU,foreignBidsFromNonEU,Bids from firms in non-European Economic Area countries,The number of bids received from tenderers from non-European Economic Area countries.
-EU,tendersAbnormallyLow,Tenders excluded because they were abnormally low,"The number of tenders excluded because they were abnormally low. Note that in some EU datasets this may have been converted from a boolean, such that a value of 1 would indicate '1 or more' tenders were excluded. Users should evaluate and interpret data accordingly."
+EU,tendersAbnormallyLow,Tenders excluded because they were abnormally low,"The number of tenders excluded because they were abnormally low. Note that in some EU datasets this might have been converted from a boolean, such that a value of 1 would indicate ""1 or more"" tenders were excluded. Users need to evaluate and interpret data accordingly."
