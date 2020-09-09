@@ -24,7 +24,7 @@ The European Commission also provides [template PDF files](https://publications.
 
 This guidance is based on the TED publication XML schema R2.0.9 (007, 2018-10-30).
 
-## TED-to-OCDS Mapping
+## TED-to-OCDS mapping
 
 This website takes the human-readable form labels from the standard form PDF files, pairs them with the machine-readable element names from the TED XML files, and provides guidance on how to express the information in OCDS.
 
