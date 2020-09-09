@@ -1,0 +1,7 @@
+Code,Title,Description
+cash,Cash,"The payment is made in cash, such as banknotes and coins."
+check,Check,"The payment is made by check (also written as ""cheque"")."
+creditCard,Credit card,The payment is made by credit card.
+directDebit,Direct debit,"The payment is made by direct debit, also known as direct withdrawal, pre-authorized debit (PAD) or pre-authorized payment (PAP)."
+letterOfCredit,Letter of credit,The payment is made by letter of credit.
+wireTransfer,Wire transfer,"The payment is made by wire transfer, also known as bank transfer or credit transfer."

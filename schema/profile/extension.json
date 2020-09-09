@@ -34,6 +34,7 @@
     "geometryType.csv",
     "reservedParticipation.csv",
     "participationFeeType.csv",
+    "methodOfPayment.csv",
     "partyScale.csv",
     "selectionCriterionType.csv",
     "appliesTo.csv",

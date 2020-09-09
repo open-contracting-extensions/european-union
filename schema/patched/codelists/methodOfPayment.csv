@@ -1,0 +1,7 @@
+Code,Title,Description,Extension
+cash,Cash,"The payment is made in cash, such as banknotes and coins.",Participation Fees
+check,Check,"The payment is made by check (also written as ""cheque"").",Participation Fees
+creditCard,Credit card,The payment is made by credit card.,Participation Fees
+directDebit,Direct debit,"The payment is made by direct debit, also known as direct withdrawal, pre-authorized debit (PAD) or pre-authorized payment (PAP).",Participation Fees
+letterOfCredit,Letter of credit,The payment is made by letter of credit.,Participation Fees
+wireTransfer,Wire transfer,"The payment is made by wire transfer, also known as bank transfer or credit transfer.",Participation Fees
