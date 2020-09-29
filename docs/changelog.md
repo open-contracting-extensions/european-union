@@ -1,5 +1,12 @@
 # Changelog
 
+## 2020-09-29
+
+### Fixed
+
+* F05: III.1.6 Deposits and guarantees required (`/LEFTI/DEPOSIT_GUARANTEE_REQUIRED`)
+  * Rename `requiresGuarantees` to `depositsGuarantees`, and map as string instead of as boolean
+
 ## 2020-07-06
 
 ### Changed
