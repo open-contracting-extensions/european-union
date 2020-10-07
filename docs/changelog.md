@@ -1,5 +1,12 @@
 # Changelog
 
+## 2020-10-07
+
+### Changed
+
+* Minimum level(s) of standards possibly required (`/LEFTI/ECONOMIC_FINANCIAL_MIN_LEVEL`, `/LEFTI/TECHNICAL_PROFESSIONAL_MIN_LEVEL`)
+  * Clarify mapping when no `SelectionCriterion` object exists
+
 ## 2020-09-29
 
 ### Fixed
