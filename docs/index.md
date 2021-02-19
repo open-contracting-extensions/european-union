@@ -18,7 +18,7 @@ The secondary legislation includes the [Commission Implementing Regulation (EU) 
 
 [PDF files](http://simap.ted.europa.eu/standard-forms-for-public-procurement) of the forms are provided by the European Commission, for reference only ([Prior information notice](http://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf), for example). However, the PDF files don't formally specify the form fields and their possible values (numbers, dates, codes, etc.). These are specified in the Tenders Electronic Daily (TED) [XML schemas](https://publications.europa.eu/en/web/eu-vocabularies/e-procurement/tedschemas). Of particular interest is the Publication Schema, which is used to publish notices.
 
-Reading the schema, however, is challenging, unless you're familiar with XML Schema and related tools. To make it easier to understand the structure of the notices, we generated [XML files](https://github.com/open-contracting/european-union-support/tree/master/output/samples) for the notices, which provide validation rules in comments, and retain XML Schema elements like `<choice>` only where necessary.
+Reading the schema, however, is challenging, unless you're familiar with XML Schema and related tools. To make it easier to understand the structure of the notices, we generated [XML files](https://github.com/open-contracting/european-union-support/tree/main/output/samples) for the notices, which provide validation rules in comments, and retain XML Schema elements like `<choice>` only where necessary.
 
 The European Commission also provides [template PDF files](https://publications.europa.eu/documents/3938058/5358176/Archive.zip/ce7ceb02-94b0-04e8-8b9f-7fb4acf1ccdb), in which label keys like `ca` stand for labels like 'Contracting authority', and provides an Excel file that maps the label keys to labels in official languages of the European Union.
 
@@ -77,7 +77,7 @@ Most fields map simply and directly from TED XML to OCDS JSON. Badges are used t
 * <span class="badge badge-warning">Attention</span> If there is a potential issue with the guidance, it is described briefly, and a link is provided to a GitHub issue to acknowledge or dismiss the potential issue.
 * <span class="badge badge-issue">Issue</span> If there is a reported issue with the guidance, it is described briefly, and a link is provided to the GitHub issue.
 
-When reading the guidance on this website, it may be useful to refer to the notice's [PDF file](http://simap.ted.europa.eu/standard-forms-for-public-procurement) (be sure to open the new, not old, form), to see whether the field is a check box, radio button, etc. and to its [XML file](https://github.com/open-contracting/european-union-support/tree/master/output/samples), to see the validation rules and other context.
+When reading the guidance on this website, it may be useful to refer to the notice's [PDF file](http://simap.ted.europa.eu/standard-forms-for-public-procurement) (be sure to open the new, not old, form), to see whether the field is a check box, radio button, etc. and to its [XML file](https://github.com/open-contracting/european-union-support/tree/main/output/samples), to see the validation rules and other context.
 
 ### Understanding the concepts in the forms
 
