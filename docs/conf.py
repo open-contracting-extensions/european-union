@@ -99,7 +99,7 @@ gettext_compact = False
 gettext_domain_prefix = '{}-'.format(profile_identifier)
 
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in
-# the extension registry: https://github.com/open-contracting/extension_registry/blob/master/extension_versions.csv
+# the extension registry: https://github.com/open-contracting/extension_registry/blob/main/extension_versions.csv
 with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'extension_versions.json')) as f:
     extension_versions = json.load(f)
 
