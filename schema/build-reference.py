@@ -16,7 +16,7 @@ def main():
 
     The codelists below are from the OCDS and its extensions, and are provided here for convenience only.
 
-    The codelists can be downloaded as CSV files from <https://standard.open-contracting.org/profiles/eu/master/en/_static/patched/codelists/>.
+    The codelists can be downloaded as CSV files from <https://standard.open-contracting.org/profiles/eu/latest/en/_static/patched/codelists/>.
     """)  # noqa: E501
 
     with open(os.path.join(base_dir, 'docs', 'reference', 'codelists.md'), 'w') as f:

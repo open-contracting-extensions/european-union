@@ -1,6 +1,3 @@
-# Compare this file to:
-# https://github.com/open-contracting/standard_profile_template/blob/main/include/config.mk
-
 # Edit these variables as appropriate.
 
 # The space-separated, period-prefixed translations to build (for easier substitutions).
@@ -28,7 +25,7 @@ TRANSIFEX_PROJECT=
 EXTRACT_TARGETS=
 
 # The path to the branch of the documentation to print to PDF.
-PDF_ROOT=/profiles/eu/master
+PDF_ROOT=/profiles/eu/latest
 # The pattern of pages to print to PDF. Update if the documentation adds, removes or renames pages.
 PDF_PAGES={forms/{,F01/,F02/,F03/,F04/,F05/,F06/,F07/,F08/,F12/,F13/,F14/,F15/,F20/,F21/,F22/,F23/,F24/,F25/,T01/,T02/},operations/,reference/{,schema/,codelists/},changelog/}
 # 15000 may warn: "Warning: Received createRequest signal on a disposed ResourceObject's NetworkAccessManager. This might
