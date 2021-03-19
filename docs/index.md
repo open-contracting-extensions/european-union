@@ -30,12 +30,11 @@ This website takes the human-readable form labels from the standard form PDF fil
 
 In this way, a policy analyst can see the relationship to the standard forms established in the Implementing Regulation, and a software developer can see the relationship to the elements defined in the TED XML schema.
 
-```eval_rst
-.. toctree::
-   :maxdepth: 2
+```{toctree}
+:maxdepth: 2
 
-   forms/index
-   operations
+forms/index
+operations
 ```
 
 ### Reading this website
@@ -90,12 +89,11 @@ In many cases, the form labels from the PDF files and the element names from the
 
 ## Technical reference
 
-```eval_rst
-.. toctree::
-   :maxdepth: 2
+```{toctree}
+:maxdepth: 2
 
-   reference/index
-   changelog
+reference/index
+changelog
 ```
 
 ## We want your feedback!

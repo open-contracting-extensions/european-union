@@ -31,11 +31,10 @@ def main():
             f.write('\n## {}\n\n'.format(codelist_name))
 
             f.write(dedent("""\
-            ```eval_rst
-               .. csv-table-no-translate::
-                  :header-rows: 1
-                  :class: codelist-table
-                  :file: ../_static/patched/codelists/{}
+            ```{{csv-table-no-translate}}
+            :header-rows: 1
+            :class: codelist-table
+            :file: ../_static/patched/codelists/{}
             ```
             """.format(filename)))
 
