@@ -2,12 +2,11 @@
 
 Please refer to the following pages:
 
-```eval_rst
-.. toctree::
-   :maxdepth: 1
+```{toctree}
+:maxdepth: 1
 
-   schema
-   codelists
+schema
+codelists
 ```
 
 This profile makes use of the extensions below. Instead of declaring each extension in your OCDS packages, you can declare the consolidated OCDS for EU extension:

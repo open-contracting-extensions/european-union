@@ -12,6 +12,5 @@ You can browse the schema using either the [interactive browser](#schema-browser
 
 ## Fields table
 
-```eval_rst
-.. jsonschema:: ../_static/patched/release-schema.json
+```{jsonschema} ../_static/patched/release-schema.json
 ```
