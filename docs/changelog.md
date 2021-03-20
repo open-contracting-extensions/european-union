@@ -255,7 +255,7 @@
 
 ### Fixed
 
-* Fix [referencing a previous publication](operations.md#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
+* Fix [referencing a previous publication](operations.md#reference-a-previous-publication) to use `relatedProcesses[].relationship` as an array
 * Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme (`/CONTRACTING_BODY/URL_DOCUMENT`)
 * Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays (`/OBJECT_CONTRACT/CPV_MAIN/CPV_SUPPLEMENTARY_CODE` and `/OBJECT_CONTRACT/OBJECT_DESCR/CPV_ADDITIONAL`)
 * Change the mappings for:
