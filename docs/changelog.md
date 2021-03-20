@@ -188,7 +188,7 @@
 
 ### Changed
 
-* [Create a release](../operations/#create-a-release): Use a new `ocid` for a contract award notice for an award within a framework agreement or dynamic purchasing system
+* [Create a release](operations.md#create-a-release): Use a new `ocid` for a contract award notice for an award within a framework agreement or dynamic purchasing system
 
 ## 2019-11-15
 
@@ -255,7 +255,7 @@
 
 ### Fixed
 
-* Fix [referencing a previous publication](../operations#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
+* Fix [referencing a previous publication](operations.md#reference-a-previous-release) to use `relatedProcesses[].relationship` as an array
 * Prefix 'http://' to `parties[].contactPoint.url` if there is no URL scheme (`/CONTRACTING_BODY/URL_DOCUMENT`)
 * Remove any duplicate entries from `tender.additionalClassifications` and `tender.items[].additionalClassifications` arrays (`/OBJECT_CONTRACT/CPV_MAIN/CPV_SUPPLEMENTARY_CODE` and `/OBJECT_CONTRACT/OBJECT_DESCR/CPV_ADDITIONAL`)
 * Change the mappings for:
