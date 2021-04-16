@@ -71,6 +71,7 @@ profile_identifier = 'eu'
 repository_url = 'https://github.com/open-contracting-extensions/european-union'
 
 html_theme_options = {
+    'analytics_id': 'HTWZHRIZ',
     'display_version': False,
     'root_url': '/profiles/{}'.format(profile_identifier),
     'short_project': project.replace('Open Contracting Data Standard', 'OCDS'),
