@@ -8,6 +8,14 @@ The codelists below are from the OCDS and its extensions, and are provided here 
 
 The codelists can be downloaded as CSV files from <https://standard.open-contracting.org/profiles/eu/latest/en/_static/patched/codelists/>.
 
+## Applies To
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/appliesTo.csv
+```
+
 ## Award Criteria
 
 ```{csv-table-no-translate}
@@ -206,6 +214,14 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :header-rows: 1
 :class: codelist-table
 :file: ../_static/patched/codelists/method.csv
+```
+
+## Method Of Payment
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/methodOfPayment.csv
 ```
 
 ## Milestone Status
