@@ -1,5 +1,14 @@
 # Changelog
 
+## 2021-04-20
+
+### Changed
+
+* II.2.13 Information about European Union funds (`/OBJECT_CONTRACT/OBJECT_DESCR/EU_PROGR_RELATED`)
+  * Clarify setting of `.relatedLots` on existing objects
+* Minimum level(s) of standards possibly required (`/LEFTI/ECONOMIC_FINANCIAL_MIN_LEVEL`, `/LEFTI/TECHNICAL_PROFESSIONAL_MIN_LEVEL`)
+  * Repeat changes from 2020-10-07 on F01 and F04
+
 ## 2020-10-07
 
 ### Changed
