@@ -501,6 +501,11 @@
                 "null"
               ],
               "format": "date-time"
+            },
+            "documentAvailabilityPeriod": {
+              "title": "Document availability period",
+              "description": "The period during which documents can be accessed, or during which requests for access to documents can be submitted.",
+              "$ref": "#/definitions/Period"
             }
           },
           "minProperties": 1
@@ -561,6 +566,19 @@
             "null"
           ],
           "minLength": 1
+        },
+        "legislativeReferences": {
+          "title": "Legislative references",
+          "description": "Legislative references and associated contact points for information.",
+          "type": [
+            "array"
+          ],
+          "items": {
+            "$ref": "#/definitions/LegislativeReference"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true,
+          "minItems": 1
         },
         "crossBorderLaw": {
           "title": "Cross-border law",
@@ -690,6 +708,19 @@
             "null"
           ]
         },
+        "hasRenewal": {
+          "title": "Has renewal",
+          "description": "Whether the contracts can be renewed.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "renewal": {
+          "title": "Renewal",
+          "description": "The options for the renewal of the contracts.",
+          "$ref": "#/definitions/Renewal"
+        },
         "secondStage": {
           "title": "Second stage",
           "description": "Information about the second stage of a two-stage procedure (e.g. a restricted procedure, a competitive procedure with negotiation, a competitive dialogue or an innovation partnership).",
@@ -715,6 +746,11 @@
             "string",
             "null"
           ]
+        },
+        "subcontractingTerms": {
+          "title": "Subcontracting terms",
+          "description": "Information about the terms governing subcontracting.",
+          "$ref": "#/definitions/SubcontractingTerms"
         },
         "submissionTerms": {
           "title": "Submission terms",
@@ -2005,7 +2041,8 @@
             "$ref": "#/definitions/Address"
           },
           "uniqueItems": true,
-          "wholeListMerge": true
+          "wholeListMerge": true,
+          "minItems": 1
         },
         "deliveryLocation": {
           "title": "Delivery Location",
@@ -3075,6 +3112,16 @@
           "description": "Information about the terms governing the future contracts for the lot.",
           "$ref": "#/definitions/ContractTerms"
         },
+        "minimumValue": {
+          "title": "Minimum value",
+          "description": "The minimum estimated value of the lot. A negative value indicates that the contracting process may involve payments from the supplier to the buyer (commonly used in concession contracts).",
+          "$ref": "#/definitions/Value"
+        },
+        "awardPeriod": {
+          "title": "Award period",
+          "description": "The period for decision making regarding the contract award for the lot. The end date should be the date on which an award decision is due to be finalized. The start date may be used to indicate the start of an evaluation period.",
+          "$ref": "#/definitions/Period"
+        },
         "id": {
           "title": "Lot ID",
           "type": "string",
@@ -3417,6 +3464,14 @@
           "title": "Value",
           "description": "The value for the measure in question. Total counts should be provided as an integer. Percentages should be provided as a proportion of 1 (e.g. 10% = 0.1)",
           "type": "number"
+        },
+        "valueGross": {
+          "title": "Gross value",
+          "description": "The monetary value for the measure in question, including all taxes.",
+          "type": [
+            "number",
+            "null"
+          ]
         },
         "currency": {
           "title": "Currency",
@@ -4178,6 +4233,37 @@
       },
       "minProperties": 1
     },
+    "LegislativeReference": {
+      "title": "Legislative reference",
+      "description": "Legislative reference and associated contact point",
+      "type": "object",
+      "properties": {
+        "title": {
+          "title": "Title",
+          "description": "The title of the legislative reference",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "url": {
+          "title": "URL",
+          "description": "A link to the Web page of the legislative reference.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "informationService": {
+          "title": "Information service",
+          "description": "An organization that can provide information about the legislative reference.",
+          "$ref": "#/definitions/OrganizationReference"
+        }
+      },
+      "minProperties": 1
+    },
     "Finance": {
       "title": "Financing arrangements",
       "description": "This block can be used to model details of each of the parties financing a contract or project. Note: If the finance is syndicated, and all the parties to the syndication are known, this section may be further extended with an array of syndicate partners. No schema for this is currently provided.",
@@ -4677,6 +4763,11 @@
             "null"
           ],
           "minLength": 1
+        },
+        "period": {
+          "title": "Period",
+          "description": "The period over which the options can be used.",
+          "$ref": "#/definitions/Period"
         }
       },
       "minProperties": 1
@@ -4828,7 +4919,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
       },
       "minProperties": 1
@@ -4874,6 +4966,27 @@
             "null"
           ],
           "minLength": 1
+        },
+        "minimumRenewals": {
+          "title": "Minimum renewal",
+          "description": "The minimum number of renewals.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "maximumRenewals": {
+          "title": "Maximum renewal",
+          "description": "The maximum number of renewals. If there is no maximum, set to 1e9999 (which parses to infinity).",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "period": {
+          "title": "Renewal period",
+          "description": "The period over which the contract can be renewed.",
+          "$ref": "#/definitions/Period"
         }
       },
       "minProperties": 1
@@ -4949,7 +5062,8 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
       },
       "minProperties": 1
@@ -5010,7 +5124,8 @@
           },
           "codelist": "appliesTo.csv",
           "openCodelist": false,
-          "uniqueItems": true
+          "uniqueItems": true,
+          "minItems": 1
         }
       },
       "minProperties": 1
@@ -5076,6 +5191,23 @@
         "notes": {
           "title": "Shareholder notes",
           "description": "Additional notes on this shareholder. This field should be used to provide details on any caps on equity transfer, or lock-in arrangements, applicable to this shareholder.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "minProperties": 1
+    },
+    "SubcontractingTerms": {
+      "title": "Subcontracting terms",
+      "description": "The obligations of the suppliers who subcontract.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Description",
+          "description": "A description of the terms governing subcontracting.",
           "type": [
             "string",
             "null"
@@ -5229,13 +5361,14 @@
           "description": "The period, from the bid submission deadline, for which bids must remain valid.",
           "$ref": "#/definitions/Period"
         },
-        "requiresGuarantees": {
-          "title": "Guarantees required",
-          "description": "Whether or not a financial guarantee is required.",
+        "depositsGuarantees": {
+          "title": "Deposits and guarantees",
+          "description": "Information about the deposits or guarantees required from the tenderers.",
           "type": [
-            "boolean",
+            "string",
             "null"
-          ]
+          ],
+          "minLength": 1
         }
       },
       "minProperties": 1
@@ -5292,6 +5425,14 @@
       "description": "Information about the framework agreement.",
       "type": "object",
       "properties": {
+        "minimumParticipants": {
+          "title": "Minimum number of participants",
+          "description": "The minimum number of participants in the framework agreement.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
         "maximumParticipants": {
           "title": "Maximum number of participants",
           "description": "The maximum number of participants in the framework agreement. If there is no maximum, set to 1e9999 (which parses to infinity).",
@@ -5328,6 +5469,25 @@
         "buyerCategories": {
           "title": "Buyer categories",
           "description": "Any additional categories of buyers participating in the framework agreement and not mentioned by name (e.g. 'all hospitals in the Tuscany region').",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "value": {
+          "title": "Value",
+          "description": "The total upper estimated value of the framework agreement.",
+          "$ref": "#/definitions/Value"
+        },
+        "period": {
+          "title": "Period",
+          "description": "The period over which the framework agreement is estimated to be active.",
+          "$ref": "#/definitions/Period"
+        },
+        "description": {
+          "title": "Description",
+          "description": "A summary description of the framework agreement. This complements any structured information provided using the other fields.",
           "type": [
             "string",
             "null"

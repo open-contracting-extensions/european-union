@@ -1,5 +1,6 @@
 Code,Title,Description,Source,Category
 CELEX,CELEX number,Identifier scheme for EUR-Lex documents,https://eur-lex.europa.eu/content/help/faq/intro.html#help8,legalBasis
+LEXML,LexML URN,Identifier scheme for BR-Lex documents,https://projeto.lexml.gov.br/,legalBasis
 COFOG,Classification of the Functions of Government,"A standard classifying the purposes of government activities, developed by the Organisation for Economic Co-operation and Development and published by the United Nations Statistical Division.",https://unstats.un.org/unsd/classifications/Econ/,organization
 TED_CA_TYPE,EC Type of contracting authority,The types of contracting authority within the domain of public procurement according to legislation of the European Parliament.,https://simap.ted.europa.eu/documents/10184/99173/EN_F01.pdf,organization
 TED_CE_ACTIVITY,EC Main activity of contracting entity,The main activities of contracting entities within the domain of public procurement according to legislation of the European Parliament.,https://simap.ted.europa.eu/documents/10184/99173/EN_F04.pdf,organization
