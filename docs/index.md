@@ -11,6 +11,7 @@ The primary legislation for public contracting in the European Union includes:
 * [Directive 2014/24/EU](https://eur-lex.europa.eu/eli/dir/2014/24/oj) on public procurement
 * [Directive 2014/23/EU](https://eur-lex.europa.eu/eli/dir/2014/23/oj) on the award of concession contracts
 * [Directive 2014/25/EU](https://eur-lex.europa.eu/eli/dir/2014/25/oj) on procurement by entities operating in the water, energy, transport and postal services sectors
+* [Regulation (EC) No 1370/2007](https://data.europa.eu/eli/reg/2007/1370/oj)
 
 The secondary legislation includes the [Commission Implementing Regulation (EU) 2015/1986](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1986), which establishes standard forms for the publication of procurement notices.
 
