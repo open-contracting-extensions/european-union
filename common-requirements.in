@@ -1,5 +1,6 @@
 mdit-py-plugins
-myst-parser
+# https://github.com/executablebooks/MyST-Parser/pull/359
+-e git+https://github.com/jpmckinney/myst-parser.git@heading_slug_func#egg=myst-parser
 ocds-babel
 Sphinx
 -e git+https://github.com/open-contracting/standard_theme.git@open_contracting#egg=standard_theme

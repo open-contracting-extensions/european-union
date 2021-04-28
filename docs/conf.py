@@ -19,6 +19,7 @@ from glob import glob
 from pathlib import Path
 
 import standard_theme
+from docutils.nodes import make_id
 from ocds_babel.translate import translate
 
 # -- Project information -----------------------------------------------------
@@ -106,6 +107,7 @@ with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'extension_v
 # https://myst-parser.readthedocs.io/en/latest/using/intro.html#sphinx-configuration-options
 myst_enable_extensions = []
 myst_heading_anchors = 6
+myst_heading_slug_func = make_id
 
 
 def setup(app):
