@@ -120,7 +120,7 @@ with open(os.path.join(os.path.dirname(os.path.realpath(__file__)), 'extension_v
 
 def setup(app):
     # The root of the repository.
-    basedir = Path(os.path.realpath(__file__)).parents[1]
+    basedir = Path(__file__).resolve().parents[1]
     # The `LOCALE_DIR` from `config.mk`.
     localedir = basedir / 'docs' / 'locale'
 
