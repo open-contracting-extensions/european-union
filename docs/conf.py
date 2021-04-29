@@ -106,9 +106,10 @@ html_theme_options = {
     'repository_url': repository_url,
 }
 
-# Imported by build-profile.py.
+# Imported by manage.py.
 standard_tag = '1__1__5'  # the version of OCDS to patch
 standard_version = '1.1'
+managed_codelist = True
 schema_base_url = 'https://standard.open-contracting.org{}/schema/{}/'.format(  # where the schemas will be deployed
     html_theme_options['root_url'], release.replace('-', '__').replace('.', '__'))
 # List the extension identifiers and versions that should be part of this profile. The extensions must be available in

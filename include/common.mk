@@ -123,6 +123,10 @@ all: build_source compile $(TRANSLATIONS:.%=build.%) clean_current_lang
 autobuild: current_lang.en
 	sphinx-autobuild -nW -q -b dirhtml $(DOCS_DIR) $(BUILD_DIR)/en
 
+.PHONY: update
+update: clean_dist
+	python manage.py update
+
 ### Test
 
 .PHONY: linkcheck_source

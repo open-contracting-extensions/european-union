@@ -25,8 +25,7 @@ jobs:
       - name: Make
         run: |
           if [ $GITHUB_REPOSITORY = 'open-contracting/standard_profile_template' ]; then
-            python schema/build-profile.py
-            make extract
+            make update extract
           fi
           make
       - run: make linkcheck
