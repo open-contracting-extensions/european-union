@@ -9,4 +9,9 @@ payer,Payer,A party making a payment from a transaction.,OCDS Core
 payee,Payee,A party in receipt of a payment from a transaction.,OCDS Core
 reviewBody,Review body,A party responsible for the review of this procurement process. This party often has a role in any challenges made to the contract award.,OCDS Core
 interestedParty,Interested party,"A party that has expressed an interest in the contracting process: for example, by purchasing tender documents or submitting clarification questions.",OCDS Core
+mediationBody,Mediation body,The body responsible for mediation procedures.,European Union
+centralPurchasingBody,Central purchasing body,"The procuring entity providing centralized purchasing activities and, possibly, ancillary purchasing activities.",European Union
+processContactPoint,Process contact point,A contact point dedicated to this contracting process.,European Union
+reviewContactPoint,Review contact point,The service from which information about the review procedure can be obtained.,European Union
 selectedParticipant,Selected participant,A party that has already been selected to participate in the design contest.,European Union
+informationService,Information service,An organization that can provide information regarding specific aspects of the contracting process.,European Union
