@@ -4,7 +4,7 @@
 #
 #    pip-compile common-requirements.in
 #
--e git+https://github.com/jpmckinney/myst-parser.git@heading_slug_func#egg=myst-parser
+-e git+https://github.com/jpmckinney/MyST-Parser.git@heading_slug_func#egg=myst-parser
     # via -r common-requirements.in
 -e git+https://github.com/open-contracting/standard_theme.git@open_contracting#egg=standard_theme
     # via -r common-requirements.in
@@ -29,6 +29,8 @@ click==7.1.2
     #   ocdsindex
     #   pip-tools
     #   sphinx-intl
+colorama==0.4.4
+    # via sphinx-autobuild
 docutils==0.16
     # via
     #   myst-parser
@@ -58,6 +60,10 @@ json-merge-patch==0.2
     # via ocdsextensionregistry
 jsonref==0.2
     # via ocdsextensionregistry
+linkify-it-py==1.0.1
+    # via -r common-requirements.in
+livereload==2.6.3
+    # via sphinx-autobuild
 lxml==4.6.3
     # via ocdsindex
 markdown-it-py==0.6.2
@@ -68,14 +74,13 @@ markupsafe==1.1.1
     # via jinja2
 mdit-py-plugins==0.2.6
     # via
-    #   -r common-requirements.in
     #   markdown-it-py
     #   myst-parser
 ocds-babel==0.3.1
     # via -r common-requirements.in
 ocdsextensionregistry==0.1.3
     # via -r common-requirements.in
-ocdsindex==0.0.4
+ocdsindex==0.0.7
     # via -r common-requirements.in
 packaging==20.9
     # via
@@ -112,17 +117,22 @@ requests==2.25.1
 selenium==3.141.0
     # via -r common-requirements.in
 six==1.15.0
-    # via transifex-client
+    # via
+    #   livereload
+    #   transifex-client
 smmap==3.0.5
     # via gitdb
 snowballstemmer==2.1.0
     # via sphinx
+sphinx-autobuild==2021.3.14
+    # via -r common-requirements.in
 sphinx-intl==2.0.1
     # via -r common-requirements.in
 sphinx==3.5.2
     # via
     #   -r common-requirements.in
     #   myst-parser
+    #   sphinx-autobuild
     #   sphinx-intl
 sphinxcontrib-applehelp==1.0.2
     # via sphinx
@@ -142,10 +152,14 @@ toml==0.10.2
     # via
     #   pep517
     #   pytest
+tornado==6.1
+    # via livereload
 transifex-client==0.14.2
     # via -r common-requirements.in
 typing-extensions==3.7.4.3
     # via importlib-metadata
+uc-micro-py==1.0.1
+    # via linkify-it-py
 urllib3==1.26.4
     # via
     #   elasticsearch

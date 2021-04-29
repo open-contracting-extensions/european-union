@@ -1,6 +1,6 @@
-mdit-py-plugins
-# https://github.com/executablebooks/MyST-Parser/pull/359
--e git+https://github.com/jpmckinney/myst-parser.git@heading_slug_func#egg=myst-parser
+# https://github.com/executablebooks/MyST-Parser/issues/331
+-e git+https://github.com/jpmckinney/MyST-Parser.git@heading_slug_func#egg=myst-parser
+linkify-it-py
 ocds-babel
 Sphinx
 -e git+https://github.com/open-contracting/standard_theme.git@open_contracting#egg=standard_theme
@@ -8,7 +8,7 @@ Sphinx
 # Profile
 ocdsextensionregistry
 
-# Build
+# Translations
 sphinx-intl
 transifex-client
 
@@ -21,3 +21,4 @@ selenium
 
 # Development
 pip-tools
+sphinx-autobuild
