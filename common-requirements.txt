@@ -26,6 +26,7 @@ chardet==4.0.0
     # via requests
 click==7.1.2
     # via
+    #   -r common-requirements.in
     #   ocdsindex
     #   pip-tools
     #   sphinx-intl

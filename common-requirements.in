@@ -20,5 +20,6 @@ pytest
 selenium
 
 # Development
+click
 pip-tools
 sphinx-autobuild
