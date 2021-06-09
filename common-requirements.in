@@ -1,5 +1,5 @@
-# https://github.com/executablebooks/MyST-Parser/issues/331
--e git+https://github.com/jpmckinney/MyST-Parser.git@heading_slug_func#egg=myst-parser
+# https://github.com/executablebooks/MyST-Parser/issues/331 waiting for > 0.14.0
+-e git+https://github.com/executablebooks/MyST-Parser.git@a39d2363a161b7f1d4427c6f3011203b560cb302#egg=myst-parser
 linkify-it-py
 ocds-babel
 Sphinx
