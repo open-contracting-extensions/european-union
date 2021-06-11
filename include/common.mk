@@ -129,6 +129,8 @@ update: clean_dist
 
 ### Test
 
+# "-" ignores the exit status. Schema files might contain old URLs that redirect, which can only be updated in a new version.
+
 .PHONY: linkcheck_source
 linkcheck_source: current_lang.en
 	-sphinx-build -q -b linkcheck $(DOCS_DIR) $(BUILD_DIR)/en
