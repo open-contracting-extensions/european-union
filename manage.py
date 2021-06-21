@@ -20,16 +20,21 @@ def cli():
 
 @cli.command()
 def update():
+    """
+    Updates the profile to the latest versions of extensions. If ``managed_codelist = True`` in ``conf.py``, regenerates
+    ``docs/reference/codelists.md`` to list all codelists from OCDS and extensions.
+    """
+
     import conf
 
     schema_base_url = 'https://standard.open-contracting.org{}/schema/{}/'.format(
         conf.html_theme_options['root_url'], conf.release.replace('-', '__').replace('.', '__'))
     build_profile(basedir / 'schema', conf.standard_tag, conf.extension_versions, schema_base_url=schema_base_url)
 
-    file = basedir / 'docs' / 'reference' / 'codelists.md'
     if not getattr(conf, 'managed_codelist', False):
         return
 
+    file = basedir / 'docs' / 'reference' / 'codelists.md'
     with file.open('w+') as f:
         filenames = glob(str(basedir / 'schema' / 'patched' / 'codelists' / '*.csv'))
         codelists = [os.path.basename(filename) for filename in filenames]
