@@ -4,8 +4,6 @@
 #
 #    pip-compile common-requirements.in
 #
--e git+https://github.com/executablebooks/MyST-Parser.git@a39d2363a161b7f1d4427c6f3011203b560cb302#egg=myst-parser
-    # via -r common-requirements.in
 -e git+https://github.com/open-contracting/standard_theme.git@open_contracting#egg=standard_theme
     # via -r common-requirements.in
 alabaster==0.7.12
@@ -75,6 +73,8 @@ markupsafe==1.1.1
     # via jinja2
 mdit-py-plugins==0.2.8
     # via myst-parser
+myst-parser==0.15.1
+    # via -r common-requirements.in
 ocds-babel==0.3.1
     # via -r common-requirements.in
 ocdsextensionregistry==0.1.3
