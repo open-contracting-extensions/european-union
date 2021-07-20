@@ -21,7 +21,7 @@ def cli():
 @cli.command()
 def update():
     """
-    Updates the profile to the latest versions of extensions. If conf.py sets managed_codelist to True, regenerates
+    Update the profile to the latest versions of extensions. If conf.py sets managed_codelist to True, regenerate
     docs/reference/codelists.md to list all codelists from OCDS and extensions.
     """
 
