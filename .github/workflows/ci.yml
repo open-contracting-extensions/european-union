@@ -27,7 +27,7 @@ jobs:
       - run: make
       - run: |
           make linkcheck
-          rm -f output.json output.txt
+          find . \( -name output.json -o -name output.txt \) -exec rm -r "{}" \;
       - run: pytest
       # Deploy the built documentation to the staging directory.
       - if: github.event_name == 'push'
