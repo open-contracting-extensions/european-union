@@ -27,8 +27,9 @@ def update():
 
     import conf
 
-    schema_base_url = 'https://standard.open-contracting.org{}/schema/{}/'.format(
-        conf.html_theme_options['root_url'], conf.release.replace('-', '__').replace('.', '__'))
+    path_prefix = conf.html_theme_options['root_url']
+    ref = conf.release.replace('-', '__').replace('.', '__')
+    schema_base_url = f'https://standard.open-contracting.org{path_prefix}/schema/{ref}/'
     build_profile(basedir / 'schema', conf.standard_tag, conf.extension_versions, schema_base_url=schema_base_url)
 
     if not getattr(conf, 'managed_codelist', False):
