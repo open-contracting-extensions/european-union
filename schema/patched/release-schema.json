@@ -596,7 +596,7 @@
         },
         "lots": {
           "title": "Lots",
-          "description": "A tender process can be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features may then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values ought to be interpreted as applicable to the whole tender. Properties of tender can be overridden for a given Lot through their inclusion in the Lot object.",
+          "description": "A tender process can be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features may then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values ought to be interpreted as applicable to the whole tender. Details about the whole tender can be overridden for a given lot through their inclusion in the lot object.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Lot"
@@ -938,7 +938,22 @@
           "type": [
             "string",
             "null"
-          ]
+          ],
+          "deprecated": {
+            "description": "This field is deprecated in favor of `relatedBids`, to allow an award to combine multiple bids.",
+            "deprecatedVersion": "1.2"
+          }
+        },
+        "relatedBids": {
+          "title": "Related bids",
+          "description": "Where bid details are used, a cross reference to the entries in the bids array to which this award relates. Provide the bid identifiers here.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
         },
         "valueCalculationMethod": {
           "title": "Value calculation method",
@@ -1899,23 +1914,6 @@
           },
           "uniqueItems": true,
           "minItems": 1
-        },
-        "beneficialOwnership": {
-          "type": "object",
-          "title": "Beneficial ownership",
-          "description": "This section can be used to record information concerning individuals or organizations with a beneficial ownership or control interests in this party. Where structured data is available, this section may be extended by embedding or linking to information modelled using the [Beneficial Ownership Data Standard (BODS)](https://github.com/openownership/data-standard).",
-          "properties": {
-            "description": {
-              "title": "Description",
-              "description": "A free text description of beneficial ownership or control arrangements.",
-              "type": [
-                "string",
-                "null"
-              ],
-              "minLength": 1
-            }
-          },
-          "minProperties": 1
         }
       },
       "patternProperties": {
@@ -3831,7 +3829,7 @@
     },
     "Bid": {
       "title": "Bid",
-      "description": "For representing a bid in response to the tender or qualification stage in this contracting process.",
+      "description": "For representing a bid or quote in response to the tender or qualification stage in this contracting process.",
       "type": "object",
       "required": [
         "id"
@@ -3853,6 +3851,14 @@
           ],
           "format": "date-time"
         },
+        "description": {
+          "title": "Description",
+          "description": "A description of this bid. The description field may be used to describe the terms and conditions for the bid.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "status": {
           "title": "Status",
           "description": "The status of the bid.",
@@ -3871,6 +3877,15 @@
             null
           ]
         },
+        "items": {
+          "title": "Items offered by the tenderer(s)",
+          "description": "The goods, works or services offered by the tenderer(s), broken into line items wherever possible. Items should not be duplicated, but the quantity specified instead.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          },
+          "uniqueItems": true
+        },
         "tenderers": {
           "title": "Tenderer",
           "description": "The party, or parties, responsible for this bid.",
@@ -3883,6 +3898,11 @@
           "title": "Value",
           "description": "The total value of the bid.",
           "$ref": "#/definitions/Value"
+        },
+        "validityPeriod": {
+          "title": "Validity period",
+          "description": "The period for which this bid is valid.",
+          "$ref": "#/definitions/Period"
         },
         "documents": {
           "title": "Documents",
@@ -4522,6 +4542,7 @@
             "string",
             "null"
           ],
+          "format": "uri",
           "title": "URI",
           "description": "A URI to a further description of the activity location. This might be a human-readable document with information on the location, or a machine-readable description of the location."
         }
@@ -4673,7 +4694,7 @@
             },
             "id": {
               "title": "ID",
-              "description": "The identifier from the codelist referenced in the schema property. For example, with UNCEFACT, this is the value of the 'Common Code' column. From this identifier, applications can look-up the human readable name or symbol for this unit of measure. ",
+              "description": "The identifier from the codelist referenced in the scheme field. For example, with UNCEFACT, this is the value of the 'Common Code' column. From this identifier, applications can look-up the human readable name or symbol for this unit of measure. ",
               "type": [
                 "string",
                 "null"
@@ -4808,6 +4829,10 @@
             "array",
             "null"
           ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
           "minItems": 1,
           "uniqueItems": true
         },
@@ -4818,6 +4843,10 @@
             "array",
             "null"
           ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
           "minItems": 1,
           "uniqueItems": true
         },
@@ -5312,7 +5341,7 @@
         },
         "variantPolicy": {
           "title": "Variant policy",
-          "description": "Whether tenderers are required, allowed or not allowed to submit tenders which fulfill the buyer's needs differently than as proposed in the procurement documents.",
+          "description": "Whether tenderers are required, allowed or not allowed to submit bids which fulfill the buyer's needs differently than as proposed in the procurement documents.",
           "type": [
             "string",
             "null"
