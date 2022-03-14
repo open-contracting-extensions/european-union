@@ -510,6 +510,26 @@
           "description": "The legal basis of the procedure.",
           "$ref": "#/definitions/Classification"
         },
+        "deliveryLocations": {
+          "title": "Delivery Locations",
+          "description": "The locations where activity related to this tender will take place.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Location"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        },
+        "deliveryAddresses": {
+          "title": "Delivery Addresses",
+          "description": "The addresses to which, or where, goods or services related to this tender will be delivered.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Address"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        },
         "lots": {
           "title": "Lots",
           "description": "A tender process can be divided into lots, where bidders can bid on one or more lots. Details of each lot can be provided here. Items, documents and other features may then reference the lot they are related to using relatedLot. Where no relatedLots identifier is given, the values ought to be interpreted as applicable to the whole tender. Details about the whole tender can be overridden for a given lot through their inclusion in the lot object.",
@@ -1982,11 +2002,9 @@
     "Item": {
       "properties": {
         "deliveryAddresses": {
-          "title": "Delivery addresses",
-          "description": "The addresse(s) to which the supplier delivers the item.",
-          "type": [
-            "array"
-          ],
+          "title": "Delivery Addresses",
+          "description": "The addresses to which, or where, goods or services related to this tender, contract or license will be delivered.",
+          "type": "array",
           "items": {
             "$ref": "#/definitions/Address"
           },
@@ -1994,15 +2012,33 @@
           "wholeListMerge": true,
           "minItems": 1
         },
+        "deliveryLocations": {
+          "title": "Delivery Locations",
+          "description": "The locations where activity related to this tender, contract or license will be delivered",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Location"
+          },
+          "uniqueItems": true,
+          "wholeListMerge": true
+        },
         "deliveryLocation": {
           "title": "Delivery Location",
           "description": "The location where activity related to this tender, contract or license will be delivered, or will take place.",
-          "$ref": "#/definitions/Location"
+          "$ref": "#/definitions/Location",
+          "deprecated": {
+            "description": "This field is deprecated in favour of `.deliveryLocations` to support items with multiple delivery locations.",
+            "deprecatedVersion": "1.1.6"
+          }
         },
         "deliveryAddress": {
           "title": "Delivery Address",
           "description": "The address to which, or where, goods or services related to this tender, contract or license will be delivered.",
-          "$ref": "#/definitions/Address"
+          "$ref": "#/definitions/Address",
+          "deprecated": {
+            "description": "This field is deprecated in favour of `.deliveryAddresses` to support items with multiple delivery locations.",
+            "deprecatedVersion": "1.1.6"
+          }
         },
         "relatedLot": {
           "title": "Related lot",
