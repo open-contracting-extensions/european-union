@@ -1,5 +1,14 @@
 # Changelog
 
+## 2022-03-14
+
+### Changed
+
+* III.1.2 Selection criteria as stated in the procurement documents
+  * Change mapping to use `tender.selectionCriteria.criteria` instead of `tender.documents`
+* III.1.3 Selection criteria as stated in the procurement documents
+  * Change mapping to use `tender.selectionCriteria.criteria` instead of `tender.documents`
+
 ## 2021-04-20
 
 ### Changed
