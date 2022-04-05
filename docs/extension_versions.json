@@ -15,7 +15,7 @@
   "legalBasis": "1.1",
   "location": "master",
   "lots": "master",
-  "metrics": "master",
+  "metrics": "1.1",
   "options": "master",
   "organizationClassification": "1.1",
   "otherRequirements": "master",
