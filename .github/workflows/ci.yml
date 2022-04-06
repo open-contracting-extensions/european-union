@@ -5,30 +5,27 @@ jobs:
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           submodules: true
-      - uses: actions/setup-python@v2
+      - uses: actions/setup-python@v3
         with:
           python-version: 3.8
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt', 'setup.py') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          cache: pip
+          cache-dependency-path: '**/requirements*.txt'
       # Don't install editable projects in the current working directory.
       # https://pip.pypa.io/en/latest/reference/pip_install/#install-src
       - run: pip install --src $GITHUB_WORKSPACE/../src -r requirements.txt
       # Google Chrome and ChromeDriver are already included.
       # https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners
+      # https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md
       - if: github.repository == 'open-contracting/standard_profile_template'
         run: make update extract
       - run: make
       - run: |
           make linkcheck
           find . \( -name output.json -o -name output.txt \) -exec rm -r "{}" \;
-      - run: pytest
+      - run: pytest -W error
       # Deploy the built documentation to the staging directory.
       - if: github.event_name == 'push'
         uses: shimataro/ssh-key-action@v2
