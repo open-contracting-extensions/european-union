@@ -624,7 +624,7 @@
         },
         "lotDetails": {
           "title": "Lot Details",
-          "description": "If this tender is divided into lots, details can be provided here of any criteria that apply to bidding on these lots.",
+          "description": "Details of any criteria that apply to bidding on the lots in this tender.",
           "type": "object",
           "properties": {
             "maximumLotsBidPerSupplier": {
@@ -696,8 +696,7 @@
           "items": {
             "$ref": "#/definitions/ParticipationFee"
           },
-          "uniqueItems": true,
-          "wholeListMerge": true
+          "uniqueItems": true
         },
         "procedure": {
           "title": "Procedure",
@@ -986,7 +985,7 @@
         },
         "relatedLots": {
           "title": "Related lot(s)",
-          "description": "If this award relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
+          "description": "The identifiers of the lots to which this award relates.",
           "type": [
             "array",
             "null"
@@ -1407,7 +1406,7 @@
         },
         "relatedLots": {
           "title": "Related lot(s)",
-          "description": "If this milestone relates to a particular lot, provide the identifier(s) of the related lot(s) here.",
+          "description": "The identifiers of the lots to which this milestone relates.",
           "type": [
             "array",
             "null"
@@ -1522,7 +1521,7 @@
         },
         "relatedLots": {
           "title": "Related lot(s)",
-          "description": "If this document relates to a particular lot, provide the identifier(s) of the related lot(s) here.",
+          "description": "The identifiers of the lots to which this document relates.",
           "type": [
             "array",
             "null"
@@ -2090,7 +2089,7 @@
         },
         "relatedLot": {
           "title": "Related lot",
-          "description": "If this item belongs to a lot, provide the identifier of the related lot here.",
+          "description": "The identifier of the lot to which this item relates.",
           "type": [
             "string",
             "null"
@@ -3202,10 +3201,20 @@
           "$ref": "#/definitions/Value",
           "description": "The maximum estimated value of this lot."
         },
+        "minValue": {
+          "title": "Minimum value",
+          "description": "The estimated minimum value of the lot. A negative value indicates that the contracting process may involve payments from the supplier to the buyer (commonly used in concession contracts).",
+          "$ref": "#/definitions/Value"
+        },
         "contractPeriod": {
           "title": "Contract period",
           "description": "The period over which the contract is estimated or specified to be active. If the lot does not specify explicit dates, the duration field can be used.",
           "$ref": "#/definitions/Period"
+        },
+        "buyer": {
+          "title": "Buyer",
+          "description": "The organization aiming to conclude a contract with a supplier or to use the goods, works or services in this lot. This may be different from the procuring entity who may be specified in the tender data.",
+          "$ref": "#/definitions/OrganizationReference"
         },
         "options": {
           "title": "Options",
@@ -3274,7 +3283,10 @@
       },
       "title": "Lots",
       "description": "A lot is a grouping of items within a tender that can be bid on or awarded together.",
-      "type": "object"
+      "type": "object",
+      "required": [
+        "id"
+      ]
     },
     "AwardCriteria": {
       "title": "Award criteria",
@@ -3951,7 +3963,7 @@
         },
         "relatedLots": {
           "title": "Related lot(s)",
-          "description": "If this bid relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
+          "description": "The identifiers of the lots to which this bid relates.",
           "type": [
             "array",
             "null"
@@ -4476,7 +4488,7 @@
         },
         "relatedLots": {
           "title": "Related lot(s)",
-          "description": "If this source of finance relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.",
+          "description": "The identifiers of the lots to which this source of finance relates.",
           "type": [
             "array",
             "null"
@@ -4588,6 +4600,9 @@
       "title": "Lot group",
       "description": "Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots, a lot group is used to capture this information.",
       "type": "object",
+      "required": [
+        "id"
+      ],
       "properties": {
         "id": {
           "title": "Lot group identifier",
@@ -4902,6 +4917,9 @@
       "title": "Participation fee",
       "description": "A fee applicable to bidders wishing to participate in the tender process. Fees can apply for accessing bidding documents or for submitting bids, or there can be a \"win fee\" payable by the successful bidder.",
       "type": "object",
+      "required": [
+        "id"
+      ],
       "properties": {
         "id": {
           "title": "Fee ID",
