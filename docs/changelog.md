@@ -1,5 +1,11 @@
 # Changelog
 
+## 2022-04-27
+
+### Changed
+
+* Update to R2.0.9.S05.E01_001-20210730 from R2.0.9.S03.E01_007-20181030, including new `/PROCEDURE` elements for T01.
+
 ## 2022-03-14
 
 ### Changed
