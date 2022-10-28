@@ -23,6 +23,8 @@ DOMAIN_PREFIX=
 TRANSIFEX_PROJECT=
 # Any additional extract targets.
 EXTRACT_TARGETS=
+# Extra arguments for sphinx-autobuild.
+SPHINX_AUTOBUILD_EXTRA_ARGS=
 
 # The path to the branch of the documentation to print to PDF.
 PDF_ROOT=/profiles/eu/latest
