@@ -13,7 +13,7 @@ The primary legislation for public contracting in the European Union includes:
 * [Directive 2014/25/EU](https://eur-lex.europa.eu/eli/dir/2014/25/oj) on procurement by entities operating in the water, energy, transport and postal services sectors
 * [Regulation (EC) No 1370/2007](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02007R1370-20171224)
 
-The secondary legislation includes the [Commission Implementing Regulation (EU) 2015/1986](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1986), which establishes standard forms for the publication of procurement notices.
+The secondary legislation includes the [Commission Implementing Regulation (EU) 2019/1780](https://eur-lex.europa.eu/eli/reg_impl/2019/1780/oj) (eForms), which establishes standard forms for the publication of procurement notices, and repeals the earlier [Commission Implementing Regulation (EU) 2015/1986](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015R1986).
 
 This guidance does not cover:
 
@@ -27,7 +27,7 @@ Reading the schema, however, is challenging, unless you're familiar with XML Sch
 
 The European Commission also provides [template PDF files](https://publications.europa.eu/documents/3938058/5358176/Archive.zip/ce7ceb02-94b0-04e8-8b9f-7fb4acf1ccdb), in which label keys like `ca` stand for labels like 'Contracting authority', and provides an Excel file that maps the label keys to labels in official languages of the European Union.
 
-This guidance is based on the TED publication XML schema R2.0.9 (007, 2018-10-30). It does not cover XML schema R2.0.8, used for the standard forms related to Directive 2009/81/EC, which are:
+This guidance is based on the TED publication XML schema R2.0.9 (S05, 2021-07-30). It does not cover XML schema R2.0.8, used for the standard forms related to Directive 2009/81/EC, which are:
 
 * F16: Prior information notice for contracts in the field of defence and security
 * F17: Contract notice for contracts in the field of defence and security
