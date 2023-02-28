@@ -14,7 +14,6 @@ async-generator==1.10
     #   trio-websocket
 attrs==20.3.0
     # via
-    #   markdown-it-py
     #   outcome
     #   pytest
     #   trio
@@ -76,7 +75,7 @@ livereload==2.6.3
     # via sphinx-autobuild
 lxml==4.9.1
     # via ocdsindex
-markdown-it-py==1.0.0
+markdown-it-py==2.2.0
     # via
     #   mdit-py-plugins
     #   myst-parser
@@ -84,6 +83,8 @@ markupsafe==2.1.1
     # via jinja2
 mdit-py-plugins==0.3.1
     # via myst-parser
+mdurl==0.1.2
+    # via markdown-it-py
 myst-parser==0.18.1
     # via -r common-requirements.in
 ocds-babel==0.3.1
