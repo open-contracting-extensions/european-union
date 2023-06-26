@@ -1,5 +1,11 @@
 # Changelog
 
+## 2023-06-26
+
+### Changed
+
+* `tender.essentialAssets` is an array instead of an object, to be consistent with the [OCDS for eForms](https://standard.open-contracting.org/profiles/eforms/latest/en/) profile.
+
 ## 2022-04-27
 
 ### Changed
