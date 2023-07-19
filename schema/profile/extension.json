@@ -25,11 +25,13 @@
     "permission.csv",
     "country.csv",
     "coveredBy.csv",
-    "+partyRole.csv",
+    "+documentType.csv",
+    "+itemClassificationScheme.csv",
     "+milestoneType.csv",
+    "+partyRole.csv",
+    "+relatedProcessScheme.csv",
     "financeCategory.csv",
     "financeType.csv",
-    "+itemClassificationScheme.csv",
     "locationGazetteers.csv",
     "geometryType.csv",
     "reservedParticipation.csv",
@@ -46,5 +48,8 @@
   "contactPoint": {
     "name": "Open Contracting Partnership",
     "email": "data@open-contracting.org"
-  }
+  },
+  "testDependencies": [
+    "https://raw.githubusercontent.com/open-contracting-extensions/ocds_document_publisher_extension/master/extension.json"
+  ]
 }

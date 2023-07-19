@@ -2,7 +2,7 @@
   "additionalContactPoint": "master",
   "awardCriteria": "master",
   "bidOpening": "master",
-  "bids": "master",
+  "bids": "v1.1.5",
   "charges": "master",
   "communication": "master",
   "contractTerms": "master",
