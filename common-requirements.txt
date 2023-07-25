@@ -110,7 +110,7 @@ pluggy==0.13.1
     # via pytest
 pycparser==2.21
     # via cffi
-pygments==2.13.0
+pygments==2.15.1
     # via sphinx
 pyopenssl==22.0.0
     # via urllib3
