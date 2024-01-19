@@ -1,5 +1,11 @@
 # Changelog
 
+## 2024-01-19
+
+### Changed
+
+* Rename `electronicCataloguePolicy` to `electronicCatalogPolicy`.
+
 ## 2022-04-27
 
 ### Changed
