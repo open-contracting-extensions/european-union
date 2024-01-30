@@ -10,6 +10,8 @@
 }
 .rst-content code {
   font-size: 10px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
 }
 
 q {
