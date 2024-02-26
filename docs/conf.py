@@ -104,6 +104,7 @@ html_theme_options = {
     'license_url': f'{repository_url}/blob/HEAD/LICENSE',
     'repository_url': repository_url,
 }
+html_short_title = f'{html_theme_options["short_project"]} v{release}'
 
 # Imported by manage.py.
 standard_tag = '1__1__5'  # the version of OCDS to patch
