@@ -56,7 +56,7 @@ exceptiongroup==1.0.0
     #   pytest
 h11==0.13.0
     # via wsproto
-idna==2.10
+idna==3.7
     # via
     #   requests
     #   trio
@@ -133,7 +133,7 @@ requests-cache==1.1.0
     # via ocdsextensionregistry
 selenium==4.11.2
     # via -r common-requirements.in
-six==1.15.0
+six==1.16.0
     # via
     #   livereload
     #   url-normalize
