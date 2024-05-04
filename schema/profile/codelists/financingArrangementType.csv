@@ -1,0 +1,8 @@
+Code,Title,Description
+bond,Bond,"A debt instrument provided by an issuer, such as a government or company. A bond typically obliges the issuer to pay interest (coupons) to the bondholder over a specified period and to repay the principal (amount borrowed) at the maturity date."
+loan,Loan,"A debt instrument provided by a lender, such as a commercial bank, multi-lateral financial institution, or development agency. A loan typically obliges the borrower to pay the principal (amount borrowed) and interest to the lender over a specified period."
+hybrid,Hybrid,A debt-based instrument with equity-like participation. Also called mezzanine finance.
+shares.listed,Listed shares,An equity instrument representing ownership rights in a company that is listed in a stock exchange.
+shares.unlisted,Unlisted shares,An equity instrument representing ownership rights in a company that is not listed in a stock exchange.
+grant,Grant,Money provided without expectation of repayment.
+guarantee,Guarantee,A promise by one party to assume the debt of another in case of default.

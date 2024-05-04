@@ -1,0 +1,7 @@
+Code,Title,Description,Source
+institutional,Institutional,"This finance was provided by institutional investors: organizations that pool money to purchase securities, real property, and other investment assets or originate loans. Institutional investors include banks, insurance companies, pensions, hedge funds, REITs, investment advisors, endowments, and mutual funds.",https://en.wikipedia.org/w/index.php?title=Institutional_investor&oldid=764994591
+commercial,Commercial,This finance was provided by private parties who do not fall within the definition of institutional investor.,
+bilateral,Bilateral,"This finance was provided by a bilateral institution: an agency of one specific government, usually a development agency or export-credit agency with a mandate to support domestic businesses in pursuing investments abroad.",https://ppi.worldbank.org/methodology/glossary
+multilateral,Multilateral,"This finance was provided by a multilateral institution: a body created by a group of countries to provides financing and professional support, primarily for the purpose of development.",https://en.wikipedia.org/w/index.php?title=International_financial_institutions&oldid=757498881
+vendor,Vendor,This finance was provided through a line of credit provided by a vendor.,
+other,Other,This finance was provided through some other source.,

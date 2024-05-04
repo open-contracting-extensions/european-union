@@ -1,0 +1,3 @@
+Code,Title,Description
+senior,Senior,Debt that needs to be repaid before subordinated debt is repaid.
+subordinated,Subordinated,Debt that needs to be repaid only after senior debt is repaid.
