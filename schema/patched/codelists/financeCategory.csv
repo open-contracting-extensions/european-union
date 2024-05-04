@@ -1,7 +1,0 @@
-Code,Title,Description,Extension
-equity,Equity,Equity finance is given in exchange for a share of ownership in the project (usually via direct or indirect shareholding in a Special Purpose Vehicle (SPV) company created to run the project).,Finance
-seniorDebt,Senior debt,Senior debt (sometimes called senior loans) take priority over other more junior debt.,Finance
-mezzanineDebt,Mezzanine debt,Mezzanine debt (sometimes called mezzanine loans) take priority over common shares.,Finance
-grant,Grant,A grant is finance provided without expectation of repayment.,Finance
-guarantee,Guarantee,A guarantee is a promise by one party to assume the debt of another if the other defaults. Guarantees are not to be counted in totals of the overall financing of a project.,Finance
-other,Other debts or investments,Any details of the conditions attached to this finance can be provided in the notes field.,Finance
