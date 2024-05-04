@@ -168,22 +168,6 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :file: ../_static/patched/codelists/extendedProcurementCategory.csv
 ```
 
-## Finance Category
-
-```{csv-table-no-translate}
-:header-rows: 1
-:class: codelist-table
-:file: ../_static/patched/codelists/financeCategory.csv
-```
-
-## Finance Type
-
-```{csv-table-no-translate}
-:header-rows: 1
-:class: codelist-table
-:file: ../_static/patched/codelists/financeType.csv
-```
-
 ## Financing Arrangement Type
 
 ```{csv-table-no-translate}
