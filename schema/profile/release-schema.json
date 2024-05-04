@@ -35,7 +35,7 @@
             },
             "classifications": {
               "title": "Organization classifications",
-              "description": "The classifications that categorize the organization",
+              "description": "The classifications that categorize the organization.",
               "type": "array",
               "items": {
                 "$ref": "#/definitions/Classification"
@@ -65,6 +65,15 @@
             }
           }
         },
+        "eDeliveryGateway": {
+          "title": "eDelivery gateway",
+          "description": "The organization's URL for the exchange of data and documents with eDelivery.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
         "shareholders": {
           "title": "Shareholdings",
           "description": "Shareholdings in the organization: used to provide company ownership information for firms, primarily in the case of large and complex contracts, like public private partnerships, that require disclosure of this information by bidders or suppliers.",
@@ -92,6 +101,11 @@
           },
           "uniqueItems": true,
           "minItems": 1
+        },
+        "address": {
+          "title": "Address",
+          "description": "The address of the contact point.",
+          "$ref": "#/definitions/Address"
         }
       }
     },
@@ -161,6 +175,32 @@
           "title": "Award period",
           "description": "The period for decision making regarding the contract award for the lot. The end date should be the date on which an award decision is due to be finalized. The start date may be used to indicate the start of an evaluation period.",
           "$ref": "#/definitions/Period"
+        },
+        "hasAccessibilityCriteria": {
+          "title": "Has accessibility criteria",
+          "description": "Whether the technical specifications for the lot include accessibility criteria for people with disabilities.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "noAccessibilityCriteriaRationale": {
+          "title": "No accessibility criteria rationale",
+          "description": "The rationale for not including accessibility criteria when the object of the lot is intended for use by natural persons.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "reviewDetails": {
+          "title": "Review details",
+          "description": "Precise information concerning the time limits for the review procedures for the lot or contact information from which it can be obtained.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
         },
         "id": {
           "title": "Lot ID",
@@ -306,6 +346,11 @@
           ],
           "minLength": 1
         },
+        "submissionTerms": {
+          "title": "Submission terms",
+          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids or expressions of interest for the lot.",
+          "$ref": "#/definitions/SubmissionTerms"
+        },
         "options": {
           "title": "Options",
           "description": "A description of the options.",
@@ -313,7 +358,7 @@
         },
         "hasOptions": {
           "title": "Options used",
-          "description": "Whether the buyer reserves the right to make additional purchases from the supplier, as long as the contract is valid.",
+          "description": "Whether the buyer is expected to reserve the right to make additional purchases from the supplier.",
           "type": [
             "boolean",
             "null"
@@ -339,7 +384,7 @@
         },
         "hasRenewal": {
           "title": "Has renewal",
-          "description": "Whether the contract related to the lot can be renewed.",
+          "description": "Whether the buyer is expected to reserve the right to renew the future contract(s) related to the lot.",
           "type": [
             "boolean",
             "null"
@@ -347,7 +392,7 @@
         },
         "renewal": {
           "title": "Renewal",
-          "description": "The options for the renewal of the contract related to the lot.",
+          "description": "The options for the renewal of the contract(s) related to the lot.",
           "$ref": "#/definitions/Renewal"
         },
         "secondStage": {
@@ -364,11 +409,6 @@
           "title": "Subcontracting terms",
           "description": "Information about the terms governing subcontracting.",
           "$ref": "#/definitions/SubcontractingTerms"
-        },
-        "submissionTerms": {
-          "title": "Submission terms",
-          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids for the lot.",
-          "$ref": "#/definitions/SubmissionTerms"
         },
         "techniques": {
           "title": "Techniques",
@@ -775,7 +815,7 @@
         },
         "targets": {
           "title": "Targets",
-          "description": "Any target metrics for this results of this contracting process.",
+          "description": "Any target metrics for this contracting process.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Metric"
@@ -790,7 +830,7 @@
         },
         "hasOptions": {
           "title": "Options used",
-          "description": "Whether or not the buyer reserves the right to make additional purchases from the supplier, as long as the contract is valid.",
+          "description": "Whether the buyer is expected to reserve the right to make additional purchases from the supplier.",
           "type": [
             "boolean",
             "null"
@@ -841,7 +881,7 @@
         },
         "hasRenewal": {
           "title": "Has renewal",
-          "description": "Whether the contracts can be renewed.",
+          "description": "Whether the buyer is expected to reserve the right to renew the future contract(s).",
           "type": [
             "boolean",
             "null"
@@ -849,7 +889,7 @@
         },
         "renewal": {
           "title": "Renewal",
-          "description": "The options for the renewal of the contracts.",
+          "description": "The options for the renewal of the contract(s).",
           "$ref": "#/definitions/Renewal"
         },
         "secondStage": {
@@ -859,7 +899,7 @@
         },
         "selectionCriteria": {
           "title": "Selection criteria",
-          "description": "Information about the conditions for participation in a procedure.",
+          "description": "The minimum requirements for potential suppliers to participate in the contracting process. Selection criteria ensure that a potential supplier has the legal and financial capacities and the technical and professional abilities to perform the contract.",
           "$ref": "#/definitions/SelectionCriteria"
         },
         "mainProcurementCategoryDetails": {
@@ -885,7 +925,7 @@
         },
         "submissionTerms": {
           "title": "Submission terms",
-          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids for the procedure.",
+          "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids or expressions of interest for the procedure.",
           "$ref": "#/definitions/SubmissionTerms"
         },
         "techniques": {
@@ -994,6 +1034,32 @@
           },
           "uniqueItems": true,
           "minItems": 1
+        },
+        "options": {
+          "title": "Options",
+          "description": "A description of the options.",
+          "$ref": "#/definitions/Options"
+        },
+        "hasOptions": {
+          "title": "Options used",
+          "description": "Whether the buyer is expected to reserve the right to make additional purchases from the supplier.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "hasRenewal": {
+          "title": "Has renewal",
+          "description": "Whether the buyer is expected to reserve the right to renew the future contract(s).",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "renewal": {
+          "title": "Renewal",
+          "description": "The options for the renewal of the contract(s).",
+          "$ref": "#/definitions/Renewal"
         },
         "statusDetails": {
           "title": "Status Details",
@@ -1727,7 +1793,7 @@
         },
         "operatorRevenueShare": {
           "title": "Operator revenue share",
-          "description": "The percentage of revenue from the sale of tickets allocated to the supplier.",
+          "description": "The proportion of revenue from the sale of tickets allocated to the supplier, expressed as a decimal between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -2092,6 +2158,14 @@
             "ZW",
             null
           ]
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the address.",
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
@@ -2297,7 +2371,7 @@
         },
         "finance": {
           "title": "Finance",
-          "description": "An array with details of each source of finance arranged for this contract.",
+          "description": "Information about financing arrangements for this contract.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Finance"
@@ -2314,6 +2388,32 @@
           },
           "uniqueItems": true,
           "minItems": 1
+        },
+        "options": {
+          "title": "Options",
+          "description": "A description of the options.",
+          "$ref": "#/definitions/Options"
+        },
+        "hasOptions": {
+          "title": "Options used",
+          "description": "Whether the buyer reserves the right to make additional purchases from the supplier.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "hasRenewal": {
+          "title": "Has renewal",
+          "description": "Whether the buyer reserves the right to renew the contract.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "renewal": {
+          "title": "Renewal",
+          "description": "The options for the renewal of the contract.",
+          "$ref": "#/definitions/Renewal"
         },
         "statusDetails": {
           "title": "Status Details",
@@ -2425,7 +2525,7 @@
       "properties": {
         "finance": {
           "title": "Finance",
-          "description": "An array with details of each source of finance planned for this procedure.",
+          "description": "Information about financing arrangements for a future contracting process.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Finance"
@@ -2437,7 +2537,7 @@
     },
     "Finance": {
       "title": "Financing arrangement",
-      "description": "Information about a financing arrangement.",
+      "description": "An arrangement between two parties for raising money.",
       "type": "object",
       "required": [
         "id"
@@ -2460,66 +2560,140 @@
         },
         "description": {
           "title": "Description",
-          "description": "A short description of this financing arrangement. This may include details of lender rights, step in arrangements, exchange rate guarantees, and for syndicated loans, details of syndication and any members of the syndicate.",
+          "description": "A short description of this financing arrangement. This may include details of service fees, commitment fees, lender rights, step in arrangements, exchange rate guarantees, and for syndicated loans, details of syndication and any members of the syndicate.",
           "type": [
             "string",
             "null"
           ],
           "minLength": 1
         },
+        "value": {
+          "title": "Value",
+          "description": "The total value of this finance.",
+          "$ref": "#/definitions/Value"
+        },
         "financingParty": {
           "title": "Financing organization",
           "description": "The organization providing this financing arrangement.",
           "$ref": "#/definitions/OrganizationReference"
         },
-        "financeType": {
-          "title": "Finance type",
-          "description": "The type of finance arranged.",
+        "financingPartyType": {
+          "title": "Financing organization type",
+          "description": "The type of the financing organization, from the closed financingPartyType codelist.",
           "type": [
             "string",
             "null"
           ],
-          "codelist": "financeType.csv",
+          "codelist": "financingPartyType.csv",
           "openCodelist": false,
           "enum": [
             "institutional",
             "commercial",
             "bilateral",
             "multilateral",
-            "publicBondIssue",
-            "supplierCredit",
+            "vendor",
             "other",
             null
           ]
         },
-        "financeCategory": {
-          "title": "Finance category",
-          "description": "The nature of the finance, relevant to determining the order of preference for investors to get their money back in case of liquidation.",
+        "source": {
+          "title": "Funding source",
+          "description": "The source of funds for this financing arrangement. For example, the Green Climate Fund.",
           "type": [
             "string",
             "null"
           ],
-          "codelist": "financeCategory.csv",
+          "minLength": 1
+        },
+        "assetClass": {
+          "title": "Asset class",
+          "description": "The asset classes used in this financing arrangement, from the closed assetClass codelist.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "debt",
+              "equity"
+            ],
+            "minLength": 1
+          },
+          "codelist": "assetClass.csv",
+          "openCodelist": false,
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "type": {
+          "title": "Type",
+          "description": "The type of this financing arrangement, from the closed financingArrangementType codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "financingArrangementType.csv",
           "openCodelist": false,
           "enum": [
-            "equity",
-            "seniorDebt",
-            "mezzanineDebt",
+            "bond",
+            "loan",
+            "hybrid",
+            "shares.listed",
+            "shares.unlisted",
             "grant",
             "guarantee",
-            "other",
             null
           ]
         },
-        "value": {
-          "title": "Value",
-          "description": "The total value of this finance.",
-          "$ref": "#/definitions/Value"
+        "repaymentPriority": {
+          "title": "Repayment priority",
+          "description": "The order in which the debt in this financing arrangement will be repaid in case of default, from the closed debtRepaymentPriority codelist.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "codelist": "debtRepaymentPriority.csv",
+          "openCodelist": false,
+          "enum": [
+            "senior",
+            "subordinated",
+            null
+          ]
+        },
+        "concessional": {
+          "title": "Concessional",
+          "description": "Whether this financing arrangement is provided below market rate in order to accelerate climate or development objectives. Also called soft financing and subsidized funding.",
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "resultsBased": {
+          "title": "Results based",
+          "description": "Whether payments under this financing arrangement are contingent on the achievement of pre-defined results.",
+          "type": [
+            "boolean",
+            "null"
+          ]
         },
         "period": {
           "title": "Finance period",
-          "description": "What period is covered by this finance.",
+          "description": "The period covered by this financing arrangement. Also called maturity.",
           "$ref": "#/definitions/Period"
+        },
+        "paymentPeriod": {
+          "title": "Payment period",
+          "description": "The period over which the borrower in this financing arrangement is obliged to make payments.",
+          "$ref": "#/definitions/Period"
+        },
+        "paymentFrequency": {
+          "title": "Payment frequency (days)",
+          "description": "The average payment frequency (in days) of this financing arrangement. For example, 365 for yearly, 30.4 for monthly, or 1 for daily.",
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
         },
         "interestRate": {
           "title": "Interest rate",
@@ -2528,7 +2702,7 @@
           "properties": {
             "base": {
               "title": "Base",
-              "description": "The variable to which an additional margin amount is added to get the Interest amount. This can be specified as a fixed number, as a known variable (e.g. LIBOR or LIBOR+1%), or can be omitted if margin specifies the entire interest rate.",
+              "description": "The variable to which an additional margin amount is added to get the interest amount. This can be specified as a fixed number, as a known variable (e.g. LIBOR or LIBOR+1%), or can be omitted if margin specifies the entire interest rate.",
               "type": [
                 "string",
                 "number",
@@ -2538,7 +2712,7 @@
             },
             "margin": {
               "title": "Margin",
-              "description": "The variable added to the base to give the Interest amount expressed as a decimal fraction (e.g. 12.5% = 0.125).",
+              "description": "The variable added to the base to give the interest amount, expressed as a decimal (for example, 0.1) and not as a percentage (for example, 10).",
               "type": [
                 "number",
                 "null"
@@ -2564,26 +2738,17 @@
           },
           "minProperties": 1
         },
-        "repaymentFrequency": {
-          "title": "Repayment frequency (days)",
-          "description": "What is the average repayment frequency (in days) for this source of finance. For example, for yearly, use 365; for monthly repayment use 30.4; for daily use 1. User interfaces may wish to translate this into a more user-friendly presentation, such as 'daily','monthly' or 'yearly'.",
-          "type": [
-            "number",
-            "null"
-          ],
-          "minimum": 0
-        },
-        "stepInRights": {
-          "title": "Step in rights",
-          "description": "Whether provision of this finance confers any step in rights to the financing organization.",
+        "exchangeRateGuarantee": {
+          "title": "Exchange rate guarantees",
+          "description": "Whether there is an associated exchange rate guarantee with this source of finance.",
           "type": [
             "boolean",
             "null"
           ]
         },
-        "exchangeRateGuarantee": {
-          "title": "Exchange rate guarantees",
-          "description": "Whether there is an associated exchange rate guarantee with this source of finance.",
+        "stepInRights": {
+          "title": "Step in rights",
+          "description": "Whether provision of this finance confers any step in rights to the financing organization.",
           "type": [
             "boolean",
             "null"
@@ -2757,6 +2922,24 @@
         }
       }
     },
+    "RelatedProcess": {
+      "properties": {
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "The identifiers of the lots in the related process to which this process relates.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    },
     "SimpleIdentifier": {
       "title": "Simple identifier",
       "description": "An unambiguous reference to a resource within a given context.",
@@ -2788,7 +2971,7 @@
       "properties": {
         "forecasts": {
           "title": "Forecasts",
-          "description": "Any forecasts metrics for this results of this contracting process.",
+          "description": "Any forecasts metrics for a future contracting process.",
           "type": "array",
           "items": {
             "$ref": "#/definitions/Metric"
@@ -2893,7 +3076,7 @@
             },
             "scheme": {
               "title": "Scheme",
-              "description": "The list from which units of measure identifiers are taken. Use of the scheme 'UNCEFACT' for the UN/CEFACT Recommendation 20 list of \"Codes for Units of Measure Used in International Trade\" is recommended.",
+              "description": "The list from which units of measure identifiers are taken. It is recommended to use the scheme 'UNCEFACT' and codes from the UN/CEFACT Recommendation 20 list of \"Codes for Units of Measure Used in International Trade\".",
               "type": [
                 "string",
                 "null"
@@ -3091,12 +3274,12 @@
       "properties": {
         "id": {
           "title": "Fee ID",
-          "description": "A local identifier for this fee, unique within this block. This field is used to keep track of multiple revisions of a fee through the compilation from release to record mechanism.",
+          "description": "The locally unique identifier for the fee.",
           "type": "string"
         },
         "type": {
           "title": "Fee type",
-          "description": "The type of this fee.",
+          "description": "The type of the fee.",
           "type": [
             "array",
             "null"
@@ -3115,20 +3298,25 @@
         },
         "value": {
           "title": "Value",
-          "description": "The monetary value of this fee.",
+          "description": "The monetary value of the fee.",
           "$ref": "#/definitions/Value"
+        },
+        "relativeValue": {
+          "title": "Relative value",
+          "description": "The value of the fee, as a proportion of a monetary value.",
+          "$ref": "#/definitions/RelativeValue"
         },
         "description": {
           "title": "Description",
-          "description": "Additional information about this fee, for example: the specific cases in which the fee is applicable (e.g. hard copies of documents only), the way in which the fee is levied, or the exact nature of the fee.",
+          "description": "Additional information about the fee, for example: the specific cases in which the fee is applicable (e.g. hard copies of documents only), the way in which the fee is levied, or the exact nature of the fee.",
           "type": [
             "string",
             "null"
           ]
         },
         "methodOfPayment": {
-          "title": "Method(s) of payment",
-          "description": "The accepted ways in which fees can be paid.",
+          "title": "Payment methods",
+          "description": "The accepted ways to pay the fee.",
           "type": [
             "array",
             "null"
@@ -3139,6 +3327,48 @@
           "codelist": "methodOfPayment.csv",
           "openCodelist": true,
           "uniqueItems": true
+        },
+        "paymentAddress": {
+          "title": "Payment address",
+          "description": "The physical address to which to submit non-electronic payments.",
+          "$ref": "#/definitions/Address"
+        },
+        "payee": {
+          "title": "Payee",
+          "description": "The organization that receives the fee.",
+          "$ref": "#/definitions/OrganizationReference"
+        }
+      }
+    },
+    "RelativeValue": {
+      "title": "Relative value",
+      "description": "The value of the participation fee, as a proportion of a monetary value.",
+      "type": "object",
+      "required": [
+        "proportion",
+        "monetaryValue"
+      ],
+      "properties": {
+        "proportion": {
+          "title": "Proportion",
+          "description": "The proportion of the monetary value, expressed as a decimal between 0 and 1.",
+          "type": [
+            "number"
+          ],
+          "maximum": 1,
+          "minimum": 0,
+          "exclusiveMinimum": true
+        },
+        "monetaryValue": {
+          "title": "Monetary value",
+          "description": "The name of the monetary value.",
+          "type": "string",
+          "enum": [
+            "tender",
+            "award"
+          ],
+          "codelist": "monetaryValue.csv",
+          "openCodelist": false
         }
       }
     },
@@ -3149,7 +3379,7 @@
       "properties": {
         "isAccelerated": {
           "title": "Accelerated procedure used",
-          "description": "Whether the time limit for receipt of bids or requests to participate can be reduced due to a state of urgency.",
+          "description": "Whether the time limit for receipt of bids or expressions of interest can be reduced due to a state of urgency.",
           "type": [
             "boolean",
             "null"
@@ -3309,7 +3539,7 @@
         },
         "description": {
           "title": "Description",
-          "description": "The description of the criteria used to select the economic operators who will be allowed to bid.",
+          "description": "The description of the criteria.",
           "type": [
             "string",
             "null"
@@ -3396,6 +3626,15 @@
           "wholeListMerge": true,
           "uniqueItems": true,
           "minItems": 1
+        },
+        "verificationMethod": {
+          "title": "Verification method",
+          "description": "The methods the buyer or procuring entity uses to verify the potential supplier satisfies the criterion.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
         }
       },
       "minProperties": 1
@@ -3421,7 +3660,7 @@
         },
         "shareholding": {
           "title": "Shareholding",
-          "description": "The percentage of the organization's shares held by the shareholder, expressed as a decimal between 0 and 1.",
+          "description": "The proportion of the organization's shares held by the shareholder, expressed as a decimal between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -3484,7 +3723,7 @@
         },
         "competitiveMaximumPercentage": {
           "title": "Maximum percentage of contract value for competitive subcontracting",
-          "description": "The maximum percentage of the contract value that the buyer or procuring entity allows the supplier to subcontract to third parties through a competitive procedure.",
+          "description": "The maximum percentage of the contract value that the buyer or procuring entity allows the supplier to subcontract to third parties through a competitive procedure, expressed as a decimal proportion between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -3495,7 +3734,7 @@
         },
         "competitiveMinimumPercentage": {
           "title": "Minimum percentage of contract value for competitive subcontracting",
-          "description": "The minimum percentage of the contract value that the buyer or procuring entity requires the supplier to subcontract to third parties through a competitive procedure.",
+          "description": "The minimum percentage of the contract value that the buyer or procuring entity requires the supplier to subcontract to third parties through a competitive procedure, expressed as a decimal proportion between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -3522,7 +3761,7 @@
         },
         "maximumPercentage": {
           "title": "Maximum percentage of contract value",
-          "description": "The maximum percentage of the contract value that will be subcontracted.",
+          "description": "The maximum percentage of the contract value that will be subcontracted, expressed as a decimal proportion between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -3533,7 +3772,7 @@
         },
         "minimumPercentage": {
           "title": "Minimum percentage of contract value",
-          "description": "The minimum percentage of the contract value that will be subcontracted.",
+          "description": "The minimum percentage of the contract value that will be subcontracted, expressed as a decimal proportion between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -3543,7 +3782,7 @@
         },
         "competitiveMaximumPercentage": {
           "title": "Maximum percentage of contract value for competitive subcontracting",
-          "description": "The maximum percentage of the contract value that the buyer or procuring entity allows the supplier to subcontract to third parties through a competitive procedure.",
+          "description": "The maximum percentage of the contract value that the buyer or procuring entity allows the supplier to subcontract to third parties through a competitive procedure, expressed as a decimal proportion between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -3554,7 +3793,7 @@
         },
         "competitiveMinimumPercentage": {
           "title": "Minimum percentage of contract value for competitive subcontracting",
-          "description": "The minimum percentage of the contract value that the buyer or procuring entity requires the supplier to subcontract to third parties through a competitive procedure.",
+          "description": "The minimum percentage of the contract value that the buyer or procuring entity requires the supplier to subcontract to third parties through a competitive procedure, expressed as a decimal proportion between 0 and 1.",
           "type": [
             "number",
             "null"
@@ -3624,12 +3863,12 @@
     },
     "SubmissionTerms": {
       "title": "Submission terms",
-      "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids.",
+      "description": "Information about the submission terms to describe how, when and where the tenderers need to submit their bids or expressions of interest.",
       "type": "object",
       "properties": {
         "electronicSubmissionPolicy": {
           "title": "Electronic submission policy",
-          "description": "Whether tenderers are required, allowed or not allowed to submit bids electronically.",
+          "description": "Whether tenderers are required, allowed or not allowed to submit bids or expressions of interest electronically.",
           "type": [
             "string",
             "null"
@@ -3677,7 +3916,7 @@
         },
         "languages": {
           "title": "Submission language",
-          "description": "One or more languages in which bids or requests to participate can be submitted, using either two-letter [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), or extended [BCP47 language tags](http://www.w3.org/International/articles/language-tags/). The use of lowercase two-letter codes from [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) is recommended.",
+          "description": "One or more languages in which bids or expressions of interest can be submitted, using either two-letter [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes), or extended [BCP47 language tags](http://www.w3.org/International/articles/language-tags/). The use of lowercase two-letter codes from [ISO639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) is recommended.",
           "type": [
             "array",
             "null"
@@ -3719,15 +3958,6 @@
             "null"
           ]
         },
-        "nonElectronicSubmissionRationale": {
-          "title": "Non-electronic submission rationale",
-          "description": "The rationale for electronic submission not being allowed.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "minLength": 1
-        },
         "subcontractingClauses": {
           "title": "Subcontracting clauses",
           "description": "The information about subcontracting that needs to be provided in the bid.",
@@ -3741,6 +3971,28 @@
           },
           "uniqueItems": true,
           "minItems": 1
+        },
+        "nonElectronicSubmission": {
+          "title": "Non-electronic submission",
+          "description": "Information about non-electronic submission requirements.",
+          "type": "object",
+          "properties": {
+            "rationale": {
+              "title": "Rationale",
+              "description": "The rationale for electronic submission not being allowed.",
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "address": {
+              "title": "Address",
+              "description": "The address to which non-electronic bids or expressions of interest should be submitted.",
+              "$ref": "#/definitions/Address"
+            }
+          },
+          "minProperties": 1
         }
       },
       "minProperties": 1

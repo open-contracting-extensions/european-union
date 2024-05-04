@@ -1,3 +1,3 @@
 Code,Title,Description
-minimumScore,Minimum score,"The number is a minimum score that bids or requests to participate need to receive for the criterion. For example: ""A bid must receive 20 points or more for criterion X."""
-maximumBids,Maximum number of passing bids,"The number is the maximum number of bids or requests to participate that can pass the criterion. For example: ""A bid must receive one of the highest 3 scores for criterion X."""
+minimumScore,Minimum score,"The number is a minimum score that bids or expressions of interest need to receive for the criterion. For example: ""A bid must receive 20 points or more for criterion X."""
+maximumBids,Maximum number of passing bids,"The number is the maximum number of bids or expressions of interest that can pass the criterion. For example: ""A bid must receive one of the highest 3 scores for criterion X."""

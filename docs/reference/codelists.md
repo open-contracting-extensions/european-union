@@ -16,6 +16,14 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :file: ../_static/patched/codelists/appliesTo.csv
 ```
 
+## Asset Class
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/assetClass.csv
+```
+
 ## Award Criteria
 
 ```{csv-table-no-translate}
@@ -120,6 +128,14 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :file: ../_static/patched/codelists/currency.csv
 ```
 
+## Debt Repayment Priority
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/debtRepaymentPriority.csv
+```
+
 ## Document Type
 
 ```{csv-table-no-translate}
@@ -166,6 +182,22 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :header-rows: 1
 :class: codelist-table
 :file: ../_static/patched/codelists/financeType.csv
+```
+
+## Financing Arrangement Type
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/financingArrangementType.csv
+```
+
+## Financing Party Type
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/financingPartyType.csv
 ```
 
 ## Framework Agreement Method
@@ -238,6 +270,14 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :header-rows: 1
 :class: codelist-table
 :file: ../_static/patched/codelists/milestoneType.csv
+```
+
+## Monetary Value
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/monetaryValue.csv
 ```
 
 ## Participation Fee Type
