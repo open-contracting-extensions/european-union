@@ -171,7 +171,7 @@ tomli==2.0.1
     #   pip-tools
     #   pyproject-hooks
     #   pytest
-tornado==6.3.3
+tornado==6.4.1
     # via livereload
 trio==0.20.0
     # via
