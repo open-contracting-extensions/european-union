@@ -187,7 +187,7 @@ uc-micro-py==1.0.1
     # via linkify-it-py
 url-normalize==1.4.3
     # via requests-cache
-urllib3[socks]==1.26.18
+urllib3[socks]==1.26.19
     # via
     #   elastic-transport
     #   requests
