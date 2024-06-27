@@ -21,7 +21,7 @@ This guidance does not cover:
 
 ### Technical
 
-PDF files of the forms were provided by the European Commission, for reference only ([Prior information notice](_static/pdf/EN_F01.pdf), for example). However, the PDF files don't formally specify the form fields and their possible values (numbers, dates, codes, etc.). These are specified in the Tenders Electronic Daily (TED) [XML schemas](https://op.europa.eu/en/web/eu-vocabularies/e-procurement/tedschemas). Of particular interest is the Publication Schema, which is used to publish notices.
+PDF files of the forms were provided by the European Commission, for reference only ([Prior information notice](https://ted.europa.eu/documents/d/ted/en_f01), for example). However, the PDF files don't formally specify the form fields and their possible values (numbers, dates, codes, etc.). These are specified in the Tenders Electronic Daily (TED) [XML schemas](https://op.europa.eu/en/web/eu-vocabularies/e-procurement/tedschemas). Of particular interest is the Publication Schema, which is used to publish notices.
 
 Reading the schema, however, is challenging, unless you're familiar with XML Schema and related tools. To make it easier to understand the structure of the notices, we generated [XML files](https://github.com/open-contracting/european-union-support/tree/main/output/samples) for the notices, which provide validation rules in comments, and retain XML Schema elements like `<choice>` only where necessary.
 
