@@ -27,7 +27,7 @@ build==0.10.0
     # via pip-tools
 cattrs==23.1.2
     # via requests-cache
-certifi==2023.7.22
+certifi==2024.7.4
     # via
     #   elastic-transport
     #   requests
