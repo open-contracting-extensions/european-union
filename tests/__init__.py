@@ -1,17 +1,17 @@
 languages = {
-    'en': 'English',
+    "en": "English",
 }
 
 test_basic_params = {
-    'en': 'OCDS',
+    "en": "OCDS",
 }
 
 test_navigation_params = [
-    ('en', 'Next'),
+    ("en", "Next"),
 ]
 
 test_search_params = [
-    ('en', r'found \d+ page\(s\) matching'),
+    ("en", r"found \d+ page\(s\) matching"),
 ]
 
-last_path = '/changelog/'
+last_path = "/changelog/"
