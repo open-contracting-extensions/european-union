@@ -90,7 +90,7 @@ myst-parser==0.18.1
     # via -r common-requirements.in
 ocds-babel==0.3.6
     # via -r common-requirements.in
-ocdsextensionregistry==0.4.0
+ocdsextensionregistry==0.5.0
     # via -r common-requirements.in
 ocdsindex==0.2.0
     # via -r common-requirements.in
@@ -124,7 +124,7 @@ requests-cache==1.1.0
     # via ocdsextensionregistry
 selenium==4.11.2
     # via -r common-requirements.in
-setuptools==74.1.2
+setuptools==75.2.0
     # via sphinx-intl
 six==1.16.0
     # via url-normalize
@@ -160,7 +160,7 @@ sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
 standard-theme @ git+https://github.com/open-contracting/standard_theme.git@07ca0e39979a244656dd6df0658f2ead428184b9#egg=standard_theme
     # via -r common-requirements.in
-starlette==0.38.4
+starlette==0.40.0
     # via sphinx-autobuild
 tomli==2.0.1
     # via pytest
