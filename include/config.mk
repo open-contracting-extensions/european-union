@@ -19,6 +19,8 @@ DIST_FILES=schema/profile/release-schema.json schema/profile/codelists schema/pa
 POT_DIR=$(BUILD_DIR)/locale
 # The prefix, if any, to the schema and codelists domains.
 DOMAIN_PREFIX=
+# The Transifex organization name.
+TRANSIFEX_ORGANIZATION=open-contracting-partnership-1
 # The Transifex project name.
 TRANSIFEX_PROJECT=
 # Any additional extract targets.
