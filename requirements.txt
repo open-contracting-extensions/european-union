@@ -2,5 +2,5 @@
 
 # Add your own requirements below.
 
-sphinxcontrib-opendataservices-jsonschema==0.5.1
+sphinxcontrib-opendataservices-jsonschema==0.7.1
 sphinxcontrib-opendataservices==0.5.0
