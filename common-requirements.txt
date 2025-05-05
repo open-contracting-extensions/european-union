@@ -51,7 +51,7 @@ exceptiongroup==1.2.2
     #   anyio
     #   cattrs
     #   pytest
-h11==0.13.0
+h11==0.16.0
     # via
     #   uvicorn
     #   wsproto
@@ -124,7 +124,7 @@ requests-cache==1.1.0
     # via ocdsextensionregistry
 selenium==4.11.2
     # via -r common-requirements.in
-setuptools==75.2.0
+setuptools==80.3.1
     # via sphinx-intl
 six==1.16.0
     # via url-normalize
