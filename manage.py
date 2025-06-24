@@ -12,6 +12,8 @@ from ocdsextensionregistry import build_profile
 basedir = Path(__file__).resolve().parent
 sys.path.append(str(basedir / "docs"))
 
+import conf  # noqa: E402
+
 
 @click.group()
 def cli():
@@ -24,8 +26,6 @@ def update():
     Update the profile to the latest versions of extensions. If conf.py sets managed_codelist to True, regenerate
     docs/reference/codelists.md to list all codelists from OCDS and extensions.
     """
-    import conf
-
     path_prefix = conf.html_theme_options["root_url"]
     ref = conf.release.replace("-", "__").replace(".", "__")
     schema_base_url = f"https://standard.open-contracting.org{path_prefix}/schema/{ref}/"
