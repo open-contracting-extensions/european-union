@@ -1,5 +1,7 @@
 name: CI
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   build:
     uses: open-contracting/.github/.github/workflows/ci-profile.yml@main
