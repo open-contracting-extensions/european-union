@@ -184,6 +184,14 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :file: ../_static/patched/codelists/financingPartyType.csv
 ```
 
+## Foreign Subsidy Measures
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/foreignSubsidyMeasures.csv
+```
+
 ## Framework Agreement Method
 
 ```{csv-table-no-translate}
@@ -342,6 +350,14 @@ The codelists can be downloaded as CSV files from <https://standard.open-contrac
 :header-rows: 1
 :class: codelist-table
 :file: ../_static/patched/codelists/selectionCriterionType.csv
+```
+
+## Sources
+
+```{csv-table-no-translate}
+:header-rows: 1
+:class: codelist-table
+:file: ../_static/patched/codelists/sources.csv
 ```
 
 ## Submission Method

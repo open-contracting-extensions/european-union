@@ -1,2 +1,3 @@
 Code,Title,Description
-eu-oj,Official Journal of the European Union,An Official Journal of the European Union contracting process identifier.
+eu-notice-id-ref,eForms versioned notice identifier,An eForms notice identifier (UUID) concatenated with the associated version identifier (2 digits) in the form {UUID}-{vv}.
+eu-ojs-notice-id,Official Journal of the European Union notice identifier,"An Official Journal of the European Union notice identifier, also known as a Notice Publication ID in eForms."

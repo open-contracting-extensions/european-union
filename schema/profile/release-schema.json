@@ -259,7 +259,7 @@
           "description": "The maximum estimated value of this lot.",
           "$ref": "#/definitions/Value"
         },
-        "minValue": {
+        "minimumValue": {
           "title": "Minimum value",
           "description": "The estimated minimum value of the lot. A negative value indicates that the contracting process may involve payments from the supplier to the buyer (commonly used in concession contracts).",
           "$ref": "#/definitions/Value"
@@ -745,26 +745,6 @@
           "title": "Legal basis",
           "description": "The legal basis of the procedure.",
           "$ref": "#/definitions/Classification"
-        },
-        "deliveryLocations": {
-          "title": "Delivery Locations",
-          "description": "The locations where activity related to this tender will take place.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Location"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true
-        },
-        "deliveryAddresses": {
-          "title": "Delivery Addresses",
-          "description": "The addresses to which, or where, goods or services related to this tender will be delivered.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Address"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true
         },
         "lots": {
           "title": "Lots",
@@ -1540,6 +1520,26 @@
           },
           "uniqueItems": true
         },
+        "foreignSubsidyMeasures": {
+          "title": "Foreign subsidy measures",
+          "description": "The measures applied under the Foreign Subsidies Regulation (EU) 2022/2560.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "fsr-adm-clos",
+            "fsr-commit",
+            "fsr-irregul",
+            "fsr-meat",
+            "fsr-no-obj",
+            "fsr-proh",
+            "fsr-stand",
+            null
+          ],
+          "codelist": "foreignSubsidyMeasures.csv",
+          "openCodelist": false
+        },
         "hasSubcontracting": {
           "title": "Subcontracting involved",
           "description": "Whether a part of the contract will be subcontracted to third parties.",
@@ -2158,14 +2158,6 @@
             "ZW",
             null
           ]
-        },
-        "description": {
-          "title": "Description",
-          "description": "The description of the address.",
-          "type": [
-            "string",
-            "null"
-          ]
         }
       }
     },
@@ -2425,58 +2417,6 @@
         }
       }
     },
-    "Item": {
-      "properties": {
-        "deliveryAddresses": {
-          "title": "Delivery Addresses",
-          "description": "The addresses to which, or where, goods or services related to this tender, contract or license will be delivered.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Address"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true,
-          "minItems": 1
-        },
-        "deliveryLocations": {
-          "title": "Delivery Locations",
-          "description": "The locations where activity related to this tender, contract or license will be delivered.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Location"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true,
-          "minItems": 1
-        },
-        "deliveryLocation": {
-          "title": "Delivery Location",
-          "description": "The location where activity related to this tender, contract or license will be delivered, or will take place.",
-          "$ref": "#/definitions/Location",
-          "deprecated": {
-            "description": "This field is deprecated in favour of `.deliveryLocations` to support items with multiple delivery locations.",
-            "deprecatedVersion": "1.2.0"
-          }
-        },
-        "deliveryAddress": {
-          "title": "Delivery Address",
-          "description": "The address to which, or where, goods or services related to this tender, contract or license will be delivered.",
-          "$ref": "#/definitions/Address",
-          "deprecated": {
-            "description": "This field is deprecated in favour of `.deliveryAddresses` to support items with multiple delivery locations.",
-            "deprecatedVersion": "1.2.0"
-          }
-        },
-        "relatedLot": {
-          "title": "Related lot",
-          "description": "The identifier of the lot to which this item relates.",
-          "type": [
-            "string",
-            "null"
-          ]
-        }
-      }
-    },
     "Period": {
       "properties": {
         "description": {
@@ -2487,6 +2427,33 @@
             "null"
           ],
           "minLength": 1
+        }
+      }
+    },
+    "RelatedProcess": {
+      "properties": {
+        "part": {
+          "title": "Part",
+          "description": "The identifier of a part of a prior information notice, or another similar notice, that describes a planning process.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "relatedLots": {
+          "title": "Related lot(s)",
+          "description": "The identifiers of the lots in the related process to which this process relates.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "minItems": 1
         }
       }
     },
@@ -2519,6 +2486,78 @@
           "$ref": "#/definitions/OrganizationReference"
         }
       },
+      "minProperties": 1
+    },
+    "ExclusionGrounds": {
+      "properties": {
+        "sources": {
+          "title": "Sources",
+          "description": "The sources in which the exclusion grounds are defined.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "epo-notice",
+              "epo-procurement-document",
+              "epo-sub-espd"
+            ]
+          },
+          "codelist": "sources.csv",
+          "openCodelist": false,
+          "uniqueItems": true,
+          "minItems": 1
+        }
+      }
+    },
+    "SelectionCriteria": {
+      "properties": {
+        "sources": {
+          "title": "Sources",
+          "description": "The sources in which the selection criteria are defined.",
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "enum": [
+              "epo-notice",
+              "epo-procurement-document",
+              "epo-sub-espd"
+            ]
+          },
+          "codelist": "sources.csv",
+          "openCodelist": false,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "criteria": {
+          "title": "Selection criteria",
+          "description": "The selection criteria.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SelectionCriterion"
+          },
+          "wholeListMerge": true,
+          "uniqueItems": true,
+          "minItems": 1
+        },
+        "description": {
+          "title": "Description",
+          "description": "The description of the criteria.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      },
+      "title": "Selection criteria",
+      "description": "Information about conditions for participation.",
+      "type": "object",
       "minProperties": 1
     },
     "Budget": {
@@ -2771,10 +2810,32 @@
       },
       "minProperties": 1
     },
+    "Item": {
+      "properties": {
+        "deliveryLocation": {
+          "title": "Delivery Location",
+          "description": "The location where activity related to this tender, contract or license will be delivered, or will take place.",
+          "$ref": "#/definitions/Location"
+        },
+        "deliveryAddress": {
+          "title": "Delivery Address",
+          "description": "The address to which, or where, goods or services related to this tender, contract or license will be delivered.",
+          "$ref": "#/definitions/Address"
+        },
+        "relatedLot": {
+          "title": "Related lot",
+          "description": "The identifier of the lot to which this item relates.",
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
     "Location": {
-      "title": "Location",
-      "description": "A physical or virtual location.",
       "type": "object",
+      "title": "Delivery Location",
+      "description": "The location where activity related to this tender, contract or license will be delivered, or will take place. A location can be described by either a geometry (point location, line or polygon), or a gazetteer entry, or both.",
       "properties": {
         "description": {
           "title": "Description",
@@ -2785,19 +2846,17 @@
           ]
         },
         "geometry": {
-          "title": "Geometry",
-          "description": "We follow the [GeoJSON standard](https://www.rfc-editor.org/rfc/rfc7946) to express basic location information, using longitude, latitude, and optional elevation values in the [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System) (EPSG:4326) projection. A point location can be identified by geocoding an address. For concession licenses, or other scenarios covering a polygon location that is not contained in a known gazetteer, polygon and multi-polygon can be used.",
           "type": "object",
+          "title": "Geometry",
+          "description": "We follow the [GeoJSON standard](http://geojson.org/) to express basic location information, using longitude, latitude, and optional elevation values in the [WGS84](https://en.wikipedia.org/wiki/World_Geodetic_System) (EPSG:4326) projection. A point location can be identified by geocoding a delivery address. For concession licenses, or other contracts covering a polygon location which is not contained in a known gazetteer, polygon and multi-polygon can be used.",
           "properties": {
             "type": {
               "title": "Type",
-              "description": "The type of [GeoJSON Geometry Objects](https://www.rfc-editor.org/rfc/rfc7946#section-3.1) being provided. To provide longitude, latitude, and optional elevation, use 'Point', and enter an array of [longitude, latitude] or [longitude, latitude, elevation] as the value of the coordinates field: e.g. [-122.085, 37.42].",
+              "description": "The type of [GeoJSON Geometry Objects](http://geojson.org/geojson-spec.html#geometry-objects) being provided. To provide longitude, latitude, and optional elevation, use 'Point', and enter an array of [longitude, latitude] or [longitude, latitude, elevation] as the value of the coordinates field: e.g. [-122.085, 37.42].",
               "type": [
                 "string",
                 "null"
               ],
-              "codelist": "geometryType.csv",
-              "openCodelist": false,
               "enum": [
                 "Point",
                 "MultiPoint",
@@ -2806,7 +2865,9 @@
                 "Polygon",
                 "MultiPolygon",
                 null
-              ]
+              ],
+              "codelist": "geometryType.csv",
+              "openCodelist": false
             },
             "coordinates": {
               "title": "Coordinates",
@@ -2825,9 +2886,9 @@
           }
         },
         "gazetteer": {
+          "type": "object",
           "title": "Gazetteer",
           "description": "Identifiers from a gazetteer (a geographical index or directory) for the location.",
-          "type": "object",
           "properties": {
             "scheme": {
               "title": "Gazetteer scheme",
@@ -2847,19 +2908,20 @@
                 "null"
               ],
               "items": {
-                "type": "string"
+                "type": [
+                  "string"
+                ]
               }
             }
           }
         },
         "uri": {
-          "title": "URI",
-          "description": "A URI to a further description of the location. This might be a human-readable document with information on the location, or a machine-readable description of the location.",
           "type": [
             "string",
             "null"
           ],
-          "format": "uri"
+          "title": "URI",
+          "description": "A URI to a further description of the activity location. This might be a human-readable document with information on the location, or a machine-readable description of the location."
         }
       }
     },
@@ -2917,24 +2979,6 @@
             "$ref": "#/definitions/UnstructuredChange"
           },
           "wholeListMerge": true,
-          "uniqueItems": true,
-          "minItems": 1
-        }
-      }
-    },
-    "RelatedProcess": {
-      "properties": {
-        "relatedLots": {
-          "title": "Related lot(s)",
-          "description": "The identifiers of the lots in the related process to which this process relates.",
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": "string",
-            "minLength": 1
-          },
           "uniqueItems": true,
           "minItems": 1
         }
@@ -3521,34 +3565,6 @@
       },
       "minProperties": 1
     },
-    "SelectionCriteria": {
-      "title": "Selection criteria",
-      "description": "Information about conditions for participation.",
-      "type": "object",
-      "properties": {
-        "criteria": {
-          "title": "Selection criteria",
-          "description": "The selection criteria.",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/SelectionCriterion"
-          },
-          "wholeListMerge": true,
-          "uniqueItems": true,
-          "minItems": 1
-        },
-        "description": {
-          "title": "Description",
-          "description": "The description of the criteria.",
-          "type": [
-            "string",
-            "null"
-          ],
-          "minLength": 1
-        }
-      },
-      "minProperties": 1
-    },
     "SelectionCriterion": {
       "title": "Selection criterion",
       "description": "Information about the selection criterion.",
@@ -3570,6 +3586,15 @@
             "other",
             null
           ]
+        },
+        "subType": {
+          "title": "Subtype",
+          "description": "The subtype of the criterion.",
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
         },
         "description": {
           "title": "Description",
