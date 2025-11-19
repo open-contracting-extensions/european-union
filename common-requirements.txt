@@ -44,7 +44,7 @@ docutils==0.18
     #   sphinx
 elastic-transport==8.17.1
     # via elasticsearch
-elasticsearch[requests]==8.6.2
+elasticsearch==8.6.2
     # via ocdsindex
 exceptiongroup==1.2.2
     # via
@@ -124,6 +124,8 @@ requests-cache==1.1.0
     # via ocdsextensionregistry
 selenium==4.11.2
     # via -r common-requirements.in
+setuptools==80.9.0
+    # via sphinx-intl
 six==1.16.0
     # via url-normalize
 sniffio==1.2.0
@@ -156,9 +158,9 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-standard-theme @ git+https://github.com/open-contracting/standard_theme.git@open_contracting
+standard-theme @ git+https://github.com/open-contracting/standard_theme.git@2c80f7d4748e768eead3fd34d31c00d6b953c02c#egg=standard_theme
     # via -r common-requirements.in
-starlette==0.49.1
+starlette==0.50.0
     # via sphinx-autobuild
 tomli==2.0.1
     # via pytest
@@ -179,7 +181,7 @@ uc-micro-py==1.0.1
     # via linkify-it-py
 url-normalize==1.4.3
     # via requests-cache
-urllib3[socks]==2.5.0
+urllib3==2.5.0
     # via
     #   elastic-transport
     #   requests
