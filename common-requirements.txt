@@ -158,7 +158,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-standard-theme @ git+https://github.com/open-contracting/standard_theme.git@5d169dcc532807146e3f1dbcf7bae9c5be11c398#egg=standard_theme
+standard-theme @ git+https://github.com/open-contracting/standard_theme.git@dc06bcc22807e2d2950287746c4e5feb7988a131#egg=standard_theme
     # via -r common-requirements.in
 starlette==0.50.0
     # via sphinx-autobuild
@@ -181,7 +181,7 @@ uc-micro-py==1.0.1
     # via linkify-it-py
 url-normalize==1.4.3
     # via requests-cache
-urllib3==2.6.2
+urllib3==2.6.3
     # via
     #   elastic-transport
     #   requests
