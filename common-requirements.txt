@@ -89,7 +89,7 @@ ocds-babel==0.3.7
     # via -r common-requirements.in
 ocdsextensionregistry==0.6.5
     # via -r common-requirements.in
-ocdsindex==0.4.0
+ocdsindex==0.4.1
     # via -r common-requirements.in
 outcome==1.3.0.post0
     # via
