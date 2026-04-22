@@ -33,3 +33,6 @@ ignore-variadic-names = true
     "D301",  # click escapes
     "TRY003",  # errors
 ]
+
+[tool.uv.pip]
+exclude-newer = "1 week"

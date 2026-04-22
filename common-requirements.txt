@@ -42,7 +42,7 @@ docutils==0.18
     #   sphinx
 elastic-transport==9.2.1
     # via elasticsearch
-elasticsearch==9.3.0
+elasticsearch[requests]==9.3.0
     # via ocdsindex
 h11==0.16.0
     # via
@@ -69,7 +69,7 @@ jsonref==1.0.0.post1
     # via ocdsextensionregistry
 linkify-it-py==1.0.1
     # via -r common-requirements.in
-lxml==6.0.2
+lxml==6.1.0
     # via ocdsindex
 markdown-it-py==2.2.0
     # via
@@ -110,7 +110,7 @@ pygments==2.20.0
     #   sphinx
 pysocks==1.7.1
     # via urllib3
-pytest==9.0.2
+pytest==9.0.3
     # via -r common-requirements.in
 python-dateutil==2.9.0.post0
     # via elasticsearch
@@ -126,8 +126,6 @@ requests-cache==1.1.0
     # via ocdsextensionregistry
 selenium==4.40.0
     # via -r common-requirements.in
-setuptools==82.0.1
-    # via sphinx-intl
 six==1.16.0
     # via
     #   python-dateutil
@@ -164,7 +162,7 @@ sphinxcontrib-qthelp==1.0.3
     # via sphinx
 sphinxcontrib-serializinghtml==1.1.5
     # via sphinx
-standard-theme @ git+https://github.com/open-contracting/standard_theme.git@5ab01a75d04b92c39a7826b91250157667521cff#egg=standard_theme
+standard-theme @ git+https://github.com/open-contracting/standard_theme.git@open_contracting
     # via -r common-requirements.in
 starlette==0.50.0
     # via sphinx-autobuild
@@ -186,12 +184,13 @@ typing-extensions==4.15.0
     #   elasticsearch
     #   myst-parser
     #   selenium
+    #   starlette
     #   trio-typing
 uc-micro-py==1.0.1
     # via linkify-it-py
 url-normalize==1.4.3
     # via requests-cache
-urllib3==2.6.3
+urllib3[socks]==2.6.3
     # via
     #   elastic-transport
     #   requests
