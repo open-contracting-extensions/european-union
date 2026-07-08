@@ -1,0 +1,7 @@
+name: Lint JavaScript
+on: [push, pull_request]
+jobs:
+  lint:
+    uses: open-contracting/.github/.github/workflows/js.yml@main
+    permissions:
+      contents: read
