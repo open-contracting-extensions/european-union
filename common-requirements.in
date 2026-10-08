@@ -4,7 +4,6 @@ ocds-babel
 Sphinx
 sphinxcontrib-opendataservices
 sphinxcontrib-opendataservices-jsonschema
-git+https://github.com/open-contracting/standard_theme.git@open_contracting#egg=standard_theme
 
 # Profile
 ocdsextensionregistry
