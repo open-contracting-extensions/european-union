@@ -2,7 +2,7 @@
 #    uv pip compile common-requirements.in -o common-requirements.txt
 alabaster==0.7.12
     # via sphinx
-anyio==4.4.0
+anyio==4.14.2
     # via
     #   elasticsearch
     #   starlette
@@ -132,7 +132,6 @@ six==1.16.0
     #   url-normalize
 sniffio==1.3.1
     # via
-    #   anyio
     #   elastic-transport
     #   elasticsearch
     #   trio
@@ -181,6 +180,7 @@ types-urllib3==1.26.25.14
     # via selenium
 typing-extensions==4.15.0
     # via
+    #   anyio
     #   elasticsearch
     #   myst-parser
     #   selenium
@@ -190,7 +190,7 @@ uc-micro-py==1.0.1
     # via linkify-it-py
 url-normalize==1.4.3
     # via requests-cache
-urllib3[socks]==2.7.0
+urllib3[socks]==2.8.0
     # via
     #   elastic-transport
     #   requests
