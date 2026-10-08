@@ -76,6 +76,7 @@ html_theme_options = {
     "root_url": f"/profiles/{profile_identifier}" if profile_identifier else "",
     # Relative to the version's directory, so that one value serves the live and staging copies.
     "versions_url": "../versions.json",
+    "languages": {"en": "English"},
     "short_project": project.replace("Open Contracting Data Standard", "OCDS"),
     "copyright": copyright,
     "license_name": "Apache License 2.0",
