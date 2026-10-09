@@ -32,10 +32,4 @@ PDF_PAGES={,forms/{,F01/,F02/,F03/,F04/,F05/,F06/,F07/,F08/,F12/,F13/,F14/,F15/,
 # be an indication of an iframe taking too long to load."
 PDF_DELAY=20000
 
-# Compile PO files for codelists and schema to MO files, so that `translate` succeeds.
-.PHONY: compile
-compile:
-	# pybabel compile --use-fuzzy -d $(LOCALE_DIR) -D $(DOMAIN_PREFIX)schema
-	# pybabel compile --use-fuzzy -d $(LOCALE_DIR) -D $(DOMAIN_PREFIX)codelists
-
 # Put local targets below.
